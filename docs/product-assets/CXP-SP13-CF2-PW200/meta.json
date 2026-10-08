@@ -1,0 +1,39 @@
+{
+  "invoice_sku": "CXP-SP13-CF2-PW200",
+  "invoice_qty": 8,
+  "wholesale_eur": 4.31,
+  "hatlabs_handle": "sp13-power-pigtail-connector-pair",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/sp13-power-pigtail-connector-pair",
+  "hatlabs_title": "SP13 Power Pigtail Connector Pair",
+  "shop_sku": "CXP-SP13-CF2-PW200",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "7.40",
+  "grams": 18,
+  "images": [
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110144.jpg?v=1744703927"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110148.jpg?v=1744703927"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/03.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03.png?v=1744705891"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/04.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41.png?v=1744705898"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/05.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52.png?v=1744705905"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF2-PW200/06.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P2-0.2PW.png?v=1781598716"
+    }
+  ],
+  "image_count": 6
+}

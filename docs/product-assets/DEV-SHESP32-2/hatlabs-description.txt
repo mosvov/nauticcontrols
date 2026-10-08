@@ -1,0 +1,97 @@
+SH-ESP32 is the perfect sensor development board for marine and automotive environments. It allows you to easily and safely integrate different sensors to your boat electronics systems, whether you are using Signal K or NMEA 2000 as your boat electronics backbone. It has native NMEA 2000 compatible CAN bus connectivity.
+
+ SH-ESP32 can be used to create different types of sensors and control devices. Use scenarios include:
+
+ 
+- RPM sensors for older engines
+
+- Tank level sensors
+
+- Bilge alarms
+
+- Temperature and humidity sensors
+
+- Relay controls (lights, blowers, anchor winch)
+
+- Attitude sensors
+
+- Electronic compasses
+
+- NMEA 2000 gateways
+
+- NMEA 0183 gateways
+
+ 
+ Some of these applications require a small number of additional components.
+
+ This device is programmable with a regular micro USB cable. 
+
+ Features 
+ 
+- Built around Espressif's powerful ESP32-WROOM32 module with 4 MB of flash and WiFi, Bluetooth and Bluetooth LE connectivity
+
+- Safe, built-in power supply, supporting voltages between 8 and 32 volts.
+
+- Isolated (safe and NMEA 2000 compliant!) NMEA 2000 compatible CAN bus interface
+
+- Protected, opto-coupled signal input and output
+
+- Protected 1-wire interface
+
+- Protected I2C interface
+
+- USB connectivity for programming and serial communication
+
+- All ESP32-WROOM32 GPIO pins broken out to a standard header
+
+- Generous proto board area for connecting additional circuitry
+
+- Complies with the following standards:
+ 
+- CISPR 25 class 4
+
+- CISPR 32
+
+- DNVGL-CG-0339
+
+ 
+
+ 
+ Contents 
+ Sales package includes:
+
+ 
+ 
+- SH-ESP32 rev.2 board with all connectors soldered in place
+
+- Pluggable screw terminals
+ 
+- 1x4 pin plug for CAN bus (NMEA 2000)
+
+- 1x2 pin plug for power input
+
+ 
+
+ 
+ 
+ USB Drivers 
+ SH-ESP32 uses a CH340C serial USB chip. It is supported out of the box in Linux and MacOS, but Windows users need to install a driver downloadable from the manufacturer website .
+
+ Software 
+ SH-ESP32 can be programmed with either Espressif's ESP-IDF or with the Arduino core for the ESP32 . If you are starting from the scratch, we highly recommend SensESP, a universal Signal K sensor framework for ESP8266 and ESP32 .
+
+ Documentation 
+ SH-ESP32 documentation site is available here:
+
+ 
+- SH-ESP32 Documentation Site 
+
+ 
+ Compliance information is available here:
+
+ 
+- SH-ESP32 
+
+ 
+ Note 
+ This is a developer device and does not come with any useful software pre-installed. Hat Labs cannot provide support for writing programs for the device. For development questions and discussion, please join to the discussion forum or the Signal K development Slack (#sensors channel).

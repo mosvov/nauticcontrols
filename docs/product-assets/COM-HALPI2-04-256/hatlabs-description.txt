@@ -1,0 +1,114 @@
+Supply notice: Compute Module 5 availability 
+
+ Raspberry Pi Compute Module 5 modules are currently in short supply worldwide due to elevated memory-chip demand from AI data centres. As a result:
+
+ 
+- Some HALPI2 RAM and storage configurations may go temporarily out of stock with little notice.
+
+- Component prices are rising; the prices shown reflect our latest costs and may be revised again as the market moves.
+
+ 
+ If your preferred configuration is unavailable, please email us at info@hatlabs.fi . We can often suggest a closely-matching variant in stock, or give you a realistic ETA for the one you want.
+
+ 
+ Introduction 
+ 
+ HALPI2 is a unique, custom-design, pre-built, fully functional Raspberry Pi boat computer. Powered by the Raspberry Pi Compute Module 5 (CM5), it is 100% compatible with the Raspberry Pi ecosystem. HALPI2 comes pre-installed with a Halos with pre-configured NMEA 2000 and other settings. It includes a pre-configured Signal K server, AvNav and other essential open navigation software. Additional packages such as OpenCPN, InfluxDB and Grafana can be easily installed.
+
+ HALPI2 can be used as a marine plotter platform, a data acquisition and visualization device, boat automation and control platform, or for a million other use cases--it is a generic computer, after all!
+
+ 
+ Features 
+ 
+ Being powered with a Raspberry Pi CM5, HALPI2 offers the exact same high performance as the standard Raspberry Pi 5 single-board computer. It can be equipped with up to 16 GB of system memory and any size SSD hard drive (up to 1 TB offered as standard). Typical embedded platforms have far more modest specs.
+
+ HALPI2 comes integrated with an advanced power supply with a short-term energy storage. The integrated Raspberry Pi 2040 microcontroller manages the board operation, shutting the computer down in a controlled fashion when the power is cut. Likewise, the power supply design allows the computer to keep running during short voltage dips such as engine cranking or even during major voltage spikes such as alternator load dumps. This makes HALPI2 an ideal solution for deeply embedded systems. Your crew, personnel or family members don't need to be trained to shutdown the device or even be aware of its existence. The device will automatically shut down when the power is cut from an electrical panel or ignition switch, without risking SSD drive corruption.
+
+ Thanks to input current limiting, HALPI2 can be powered via the NMEA 2000 network and the device will be guaranteed to never consume more than 0.8 A of current. (Average power consumption will be much lower than that.) Alternatively, it can be powered through a dedicated power connector, providing full galvanic isolation towards the NMEA 2000 network.
+
+ Despite being designed for a compact 200x130x60 mm die-cast aluminium enclosure, HALPI2 provides excellent thermal performance. The device CPU is connected to the enclosure bottom, making the enclosure act as a giant heat sink. This guarantees flawless operation even in adverse conditions. The device comes with an IP65 ingress rating, making it dust and water-proof. (Don't immerse it in water, nevertheless!)
+
+ HALPI2 comes standard with great connectivity and room for expansion. The enclosure includes the following connectors as standard:
+
+ 
+- Power connector (10-32V input range, will survive input voltages of up to 100V)
+
+- NMEA 2000 Micro-C connector
+
+- Raspberry Pi antenna
+
+- RJ45 Ethernet connector
+
+- 2x USB3 Type A connectors
+
+- HDMI connector
+
+ 
+ Additionally, there are pre-drilled holes for two more SMA antenna connectors for GPS or mobile connectivity and three 13mm holes for cable glands or SP13 type connectors. Internally, there are two additional USB3 connectors for dongles, GPS, mobile connectivity or other devices. One of the USB3 or Ethernet connectors can be replaced with another HDMI connector if two displays are needed. An isolated NMEA 0183 interface is provided as well. And finally, HALPI2 accepts all standard Raspberry Pi HATs in case the stock features are not enough!
+
+ Documentation 
+ 
+ 
+ HALPI documentation is available at docs.hatlabs.fi/halpi2 .
+
+ 
+ Contents  
+ 
+ The sales kit includes:
+
+ 
+- HALPI2 device with the selected CM5 module and SSD drive configuration.
+
+- Certified Raspberry Pi antenna
+
+- Blind nuts for unused enclosure holes (pre-installed)
+
+- 2m long power cable with a molded E7 connector (compatible with Amphenol LTW Mini)
+
+- 3x RP7 size cable glands for waterproof cable runs
+
+ 
+ 
+ 
+ 
+ Ordering Instructions 
+ Some HALPI2 configurations are made to order and the lead time before shipping can be up to 7 days.
+
+ Memory and Disk Size 
+ How much memory should you get? Typical use cases rarely need more than 8 GB, and for most uses, even 4 GB is enough. There are diminishing returns with the 16 GB model, but that of course is the most future-proof version. On the other hand, swapping the CM5 module to a larger memory variant is a fairly straightforward operation.
+
+ Similarly, a 512 GB SSD disk is ample for most use cases. Get a 1 TB SSD if you're fairly certain your data storage needs will be large.
+
+ If you intend to implement a simple single-use device, smaller CM5 modules with integrated eMMC such as the 2 GB / 32 GB model are fine. We can provide HALPI2 computers using any available CM5 module variant on request.
+
+ Interfaces 
+ If you want to customize the Ethernet/HDMI/USB panel connectors, order any additional connectors you need and leave us a note; we can pre-install the connectors for you. Note that the total number of those connectors is four - we will ship the replaced connectors to you as spares.
+
+ If you need more than one NMEA 2000 or CAN bus, you can add additional ports for example with this HAT:
+
+ 
+- Waveshare 2-Channel Isolated CAN HAT 
+
+ 
+ Additionally, you can add additional NMEA 0183 ports by including this HAT:
+
+ 
+- Waveshare 2-Channel Isolated RS485 HAT 
+
+ 
+ NMEA 0183 doesn't have standardized connectors. For bidirectional use, add this:
+
+ 
+- SP13 Pigtail Connector, 5 pin, male cable plug 
+
+ 
+ Finally, if you want to include a GNSS (GPS, Beidou, Galileo, GLONASS) receiver, add this HAT:
+
+ 
+- Waveshare MAX-M8Q GNSS HAT 
+
+ 
+ If you are unsure about what to get, contact us for advice at info@hatlabs.fi !
+
+ Operating System 
+ By default, the devices will be shipped with Halos Desktop Marine preinstalled. Other alternatives include a standard Raspberry Pi OS or OpenPlotter 4. Contact us if you prefer to get your device with one of the alternatives.

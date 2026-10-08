@@ -1,0 +1,21 @@
+HALMET is the Hat Labs Marine Engine & Tank interface. As a successor to the SH-ESP32 and the Engine Top Hat, it lets you connect your marine engine, tanks and other devices with resistive, voltage, binary or pulse outputs to an NMEA 2000 or Signal K network, with native NMEA 2000 and WiFi support.
+
+ The sales package includes:
+
+ 
+- HALMET device
+
+- 4-pin pluggable screw terminal for NMEA 2000 and power
+
+- 8 pcs two-pin pluggable screw terminals for analog and digital inputs
+
+- 4 pcs jumper headers for enabling active resistance measurement
+
+ 
+ HALMET is a development kit style product. In particular, it does not come with any software pre-installed. Sample software is available, but support for any software development issues can only be provided via the discussion boards.
+
+ The example firmware can be found on GitHub:  https://github.com/hatlabs/HALMET-example-firmware 
+
+ Enclosure and other connectors are for illustration only.
+
+ Documentation site: docs.hatlabs.fi/halmet

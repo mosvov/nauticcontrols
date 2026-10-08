@@ -1,0 +1,28 @@
+A five-pin SP13 connector with a female cable plug and a male panel connector. Suitable to be used for example as an NMEA 0183 or other data connector. The panel connector has a pigtail for easier and faster installation: just trim the wires to the correct length, strip and connect to a screw terminal!
+
+ 
+
+ Contents:
+
+ 
+- One pigtail panel connector with a back nut (male)
+
+- One cable plug (female)
+
+ 
+ 
+
+ Specifications:
+
+ 
+- Ingress Protection rating: IP68
+
+- Contact diameter: 5×1.0 mm
+
+- Rated current: 5 A
+
+- Cable range: 4-6.5 mm
+
+- Pigtail wire length: 20 cm
+
+- Pigtail wire gauge: 22 AWG (0.34 mm2)

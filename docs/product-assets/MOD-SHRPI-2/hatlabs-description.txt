@@ -1,0 +1,17 @@
+Introducing the Sailor Hat for Raspberry Pi Version 2 , the ultimate power management solution for your single-board computer!
+
+ With its three 20F super-capacitors, the Sailor Hat ensures that your Raspberry Pi stays safe even when power is turned off or cut unexpectedly. This feature not only prevents hard drive corruption but also allows the Raspberry Pi to be shut down in a controlled fashion, making it an ideal fit for embedding in other systems such as boat electronics or 3D printers. When the power is toggled off, the Sailor Hat automatically initiates a shutdown process, ensuring that the Raspberry Pi shuts down transparently.
+
+ The Sailor Hat also boasts a standard Raspberry Pi HAT form factor, making it the perfect fit for your Pi. Its wide 9-32V voltage range power input comes with heavy-duty protection against voltage spikes and surges, making it a reliable choice for your device.
+
+ The Sailor Hat is also configurable with input current limiting of 0.8A, 1.8A, and 2.8A. It works as a power reserve, providing instantaneous peak current up to 5A, letting your device ride over short power cuts. The maximum continuous output current at 5V is at least 3A (subject to environment temperature and cooling).
+
+ Stay informed with the Sailor Hat's comprehensive board monitoring and reporting features, including input voltage, input current, supercap voltage, and board temperature. Its easy-to-install smart monitoring software provides an HTTP API for integrating the board to other apps.
+
+ The Sailor Hat also comes with an integrated real-time clock that can wake up your Pi at defined times, perfect for battery-powered monitoring applications. Plus, it can be stacked with interface hats for custom needs.
+
+ Upgrade your Raspberry Pi's power management capabilities with the Sailor Hat!
+
+ Note: The Raspberry Pi in the product images is for illustration only and is not included in the sales package.
+
+ See also the SH-RPi documentation site at docs.hatlabs.fi/sh-rpi .

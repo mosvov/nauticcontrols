@@ -1,0 +1,28 @@
+A four-pin SP13 connector with a male cable plug and a female panel connector. Suitable to be used for example as a sensor data connector. The panel connector has a pigtail for easier and faster installation: just trim the wires to the correct length, strip and connect to a screw terminal!
+
+ 
+
+ Contents:
+
+ 
+- One pigtail panel connector with a back nut (male)
+
+- One cable plug (female)
+
+ 
+ 
+
+ Specifications:
+
+ 
+- Ingress Protection rating: IP68
+
+- Contact diameter: 4×1.0 mm
+
+- Rated current: 5 A
+
+- Cable range: 4-6.5 mm
+
+- Pigtail wire length: 20 cm
+
+- Pigtail wire gauge: 22 AWG (0.34 mm2)

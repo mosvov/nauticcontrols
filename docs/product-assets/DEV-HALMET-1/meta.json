@@ -1,0 +1,47 @@
+{
+  "invoice_sku": "DEV-HALMET-1",
+  "invoice_qty": 12,
+  "wholesale_eur": 23.36,
+  "hatlabs_handle": "halmet",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/halmet",
+  "hatlabs_title": "HALMET",
+  "shop_sku": "DEV-HALMET-1",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "40.16",
+  "grams": 80,
+  "images": [
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230251.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230253.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/03.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230252.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/04.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230254.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/05.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230255.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/06.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230256.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/07.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230279.jpg?v=1767617273"
+    },
+    {
+      "file": "docs/product-assets/DEV-HALMET-1/08.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/HALMET_v1.0.0-a1_enclosure.jpg?v=1767617273"
+    }
+  ],
+  "image_count": 8
+}

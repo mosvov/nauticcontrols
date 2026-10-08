@@ -1,0 +1,20 @@
+A waterproof enclosure with a transparent lid and 6 pre-drilled 13 mm holes plus 4 PG7 blind plugs. A snug fit for Raspberry Pis or a spacious home for microcontroller boards - no drilling required!
+
+ The holes fit NMEA 2000 panel connectors, SP13 connectors or PG7 cable glands. They can also be enlarged with a step drill bit to accept larger connector sizes.
+
+ 
+- External dimensions: 158x90x60 mm (6.22x3.54x2.36 inches)
+
+- Weight 186 g (6.56 oz)
+
+- Body material ABS, lid transparent polycarbonate
+
+- Functional beige color
+
+- IP65 ingress protection rating
+
+- Stainless steel (A4/AISI 316) screws for added durability
+
+- Accommodates Raspberry Pi and 2 HATs
+
+- When used with a Raspberry Pi, a fan and a Raspberry Pi heat sink are recommended

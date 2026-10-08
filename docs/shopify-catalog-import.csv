@@ -1,0 +1,141 @@
+Handle,Title,Body (HTML),Vendor,Product Category,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Cost per item,Status,SEO Title,SEO Description,Image Src,Image Position,Image Alt Text,Gift Card,Variant Weight Unit
+signal-k-gateway-kit,Signal K Gateway Kit,"<p>US-stocked DIY Signal K / NMEA 2000 gateway kit built around the Hat Labs <strong>SH-ESP32</strong>.</p>
+<p>Ships from Florida. No international freight or customs surprises for US customers.</p>
+<h3>Kit includes</h3>
+<ul>
+<li>1× SH-ESP32 development board (sales package)</li>
+<li>1× Waterproof enclosure 100×68×50 mm (flanges + holes)</li>
+<li>1× NMEA 2000 Micro-C panel connector with pigtails</li>
+</ul>
+<h3>What this is</h3>
+<p>A developer-style installation kit for boaters building a Wi-Fi / USB NMEA 2000 gateway or custom Signal K sensor node. Firmware and install guidance are provided by Nautic Controls (board does not ship with finished consumer gateway firmware from Hat Labs).</p>
+<h3>DIY note</h3>
+<p>This is not a drop-in Actisense or Yacht Devices finished gateway. Expect basic soldering/assembly skill and firmware flashing.</p>
+<p>Hardware by <a href=""https://hatlabs.fi"">Hat Labs Oy</a>. Docs: <a href=""https://docs.hatlabs.fi"">docs.hatlabs.fi</a></p>",Nautic Controls,,Kit,"kit,gateway,signal-k,hat-labs,sh-esp32,nmea2000",FALSE,Title,Default Title,KIT-GATEWAY-ESP32,400,shopify,0,deny,manual,89.99,,TRUE,TRUE,33.07,draft,Signal K Gateway Kit | Nautic Controls,US-stocked SH-ESP32 gateway kit with enclosure and NMEA 2000 M12 connector. Ships from Florida.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230264.jpg?v=1767617100,1,Signal K Gateway Kit,FALSE,g
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230268.jpg?v=1767617100,2,Signal K Gateway Kit,,
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230265.jpg?v=1767617100,3,Signal K Gateway Kit,,
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100239.jpg?v=1765453239,4,Signal K Gateway Kit,,
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100241.jpg?v=1765453247,5,Signal K Gateway Kit,,
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110003.jpg?v=1726045479,6,Signal K Gateway Kit,,
+signal-k-gateway-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110004.jpg?v=1726045478,7,Signal K Gateway Kit,,
+engine-monitoring-kit,Engine Monitoring Kit,"<p>US-stocked DIY engine and tank monitoring kit built around Hat Labs <strong>HALMET</strong>.</p>
+<p>Connect resistive, voltage, binary, or pulse outputs from engines and tanks to NMEA 2000 / Signal K.</p>
+<h3>Kit includes</h3>
+<ul>
+<li>1× HALMET board (sales package with screw terminals)</li>
+<li>1× Waterproof enclosure 158×90×60 mm (pre-drilled)</li>
+<li>1× SP13 2-pin power pigtail connector pair</li>
+</ul>
+<h3>DIY note</h3>
+<p>HALMET ships as a development kit without finished consumer firmware. Nautic Controls provides install guidance and firmware path. Not a drop-in Actisense EMU-1 replacement.</p>
+<p>Example firmware: <a href=""https://github.com/hatlabs/HALMET-example-firmware"">HALMET-example-firmware</a> · Docs: <a href=""https://docs.hatlabs.fi/halmet"">docs.hatlabs.fi/halmet</a></p>",Nautic Controls,,Kit,"kit,engine,halmet,signal-k,hat-labs,nmea2000",FALSE,Title,Default Title,KIT-ENGINE-HALMET,500,shopify,0,deny,manual,169.99,,TRUE,TRUE,40.67,draft,Engine Monitoring Kit | Nautic Controls,US-stocked HALMET engine kit with enclosure and SP13 power. Analog gauges to Signal K.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230251.jpg?v=1767617273,1,Engine Monitoring Kit,FALSE,g
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230253.jpg?v=1767617273,2,Engine Monitoring Kit,,
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230252.jpg?v=1767617273,3,Engine Monitoring Kit,,
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110247.jpg?v=1765455426,4,Engine Monitoring Kit,,
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110248.jpg?v=1765455434,5,Engine Monitoring Kit,,
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110144.jpg?v=1744703927,6,Engine Monitoring Kit,,
+engine-monitoring-kit,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110148.jpg?v=1744703927,7,Engine Monitoring Kit,,
+sh-esp32,SH-ESP32 Development Board,"<p>Hat Labs <strong>SH-ESP32</strong> sensor development board for marine and automotive systems. Isolated NMEA 2000 CAN, protected I/O, 8–32 V power, Wi-Fi / Bluetooth via ESP32.</p>
+<p><strong>US stock</strong> via Nautic Controls (Florida). Faster domestic shipping than ordering from Finland.</p>
+<h3>Typical uses</h3>
+<ul>
+<li>NMEA 2000 / NMEA 0183 gateways</li>
+<li>Tank, bilge, temp, RPM, and attitude sensors</li>
+<li>Relay control (lights, blowers, winch)</li>
+<li>Custom Signal K nodes with SensESP</li>
+</ul>
+<h3>Sales package</h3>
+<ul>
+<li>SH-ESP32 rev.2 with connectors soldered</li>
+<li>Pluggable screw terminals (CAN + power)</li>
+</ul>
+<p>Programmable over micro-USB. Recommended framework: SensESP. Docs: <a href=""https://docs.hatlabs.fi"">docs.hatlabs.fi</a></p>
+<p><em>Developer board — firmware not pre-installed.</em></p>",Nautic Controls,,Board,"board,sh-esp32,hat-labs,signal-k,nmea2000",FALSE,Title,Default Title,DEV-SHESP32-2,80,shopify,0,deny,manual,49.00,,TRUE,TRUE,20.88,draft,SH-ESP32 Board | Nautic Controls,Hat Labs SH-ESP32 developer board. US stock via Nautic Controls in Florida.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230264.jpg?v=1767617100,1,SH-ESP32 Development Board,FALSE,g
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230268.jpg?v=1767617100,2,SH-ESP32 Development Board,,
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230265.jpg?v=1767617100,3,SH-ESP32 Development Board,,
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230269.jpg?v=1767617100,4,SH-ESP32 Development Board,,
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230271.jpg?v=1767617100,5,SH-ESP32 Development Board,,
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230284.jpg?v=1767617100,6,SH-ESP32 Development Board,,
+sh-esp32,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230285.jpg?v=1767617100,7,SH-ESP32 Development Board,,
+halmet,HALMET Engine & Tank Interface,"<p>Hat Labs <strong>HALMET</strong> (Marine Engine &amp; Tank interface). Connect resistive, voltage, binary, or pulse outputs to NMEA 2000 or Signal K with native CAN and Wi-Fi.</p>
+<p><strong>US stock</strong> via Nautic Controls.</p>
+<h3>Sales package</h3>
+<ul>
+<li>HALMET device</li>
+<li>4-pin pluggable terminal for NMEA 2000 and power</li>
+<li>8× two-pin terminals for analog/digital inputs</li>
+<li>4× jumper headers for active resistance measurement</li>
+</ul>
+<p>Development-kit style product — no consumer firmware pre-installed. Example firmware on GitHub. Docs: <a href=""https://docs.hatlabs.fi/halmet"">docs.hatlabs.fi/halmet</a></p>",Nautic Controls,,Board,"board,halmet,hat-labs,signal-k,nmea2000,engine",FALSE,Title,Default Title,DEV-HALMET-1,100,shopify,0,deny,manual,59.00,,TRUE,TRUE,25.70,draft,HALMET Board | Nautic Controls,Hat Labs HALMET engine and tank I/O board. US stock via Nautic Controls.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230251.jpg?v=1767617273,1,HALMET Engine & Tank Interface,FALSE,g
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230253.jpg?v=1767617273,2,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230252.jpg?v=1767617273,3,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230254.jpg?v=1767617273,4,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230255.jpg?v=1767617273,5,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230256.jpg?v=1767617273,6,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC230279.jpg?v=1767617273,7,HALMET Engine & Tank Interface,,
+halmet,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/HALMET_v1.0.0-a1_enclosure.jpg?v=1767617273,8,HALMET Engine & Tank Interface,,
+sh-rpi,SH-RPi Sailor Hat for Raspberry Pi,"<p>Hat Labs <strong>SH-RPi</strong> (Sailor Hat) power-management HAT for Raspberry Pi. Wide 9–32 V input, supercapacitor safe shutdown, current limiting, monitoring, and RTC.</p>
+<p><strong>US stock</strong> via Nautic Controls. Raspberry Pi not included.</p>
+<h3>Highlights</h3>
+<ul>
+<li>Three 20F supercapacitors for controlled shutdown on power loss</li>
+<li>Input current limiting (0.8 / 1.8 / 2.8 A)</li>
+<li>Peak current up to 5 A; continuous 5 V output ≥ 3 A</li>
+<li>HTTP API monitoring (voltage, current, temp)</li>
+<li>Standard Pi HAT form factor; stackable with interface HATs</li>
+</ul>
+<p>Note: any N2K port on related kits may be power-only depending on configuration — see Hat Labs docs. Docs: <a href=""https://docs.hatlabs.fi/sh-rpi"">docs.hatlabs.fi/sh-rpi</a></p>",Nautic Controls,,Board,"board,sh-rpi,hat-labs,signal-k,raspberry-pi",FALSE,Title,Default Title,MOD-SHRPI-2,120,shopify,0,deny,manual,79.00,,TRUE,TRUE,38.54,draft,SH-RPi Board | Nautic Controls,Hat Labs SH-RPi with supercap safe shutdown. US stock via Nautic Controls.,https://cdn.shopify.com/s/files/1/0671/2832/8476/products/PXL_20230302_165130644.jpg?v=1678042217,1,SH-RPi Sailor Hat for Raspberry Pi,FALSE,g
+sh-rpi,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/products/PXL_20230302_165137088.jpg?v=1678042217,2,SH-RPi Sailor Hat for Raspberry Pi,,
+sh-rpi,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/products/PXL_20230302_165248774.jpg?v=1678042217,3,SH-RPi Sailor Hat for Raspberry Pi,,
+sh-rpi,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/products/PXL_20230302_165325579.jpg?v=1678042217,4,SH-RPi Sailor Hat for Raspberry Pi,,
+sh-rpi,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/products/PXL_20230302_165657924.jpg?v=1678042217,5,SH-RPi Sailor Hat for Raspberry Pi,,
+halpi2-4gb-256,HALPI2 Computer (4GB / 256GB),"<p>Factory-assembled Hat Labs <strong>HALPI2</strong> marine computer: Raspberry Pi Compute Module 5, 4 GB RAM, 256 GB SSD, in a marine enclosure with NMEA 2000 connectivity.</p>
+<p>Pre-configured Signal K, AvNav, and Halos marine software options. 100% Raspberry Pi ecosystem compatible.</p>
+<p><strong>US stock</strong> via Nautic Controls — demo / flagship unit for Signal K server builds.</p>
+<p>Docs: <a href=""https://docs.hatlabs.fi/halpi2"">docs.hatlabs.fi/halpi2</a></p>",Nautic Controls,,Computer,"halpi2,signal-k,hat-labs,cm5,computer",FALSE,Title,Default Title,COM-HALPI2-04-256,800,shopify,0,deny,manual,449.00,,TRUE,TRUE,323.94,draft,HALPI2 4GB/256GB | Nautic Controls,Factory HALPI2 marine CM5 / Signal K server. US stock via Nautic Controls.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300168.jpg?v=1755944302,1,HALPI2 Computer (4GB / 256GB),FALSE,g
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300169.jpg?v=1755944302,2,HALPI2 Computer (4GB / 256GB),,
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300171.jpg?v=1755944302,3,HALPI2 Computer (4GB / 256GB),,
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300174.jpg?v=1755944302,4,HALPI2 Computer (4GB / 256GB),,
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300175.jpg?v=1755944303,5,HALPI2 Computer (4GB / 256GB),,
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PCB-rendering.jpg?v=1755944303,6,HALPI2 Computer (4GB / 256GB),,
+halpi2-4gb-256,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Heat-sinking-rendering.jpg?v=1755944303,7,HALPI2 Computer (4GB / 256GB),,
+enclosure-pw100,Waterproof Enclosure 100×68×50 mm,"<p>Hat Labs waterproof enclosure <strong>100×68×50 mm</strong> with flanges and pre-made holes. Sized for SH-ESP32 gateway installs.</p>
+<p>SKU <code>ECK-PW100-FH</code>. US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"enclosure,spare,hat-labs,pw100",FALSE,Title,Default Title,ECK-PW100-FH,150,shopify,0,deny,manual,19.99,,TRUE,TRUE,7.67,draft,Waterproof Enclosure PW100 | Nautic Controls,Hat Labs ECK-PW100-FH enclosure spare. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100239.jpg?v=1765453239,1,Waterproof Enclosure 100×68×50 mm,FALSE,g
+enclosure-pw100,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100241.jpg?v=1765453247,2,Waterproof Enclosure 100×68×50 mm,,
+enclosure-pw100,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100240.jpg?v=1765453247,3,Waterproof Enclosure 100×68×50 mm,,
+enclosure-pw158,Waterproof Enclosure 158×90×60 mm,"<p>Hat Labs waterproof enclosure <strong>158×90×60 mm</strong> with pre-drilled holes. Sized for HALMET engine kits.</p>
+<p>SKU <code>ECK-PW158-H</code>. US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"enclosure,spare,hat-labs,pw158",FALSE,Title,Default Title,ECK-PW158-H,200,shopify,0,deny,manual,24.99,,TRUE,TRUE,10.23,draft,Waterproof Enclosure PW158 | Nautic Controls,Hat Labs ECK-PW158-H enclosure spare. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110247.jpg?v=1765455426,1,Waterproof Enclosure 158×90×60 mm,FALSE,g
+enclosure-pw158,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110248.jpg?v=1765455434,2,Waterproof Enclosure 158×90×60 mm,,
+enclosure-pw158,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110249.jpg?v=1765455439,3,Waterproof Enclosure 158×90×60 mm,,
+n2k-m12-pigtail,NMEA 2000 M12 Panel Pigtail Connector,"<p>NMEA 2000 Micro-C style <strong>male panel connector</strong> with pigtail wires — no soldering to the connector body.</p>
+<ul>
+<li>IP67 ingress protection</li>
+<li>~12 mm panel hole, rear-mount nut</li>
+<li>Pinout: Black GND, Red 12V, White H, Blue L</li>
+</ul>
+<p>Invoice SKU <code>CX-M12-PM5A-PW200</code> (200 mm pigtails). Product photos sourced from Hat Labs shop listing (similar PW300 / 30 cm variant).</p>
+<p>US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"connector,nmea2000,spare,hat-labs,m12",FALSE,Title,Default Title,CX-M12-PM5A-PW200,50,shopify,0,deny,manual,18.99,,TRUE,TRUE,4.52,draft,NMEA 2000 M12 Panel Connector | Nautic Controls,Hat Labs N2K M12 male panel connector with pigtails. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110003.jpg?v=1726045479,1,NMEA 2000 M12 Panel Pigtail Connector,FALSE,g
+n2k-m12-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110004.jpg?v=1726045478,2,NMEA 2000 M12 Panel Pigtail Connector,,
+n2k-m12-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/a71709b494c8567c95833e138dbbc279.jpg?v=1721389438,3,NMEA 2000 M12 Panel Pigtail Connector,,
+n2k-m12-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/CS0725401M12-P5A-GCFM12-0.2PV-NZGJ_-Model_1_4.jpg?v=1721390047,4,NMEA 2000 M12 Panel Pigtail Connector,,
+sp13-cf2-pigtail,SP13 2-Pin Power Pigtail Pair,"<p>Hat Labs <strong>SP13</strong> 2-pin power pigtail connector pair for enclosure power feeds (HALMET / marine installs).</p>
+<p>SKU <code>CXP-SP13-CF2-PW200</code>. US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"connector,sp13,spare,hat-labs",FALSE,Title,Default Title,CXP-SP13-CF2-PW200,40,shopify,0,deny,manual,16.99,,TRUE,TRUE,4.74,draft,SP13 2-Pin Power Pigtail | Nautic Controls,Hat Labs SP13 CF2 power pigtail connector pair. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110144.jpg?v=1744703927,1,SP13 2-Pin Power Pigtail Pair,FALSE,g
+sp13-cf2-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110148.jpg?v=1744703927,2,SP13 2-Pin Power Pigtail Pair,,
+sp13-cf2-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03.png?v=1744705891,3,SP13 2-Pin Power Pigtail Pair,,
+sp13-cf2-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41.png?v=1744705898,4,SP13 2-Pin Power Pigtail Pair,,
+sp13-cf2-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52.png?v=1744705905,5,SP13 2-Pin Power Pigtail Pair,,
+sp13-cf2-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P2-0.2PW.png?v=1781598716,6,SP13 2-Pin Power Pigtail Pair,,
+sp13-cf5-pigtail,SP13 5-Pin Female Pigtail Pair,"<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 5-pin, female cable plug.</p>
+<p>SKU <code>CXP-SP13-CF5-PW200</code>. US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"connector,sp13,spare,hat-labs",FALSE,Title,Default Title,CXP-SP13-CF5-PW200,40,shopify,0,deny,manual,16.99,,TRUE,TRUE,4.74,draft,SP13 5-Pin Female Pigtail | Nautic Controls,Hat Labs SP13 CF5 pigtail connector pair. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100137.jpg?v=1744706756,1,SP13 5-Pin Female Pigtail Pair,FALSE,g
+sp13-cf5-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100139.jpg?v=1744706756,2,SP13 5-Pin Female Pigtail Pair,,
+sp13-cf5-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52_c1ba6403-b14f-4071-823e-28049a01aba3.png?v=1744706763,3,SP13 5-Pin Female Pigtail Pair,,
+sp13-cf5-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41_682e60a4-5384-437a-b74e-84442c81957b.png?v=1744706763,4,SP13 5-Pin Female Pigtail Pair,,
+sp13-cf5-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_07f54c92-65f9-47d3-9741-3037b191df94.png?v=1744706763,5,SP13 5-Pin Female Pigtail Pair,,
+sp13-cf5-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P5-0.2PW.png?v=1781598586,6,SP13 5-Pin Female Pigtail Pair,,
+sp13-cm4-pigtail,SP13 4-Pin Male Pigtail Pair,"<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 4-pin, male cable plug.</p>
+<p>SKU <code>CXP-SP13-CM4-PW200</code>. US stock via Nautic Controls.</p>",Nautic Controls,,Accessory,"connector,sp13,spare,hat-labs",FALSE,Title,Default Title,CXP-SP13-CM4-PW200,40,shopify,0,deny,manual,16.99,,TRUE,TRUE,4.74,draft,SP13 4-Pin Male Pigtail | Nautic Controls,Hat Labs SP13 CM4 pigtail connector pair. US stock.,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100127m.jpg?v=1744706454,1,SP13 4-Pin Male Pigtail Pair,FALSE,g
+sp13-cm4-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100134m.jpg?v=1744706454,2,SP13 4-Pin Male Pigtail Pair,,
+sp13-cm4-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52_db1c36da-5671-49fc-9d1a-54155711b07c.png?v=1744706462,3,SP13 4-Pin Male Pigtail Pair,,
+sp13-cm4-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41_98ead8f5-0a4f-46e4-8a7b-63c21c6ee44a.png?v=1744706462,4,SP13 4-Pin Male Pigtail Pair,,
+sp13-cm4-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_ae6dbdca-1390-48bd-a9a1-a817b7f8dbb4.png?v=1744706462,5,SP13 4-Pin Male Pigtail Pair,,
+sp13-cm4-pigtail,,,,,,,,,,,,,,,,,,,,,,,,https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-S4-0.2PW.png?v=1781598626,6,SP13 4-Pin Male Pigtail Pair,,

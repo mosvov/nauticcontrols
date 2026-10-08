@@ -1,0 +1,18 @@
+A waterproof enclosure with 5 pre-drilled 13 mm holes and 3 PG7 blind plugs. This is the perfect, easy-to-use enclosure for your microcontroller projects. No drilling required!
+
+ The holes fit NMEA 2000 panel connectors, SP13 connectors or PG7 cable glands. The holes on the long edge can also be enlarged with a step drill bit to accept larger connector sizes.
+
+ IMPORTANT: The SH-ESP32 does NOT fit in this enclosure if any of the holes on the long edge have a blind plug installed. Or in other words: when used with an SH-ESP32, all three holes on the long edge must have SP13 or NMEA 2000 panel connectors installed, and even then, it's a tight fit.
+
+ Specifications:
+
+ 
+- External dimensions: 100*68*50 mm (length including the wall mount lips 132 mm)
+
+- Ingress Protection level: IP65
+
+- Material: ABS
+
+- Stainless steel (A4 / AIS316) screws
+
+- PCB mounting screws included

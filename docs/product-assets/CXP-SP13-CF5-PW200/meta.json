@@ -1,0 +1,39 @@
+{
+  "invoice_sku": "CXP-SP13-CF5-PW200",
+  "invoice_qty": 5,
+  "wholesale_eur": 4.31,
+  "hatlabs_handle": "sp13-pigtail-connector-pair-5-pin-female-cable-plug",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/sp13-pigtail-connector-pair-5-pin-female-cable-plug",
+  "hatlabs_title": "SP13 Pigtail Connector Pair, 5-pin, Female Cable Plug",
+  "shop_sku": "CXP-SP13-CF5-PW200",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "7.40",
+  "grams": 20,
+  "images": [
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100137.jpg?v=1744706756"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100139.jpg?v=1744706756"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/03.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52_c1ba6403-b14f-4071-823e-28049a01aba3.png?v=1744706763"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/04.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41_682e60a4-5384-437a-b74e-84442c81957b.png?v=1744706763"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/05.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_07f54c92-65f9-47d3-9741-3037b191df94.png?v=1744706763"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CF5-PW200/06.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P5-0.2PW.png?v=1781598586"
+    }
+  ],
+  "image_count": 6
+}

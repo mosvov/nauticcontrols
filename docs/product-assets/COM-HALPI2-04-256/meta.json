@@ -1,0 +1,43 @@
+{
+  "invoice_sku": "COM-HALPI2-04-256",
+  "invoice_qty": 2,
+  "wholesale_eur": 294.49,
+  "hatlabs_handle": "halpi2-computer",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/halpi2-computer",
+  "hatlabs_title": "HALPI2 Computer",
+  "shop_sku": "COM-HALPI2-04-256",
+  "shop_variant": "4GB / 256GB",
+  "shop_price_eur_inc_vat": "461.94",
+  "grams": 1210,
+  "images": [
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300168.jpg?v=1755944302"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300169.jpg?v=1755944302"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/03.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300171.jpg?v=1755944302"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/04.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300174.jpg?v=1755944302"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/05.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P6300175.jpg?v=1755944303"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/06.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PCB-rendering.jpg?v=1755944303"
+    },
+    {
+      "file": "docs/product-assets/COM-HALPI2-04-256/07.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Heat-sinking-rendering.jpg?v=1755944303"
+    }
+  ],
+  "image_count": 7
+}

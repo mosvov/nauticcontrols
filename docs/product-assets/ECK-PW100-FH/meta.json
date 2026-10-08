@@ -1,0 +1,27 @@
+{
+  "invoice_sku": "ECK-PW100-FH",
+  "invoice_qty": 20,
+  "wholesale_eur": 6.97,
+  "hatlabs_handle": "waterproof-enclosure-100x68x50-mm-flanges-holes",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/waterproof-enclosure-100x68x50-mm-flanges-holes",
+  "hatlabs_title": "Waterproof Enclosure 100x68x50 mm, flanges, holes",
+  "shop_sku": "ECK-PW100-FH",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "11.99",
+  "grams": 132,
+  "images": [
+    {
+      "file": "docs/product-assets/ECK-PW100-FH/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100239.jpg?v=1765453239"
+    },
+    {
+      "file": "docs/product-assets/ECK-PW100-FH/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100241.jpg?v=1765453247"
+    },
+    {
+      "file": "docs/product-assets/ECK-PW100-FH/03.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100240.jpg?v=1765453247"
+    }
+  ],
+  "image_count": 3
+}

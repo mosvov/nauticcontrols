@@ -1,0 +1,27 @@
+{
+  "invoice_sku": "ECK-PW158-H",
+  "invoice_qty": 6,
+  "wholesale_eur": 9.3,
+  "hatlabs_handle": "waterproof-enclosure-158x90x60-mm-pre-drilled-holes",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/waterproof-enclosure-158x90x60-mm-pre-drilled-holes",
+  "hatlabs_title": "Waterproof Enclosure 158x90x60 mm, pre-drilled holes",
+  "shop_sku": "ECK-PW158-H",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "15.99",
+  "grams": 192,
+  "images": [
+    {
+      "file": "docs/product-assets/ECK-PW158-H/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110247.jpg?v=1765455426"
+    },
+    {
+      "file": "docs/product-assets/ECK-PW158-H/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110248.jpg?v=1765455434"
+    },
+    {
+      "file": "docs/product-assets/ECK-PW158-H/03.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110249.jpg?v=1765455439"
+    }
+  ],
+  "image_count": 3
+}

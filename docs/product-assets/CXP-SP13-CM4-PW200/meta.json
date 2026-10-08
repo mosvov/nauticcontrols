@@ -1,0 +1,39 @@
+{
+  "invoice_sku": "CXP-SP13-CM4-PW200",
+  "invoice_qty": 5,
+  "wholesale_eur": 4.31,
+  "hatlabs_handle": "sp13-pigtail-connector-pair-4-pin-male-cable-plug",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/sp13-pigtail-connector-pair-4-pin-male-cable-plug",
+  "hatlabs_title": "SP13 Pigtail Connector Pair, 4-pin, Male Cable Plug",
+  "shop_sku": "CXP-SP13-CM4-PW200",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "7.40",
+  "grams": 20,
+  "images": [
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100127m.jpg?v=1744706454"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4100134m.jpg?v=1744706454"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/03.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52_db1c36da-5671-49fc-9d1a-54155711b07c.png?v=1744706462"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/04.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.41_98ead8f5-0a4f-46e4-8a7b-63c21c6ee44a.png?v=1744706462"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/05.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_ae6dbdca-1390-48bd-a9a1-a817b7f8dbb4.png?v=1744706462"
+    },
+    {
+      "file": "docs/product-assets/CXP-SP13-CM4-PW200/06.png",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-S4-0.2PW.png?v=1781598626"
+    }
+  ],
+  "image_count": 6
+}

@@ -1,0 +1,31 @@
+{
+  "invoice_sku": "CX-M12-PM5A-PW200",
+  "invoice_qty": 20,
+  "wholesale_eur": 4.11,
+  "hatlabs_handle": "nmea-2000-panel-pigtail-connector-male",
+  "hatlabs_url": "https://shop.hatlabs.fi/products/nmea-2000-panel-pigtail-connector-male",
+  "hatlabs_title": "NMEA 2000 panel pigtail connector, male",
+  "shop_sku": "CX-M12-PM5A-PW300",
+  "shop_variant": "Default Title",
+  "shop_price_eur_inc_vat": "7.07",
+  "grams": 20,
+  "images": [
+    {
+      "file": "docs/product-assets/CX-M12-PM5A-PW200/01.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110003.jpg?v=1726045479"
+    },
+    {
+      "file": "docs/product-assets/CX-M12-PM5A-PW200/02.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110004.jpg?v=1726045478"
+    },
+    {
+      "file": "docs/product-assets/CX-M12-PM5A-PW200/03.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/a71709b494c8567c95833e138dbbc279.jpg?v=1721389438"
+    },
+    {
+      "file": "docs/product-assets/CX-M12-PM5A-PW200/04.jpg",
+      "src": "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/CS0725401M12-P5A-GCFM12-0.2PV-NZGJ_-Model_1_4.jpg?v=1721390047"
+    }
+  ],
+  "image_count": 4
+}

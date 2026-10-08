@@ -1,0 +1,46 @@
+A NMEA 2000 compatible Micro-C style panel connector, with pigtail wires - no soldering required! This connector is useful when you want to place a product such as HALMET, SH-ESP32 or SH-RPi in an enclosure with easy-to-use NMEA 2000 connector.
+
+ As opposed to the previous variant, this one only requires a 12 mm hole and is more compact in size.
+
+ This is how you would normally use the connector:
+
+ 
+- Drill a 12 mm hole in an enclosure (conical drill bits are great for this)
+
+- Optionally, cut the pigtails to length
+
+- Strip the wire ends
+
+- Screw the wires on a terminal block connector, following the pinout on the PCB:
+ 
+- Black to GND
+
+- Red to 12V
+
+- White to H
+
+- Blue to L
+
+ 
+
+- Insert the connector into the hole and tighten the nut.
+
+ 
+ The connector is rear-mount (panel nut outside the enclosure). This makes it easier to achieve a watertight seal, and fitting a spanner is straightforward.
+
+ Specifications:
+
+ 
+ 
+- Ingress Protection: IP67
+
+- Pigtail wire length: 30 cm (12 in)
+
+- Panel hole diameter: 12 mm
+
+- Wire gauges:
+
+ 
+- Black and red: 22 AWG
+
+- White and Blue: 24 AWG
