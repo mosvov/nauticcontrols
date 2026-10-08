@@ -56,6 +56,27 @@ const productFragment = /* GraphQL */ `
     }
     tags
     updatedAt
+    docsUrl: metafield(namespace: "nautic", key: "docs_url") {
+      value
+    }
+    firmwareUrl: metafield(namespace: "nautic", key: "firmware_url") {
+      value
+    }
+    complianceUrl: metafield(namespace: "nautic", key: "compliance_url") {
+      value
+    }
+    installGuideUrl: metafield(namespace: "nautic", key: "install_guide_url") {
+      value
+    }
+    warrantySummary: metafield(namespace: "nautic", key: "warranty_summary") {
+      value
+    }
+    fccSummary: metafield(namespace: "nautic", key: "fcc_summary") {
+      value
+    }
+    hatlabsSku: metafield(namespace: "nautic", key: "hatlabs_sku") {
+      value
+    }
   }
   ${imageFragment}
   ${seoFragment}

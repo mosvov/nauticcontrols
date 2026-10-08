@@ -5,7 +5,7 @@ import Footer from "components/layout/footer";
 
 export const metadata = {
   description:
-    "Precision Marine Controls & Vessel Automation built with Next.js and Shopify Headless.",
+    "Nautic Controls - the US home for Signal K hardware. Domestic Florida stock of Hat Labs gateway and engine-monitoring kits.",
   openGraph: {
     type: "website",
   },

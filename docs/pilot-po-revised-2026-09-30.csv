@@ -1,0 +1,12 @@
+#,Item code,Description,Qty,Unit EUR,Subtotal EUR
+1,DEV-SHESP32-2,SH-ESP32 Sales Package,20,18.98,379.60
+2,DEV-HALMET-1,HALMET Sales Package,12,23.36,280.32
+3,COM-HALPI2-04-256,"HALPI2 Computer (4GB, 256GB)",2,294.49,588.98
+4,MOD-SHRPI-2,SH-RPi Sales Package,8,35.04,280.32
+5,ECK-PW100-FH,"Waterproof Enclosure 100x68x50 mm, flanges, holes",20,6.97,139.40
+6,ECK-PW158-H,"Waterproof Enclosure 158x90x60 mm, pre-drilled holes",6,9.30,55.80
+7,CX-M12-PM5A-PW200,"NMEA 2000 panel connector, male, with pigtails",20,4.11,82.20
+8,CXP-SP13-CF2-PW200,SP13 Power Pigtail Connector Pair,8,4.31,34.48
+9,CXP-SP13-CF5-PW200,"SP13 Pigtail Connector Pair, 5-pin, Female Cable Plug",5,4.31,21.55
+10,CXP-SP13-CM4-PW200,"SP13 Pigtail Connector Pair, 4-pin, Male Cable Plug",5,4.31,21.55
+,,GOODS TOTAL (ex VAT),106,,1884.20

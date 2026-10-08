@@ -1,0 +1,24 @@
+item_code,item_name,price_eur
+COM-HALPI2-00-000,"HALPI2 Computer (No module, no SSD)",157.94
+COM-HALPI2-02-032E,"HALPI2 Computer 2GB, 32 GB eMMC",255.22
+COM-HALPI2-04-064E,"HALPI2 Computer 4GB, 64GB eMMC",283.04
+COM-HALPI2-04-1024,"HALPI2 Computer (4GB, 1TB)",379.09
+COM-HALPI2-04-256,"HALPI2 Computer (4GB, 256GB)",294.49
+COM-HALPI2-04-512,"HALPI2 Computer (4GB, 512GB)",328.35
+COM-HALPI2-08-064E,"HALPI2 Computer 8GB, 64GB eMMC",331.07
+COM-HALPI2-08-1024,"HALPI2 Computer (8GB, 1TB)",435.81
+COM-HALPI2-08-256,"HALPI2 Computer (8GB, 256GB)",351.21
+COM-HALPI2-08-512,"HALPI2 Computer (8GB, 512GB)",385.07
+COM-HALPI2-16-1024,"HALPI2 Computer (16GB, 1TB)",550.30
+COM-HALPI2-16-512,"HALPI2 Computer (16GB, 512GB)",499.56
+CX-M12-PM5A-PW200,"NMEA 2000 panel connector, male, with pigtails",4.11
+CXP-SP13-CF2-PW200,SP13 Power Pigtail Connector Pair,4.31
+CXP-SP13-CF5-PW200,"SP13 Pigtail Connector Pair, 5-pin, Female Cable Plug",4.31
+CXP-SP13-CM3-PW200,"SP13 Pigtail Connector Pair, 3-pin, Male Cable Plug",4.31
+CXP-SP13-CM4-PW200,"SP13 Pigtail Connector Pair, 4-pin, Male Cable Plug",4.31
+DEV-HALMET-1,HALMET Sales Package,23.36
+DEV-HALSER-1,HALSER Sales Package,23.36
+DEV-SHESP32-2,SH-ESP32 Sales Package,18.98
+ECK-PW100-FH,"Waterproof Enclosure 100x68x50 mm, flanges, holes",6.97
+ECK-PW158-H,"Waterproof Enclosure 158x90x60 mm, pre-drilled holes",9.30
+MOD-SHRPI-2,SH-RPi Sales Package,35.04

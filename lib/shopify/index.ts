@@ -405,22 +405,30 @@ export async function getMenu(handle: string): Promise<Menu[]> {
     return [];
   }
 
-  const res = await shopifyFetch<ShopifyMenuOperation>({
-    query: getMenuQuery,
-    variables: {
-      handle,
-    },
-  });
+  try {
+    const res = await shopifyFetch<ShopifyMenuOperation>({
+      query: getMenuQuery,
+      variables: {
+        handle,
+      },
+    });
 
-  return (
-    res.body?.data?.menu?.items.map((item: { title: string; url: string }) => ({
-      title: item.title,
-      path: item.url
-        .replace(domain, "")
-        .replace("/collections", "/search")
-        .replace("/pages", ""),
-    })) || []
-  );
+    return (
+      res.body?.data?.menu?.items.map(
+        (item: { title: string; url: string }) => ({
+          title: item.title,
+          path: item.url
+            .replace(domain, "")
+            .replace("/collections", "/search")
+            .replace("/pages", ""),
+        }),
+      ) || []
+    );
+  } catch (e) {
+    // Build/prerender should not fail if Shopify is briefly unreachable.
+    console.error(`getMenu('${handle}') failed; returning empty menu`, e);
+    return [];
+  }
 }
 
 export async function getPage(handle: string): Promise<Page> {

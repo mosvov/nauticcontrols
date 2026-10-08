@@ -115,6 +115,10 @@ export type ShopifyCollection = {
   updatedAt: string;
 };
 
+export type ProductMetafield = {
+  value: string;
+};
+
 export type ShopifyProduct = {
   id: string;
   handle: string;
@@ -133,6 +137,13 @@ export type ShopifyProduct = {
   seo: SEO;
   tags: string[];
   updatedAt: string;
+  docsUrl?: ProductMetafield | null;
+  firmwareUrl?: ProductMetafield | null;
+  complianceUrl?: ProductMetafield | null;
+  installGuideUrl?: ProductMetafield | null;
+  warrantySummary?: ProductMetafield | null;
+  fccSummary?: ProductMetafield | null;
+  hatlabsSku?: ProductMetafield | null;
 };
 
 export type ShopifyCartOperation = {
