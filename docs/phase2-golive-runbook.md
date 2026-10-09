@@ -4,7 +4,7 @@ Execute in order. Do not announce sales until step 7 passes.
 
 ## 1. Receive inventory
 
-- [ ] Unbox at 606 Stargaze Lane, Saint Augustine, FL 32095
+- [ ] Unbox at Florida Warehouse
 - [ ] Count vs `docs/pilot-po-revised-2026-09-30.csv` within 10 business days
 - [ ] Photo any damage; notify Hat Labs if needed
 - [ ] Assign lot / Hat Labs order ref for warranty tracking
@@ -12,13 +12,13 @@ Execute in order. Do not announce sales until step 7 passes.
 ## 2. Upgrade Shopify plan
 
 - [ ] Settings → Plan → choose **Basic** or higher (not Starter)
-- [ ] Billing on RigSense LLC / card on file
+- [ ] Billing on Nautic Controls / card on file
 - [ ] Confirm Headless channel still installed after upgrade
 
 ## 3. Payments & tax
 
 - [ ] Enable Shopify Payments (or approved gateway) for USD
-- [ ] Business legal name: RigSense LLC DBA Nautic Controls
+- [ ] Business legal name: Nautic Controls
 - [ ] Florida sales tax registration if required; configure Shopify tax
 
 ## 4. Inventory

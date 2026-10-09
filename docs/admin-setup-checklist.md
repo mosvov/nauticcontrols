@@ -13,7 +13,7 @@ Browser: log into https://admin.shopify.com/store/dev-store-749237498237499137
 
 ## B. Florida location (done 2026-10-08)
 
-1. Location: `Florida Warehouse` · 606 Stargaze Lane, Saint Augustine, FL 32095  
+1. Location: `Florida Warehouse` (Florida, USA)  
 2. General shipping profile ships from **Florida Warehouse**  
 3. Sellable inventory stocked at Florida; `Shop location (unused)` has `fulfillsOnlineOrders: false` (Shopify may block full deactivate if it is still the primary shell location)  
 4. Package presets: create in Admin UI (API cannot create packages) - see § E

@@ -1,7 +1,7 @@
 # Research: Shopify ↔ eBay Sync Best Practices (Nautic Controls)
 
 **Date:** 2026-10-08  
-**Brand:** Nautic Controls (RigSense LLC), Florida  
+**Brand:** Nautic Controls, Florida  
 **Profile:** Small US seller, niche marine electronics hardware, domestic Florida stock (not dropship), catalog under ~20 SKUs initially (gateway kits, engine kits, maybe bare boards)  
 **Stack:** Headless Shopify + Next.js on Vercel; Shopify Admin remains commerce system of record  
 

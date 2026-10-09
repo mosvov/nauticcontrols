@@ -72,7 +72,7 @@ Pages: Shipping, Returns & Warranty, About, FCC / Responsible Party.
 - [x] Contiguous US shipping: **$9.95** under $75, **free** at $75+; other destinations contact for quote (`docs/plans/2026-10-08-shipping-rates.md`)
 - [ ] Goods received and counted at Florida location
 - [ ] Upgrade store to Shopify **Basic+**
-- [ ] Enable Shopify Payments (RigSense LLC)
+- [ ] Enable Shopify Payments (Nautic Controls)
 - [ ] Shopify Tax for registered states (FL registration TBD)
 - [ ] Set real inventory quantities
 - [ ] Kits Active only with firmware path + install guide

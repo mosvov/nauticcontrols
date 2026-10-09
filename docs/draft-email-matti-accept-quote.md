@@ -1,4 +1,4 @@
-# Draft reply to Matti — payment sent
+# Draft reply to Matti — shop status + product assets
 
 **To:** matti.airas@hatlabs.fi (reply on thread)  
 **Subject:** Re: Hat Labs reseller agreement  
@@ -8,12 +8,11 @@
 
 Hi Matti,
 
-Payment sent — $2,300 USD via Next-day ACH to your Wise USD account (Hat Labs Oy).
+Thanks for starting on the order — much appreciated.
 
-Date: Oct 8, 2026  
-Memo/reference: SAL-QTN-2026-00001 (covers invoice ACC-SINV-2026-00401 / €2,057.37 at ~mid-market)
+On the webstore: I’m actively working on it now. Plan is to have the shop ready by the time the shipment arrives here, so feel free to tell that customer a US stocking reseller is coming online around delivery of this first order.
 
-Relay flagged a possible delay around the Oct 12 bank holiday, so it may take a day or two extra to land. Ping me if you don’t see it.
+One quick ask: OK if I use product photos from your shop, and rewritten (not copy-paste) descriptions based on yours? Happy to credit Hat Labs / link back where it makes sense.
 
 Thanks!  
 Vova

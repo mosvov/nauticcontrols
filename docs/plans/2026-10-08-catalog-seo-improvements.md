@@ -107,7 +107,7 @@ Create published Online Store pages:
 3. About
 4. FCC / Responsible Party
 
-Copy should mention Florida fulfillment, RigSense LLC, and DIY kit nature.
+Copy should mention Florida fulfillment, Nautic Controls, and DIY kit nature.
 
 **Done when:** All 4 pages published; footer menu links work.
 

@@ -23,7 +23,7 @@ Policy page `shipping` + `docs/policy-pages/shipping.html`: other destinations �
 
 ## Fulfillment (ops)
 
-- Origin: **Florida Warehouse** (606 Stargaze Lane) on General profile; empty Shop location deactivated.
+- Origin: **Florida Warehouse** on General profile; empty Shop location deactivated.
 - Buy labels via **Shopify Shipping** (USPS / UPS). Checkout flats ≠ label cost.
 - Package presets (Admin UI only): Small board box 8×6×3 @ 0.1 lb (default); Kit box 12×9×4 @ 0.2 lb. See `docs/admin-setup-checklist.md` § E.
 - Pack small; adjust $9.95 after a few real FL→zone-8 labels if needed.

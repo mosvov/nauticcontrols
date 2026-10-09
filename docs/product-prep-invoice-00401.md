@@ -1,7 +1,7 @@
 # Product Prep — Invoice ACC-SINV-2026-00401
 
 **Date:** 2026-10-08  
-**Invoice:** Hat Labs Oy → RigSense LLC (Nautic Controls), 2026-10-06  
+**Invoice:** Hat Labs Oy → Nautic Controls, 2026-10-06  
 **Goods:** €1,884.20 · Shipping UPS Expedited FL: €173.17 · **Grand total €2,057.37** (VAT 0% export)  
 **Source images/copy:** live `shop.hatlabs.fi` products.json (scraped 2026-10-08)
 
@@ -100,7 +100,7 @@ Suggested metafields (namespace `nautic`):
 
 ## Open blockers before Active
 
-- [ ] Goods landed and counted at 606 Stargaze Lane, FL  
+- [ ] Goods landed and counted at Florida Warehouse  
 - [ ] Kit repackaging written consent from Matti  
 - [ ] Firmware + install guides for kits  
 - [ ] Headless channel publish + collections / menus  

@@ -32,7 +32,7 @@ Default warranty summary (all sellable SKUs):
 
 Default FCC summary (RF / computer / kits with RF boards):
 
-`Contains pre-certified radio modules. US importer (SDoC responsible party): RigSense LLC dba Nautic Controls. See FCC / Responsible Party.`
+`Contains pre-certified radio modules. US importer (SDoC responsible party): Nautic Controls. See FCC / Responsible Party.`
 
 Accessories (enclosures, connectors): omit `docs_url`, `firmware_url`, `compliance_url`; still set `warranty_summary` and a shorter FCC note only if the accessory itself is not an intentional radiator (skip `fcc_summary` for passive accessories).
 

@@ -38,7 +38,7 @@ Admin path: Settings → Notifications → Webhooks.
 
 ## Already done via plugin
 
-- Florida Warehouse location (606 Stargaze Lane) - Toronto demo location deactivated  
+- Florida Warehouse location - Toronto demo location deactivated  
 - Menus: `next-js-frontend-header-menu`, `next-js-frontend-footer-menu`  
 - Collections: `hidden-homepage-featured-items`, `hidden-homepage-carousel` (published to Headless)  
 - Pages: shipping, returns, about, fcc  
