@@ -3,11 +3,10 @@
 import { TAGS } from "lib/constants";
 import {
   addToCart,
-  createCart,
+  ensureCartId,
   getCart,
   getCartForCheckout,
   removeFromCart,
-  setCartIdCookie,
   updateCart,
 } from "lib/shopify";
 import { updateTag } from "next/cache";
@@ -109,9 +108,7 @@ export async function redirectToCheckout() {
 }
 
 export async function createCartAndSetCookie() {
-  const cart = await createCart();
-  if (!cart.id) {
-    throw new Error("Failed to create cart");
-  }
-  await setCartIdCookie(cart.id);
+  // Reuse an existing cartId (e.g. created by ensureCartId during add-to-cart)
+  // so a late modal mount effect does not orphan a cart that already has lines.
+  await ensureCartId();
 }
