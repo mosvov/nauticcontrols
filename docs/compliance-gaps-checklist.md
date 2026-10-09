@@ -21,9 +21,10 @@ Track items that block truthful FCC claims and kit Activation. Related: [`docs/m
 
 ## Storefront policy pages
 
-- [x] Draft copy in `docs/policy-pages/`
+- [x] Draft copy in `docs/policy-pages/` (includes `privacy.html`, `terms.html`)
 - [x] Published in Shopify Admin with handles `fcc`, `returns`, `shipping`, `about`
-- [x] Linked from footer menu (`Next.js Frontend Footer Menu`)
+- [x] Publish Shopify pages with handles `privacy` and `terms` (drafts in `docs/policy-pages/`)
+- [x] Linked from storefront footer (hard-coded in `components/layout/footer.tsx`)
 
 ## Notes
 

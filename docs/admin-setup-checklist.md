@@ -27,8 +27,11 @@ Browser: log into https://admin.shopify.com/store/dev-store-749237498237499137
    - `Hidden: Homepage Carousel` (add kits + boards)
 4. Navigation → create menus:
    - `Next.js Frontend Header Menu`
-   - `Next.js Frontend Footer Menu`
-5. Pages: Shipping, Returns & Warranty, About, FCC / Responsible Party
+   - `Next.js Frontend Footer Menu` (optional; storefront footer links are hard-coded in `components/layout/footer.tsx`)
+5. Pages: Shipping, Returns & Warranty, About, FCC / Responsible Party, Privacy, Terms of Service
+   - Handles must be: `shipping`, `returns`, `about`, `fcc`, `privacy`, `terms`
+   - Paste HTML from `docs/policy-pages/<handle>.html` into each page body
+   - Publish to the **Headless** sales channel (same as other CMS pages)
 
 ## D. Webhooks (after Vercel has env)
 
