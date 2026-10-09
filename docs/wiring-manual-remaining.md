@@ -32,7 +32,7 @@ Topics:
 - collections/update  
 - collections/delete  
 
-Optional later (policy pages / nav cache): `pages/create`, `pages/update`, `pages/delete` - today pages use a separate cache tag and only refresh on redeploy unless you add those webhooks and extend `lib/shopify` `revalidate`.
+Also wire page webhooks (supported in `lib/shopify` `revalidate`): `pages/create`, `pages/update`, `pages/delete`.
 
 Admin path: Settings → Notifications → Webhooks.
 

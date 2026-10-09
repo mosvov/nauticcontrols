@@ -8,7 +8,8 @@ Practical guidance for a small US Signal K / marine hardware storefront (headles
 
 - Tokens: `app/globals.css` (`ink`, `shelf`, `tile`, `line`, `accent`, `mute`)
 - Fonts: Syne (display) + Manrope (body) via `next/font`
-- Stack: existing Next.js Commerce + Tailwind v4 + Storefront API (no Hydrogen / shadcn required for this pass)
+- Stack: existing Next.js Commerce + Tailwind v4 + Storefront API `2026-10` (no Hydrogen / shadcn required for this pass)
+- Watch (do not adopt yet): framework-agnostic `@shopify/hydrogen@preview` — see [`docs/hydrogen-preview-watch.md`](hydrogen-preview-watch.md)
 
 Shopify Liquid headless theme zip remains redirect-only for checkout/email links.
 

@@ -38,6 +38,7 @@ import {
   ShopifyAddToCartOperation,
   ShopifyCart,
   ShopifyCartOperation,
+  ShopifyCartUserError,
   ShopifyCollection,
   ShopifyCollectionOperation,
   ShopifyCollectionProductsOperation,
@@ -58,32 +59,103 @@ const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartsWith(process.env.SHOPIFY_STORE_DOMAIN, "https://")
   : "";
 const endpoint = domain ? `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}` : "";
-const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN!;
+const publicStorefrontToken = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+const privateStorefrontToken = process.env.SHOPIFY_STOREFRONT_PRIVATE_TOKEN;
 
 type ExtractVariables<T> = T extends { variables: object }
   ? T["variables"]
   : never;
 
+async function getBuyerIp(): Promise<string | undefined> {
+  try {
+    const h = await headers();
+    const forwarded = h.get("x-forwarded-for");
+    if (forwarded) {
+      return forwarded.split(",")[0]?.trim() || undefined;
+    }
+    return (
+      h.get("x-real-ip") ||
+      h.get("cf-connecting-ip") ||
+      h.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() ||
+      undefined
+    );
+  } catch {
+    // Outside a request context (e.g. build-time catalog fetch).
+    return undefined;
+  }
+}
+
+function assertNoCartUserErrors(
+  userErrors: ShopifyCartUserError[] | undefined,
+  operation: string,
+) {
+  if (!userErrors?.length) {
+    return;
+  }
+
+  throw new Error(
+    `${operation}: ${userErrors.map((error) => error.message).join("; ")}`,
+  );
+}
+
+export async function setCartIdCookie(cartId: string) {
+  (await cookies()).set("cartId", cartId, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+  });
+}
+
 export async function shopifyFetch<T>({
-  headers,
+  headers: customHeaders,
   query,
   variables,
+  includeBuyerIp = false,
 }: {
   headers?: HeadersInit;
   query: string;
   variables?: ExtractVariables<T>;
+  /** Attach Shopify-Storefront-Buyer-IP for buyer-driven cart/checkout calls. */
+  includeBuyerIp?: boolean;
 }): Promise<{ status: number; body: T } | never> {
   try {
     if (!endpoint) {
       throw new Error("SHOPIFY_STORE_DOMAIN environment variable is not set");
     }
 
+    if (!privateStorefrontToken && !publicStorefrontToken) {
+      throw new Error(
+        "Set SHOPIFY_STOREFRONT_ACCESS_TOKEN or SHOPIFY_STOREFRONT_PRIVATE_TOKEN",
+      );
+    }
+
+    const requestHeaders: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+
+    // Prefer private token on the server; fall back to Headless public token.
+    if (privateStorefrontToken) {
+      requestHeaders["Shopify-Storefront-Private-Token"] =
+        privateStorefrontToken;
+    } else if (publicStorefrontToken) {
+      requestHeaders["X-Shopify-Storefront-Access-Token"] =
+        publicStorefrontToken;
+    }
+
+    // Only for buyer-driven calls. Do not read headers() inside cached catalog fetches.
+    if (includeBuyerIp) {
+      const buyerIp = await getBuyerIp();
+      if (buyerIp) {
+        requestHeaders["Shopify-Storefront-Buyer-IP"] = buyerIp;
+      }
+    }
+
     const result = await fetch(endpoint, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": key,
-        ...headers,
+        ...requestHeaders,
+        ...customHeaders,
       },
       body: JSON.stringify({
         ...(query && { query }),
@@ -216,51 +288,107 @@ const reshapeProducts = (products: ShopifyProduct[]) => {
 export async function createCart(): Promise<Cart> {
   const res = await shopifyFetch<ShopifyCreateCartOperation>({
     query: createCartMutation,
+    includeBuyerIp: true,
   });
 
-  return reshapeCart(res.body.data.cartCreate.cart);
+  assertNoCartUserErrors(res.body.data.cartCreate.userErrors, "cartCreate");
+
+  const cart = res.body.data.cartCreate.cart;
+  if (!cart) {
+    throw new Error("cartCreate returned no cart");
+  }
+
+  return reshapeCart(cart);
+}
+
+/** Ensure a cartId cookie exists before cart line mutations. */
+export async function ensureCartId(): Promise<string> {
+  const cookieStore = await cookies();
+  const existing = cookieStore.get("cartId")?.value;
+  if (existing) {
+    return existing;
+  }
+
+  const cart = await createCart();
+  if (!cart.id) {
+    throw new Error("Failed to create cart");
+  }
+
+  await setCartIdCookie(cart.id);
+  return cart.id;
 }
 
 export async function addToCart(
   lines: { merchandiseId: string; quantity: number }[],
 ): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!;
+  const cartId = await ensureCartId();
   const res = await shopifyFetch<ShopifyAddToCartOperation>({
     query: addToCartMutation,
     variables: {
       cartId,
       lines,
     },
+    includeBuyerIp: true,
   });
-  return reshapeCart(res.body.data.cartLinesAdd.cart);
+
+  assertNoCartUserErrors(res.body.data.cartLinesAdd.userErrors, "cartLinesAdd");
+
+  const cart = res.body.data.cartLinesAdd.cart;
+  if (!cart) {
+    throw new Error("cartLinesAdd returned no cart");
+  }
+
+  return reshapeCart(cart);
 }
 
 export async function removeFromCart(lineIds: string[]): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!;
+  const cartId = await ensureCartId();
   const res = await shopifyFetch<ShopifyRemoveFromCartOperation>({
     query: removeFromCartMutation,
     variables: {
       cartId,
       lineIds,
     },
+    includeBuyerIp: true,
   });
 
-  return reshapeCart(res.body.data.cartLinesRemove.cart);
+  assertNoCartUserErrors(
+    res.body.data.cartLinesRemove.userErrors,
+    "cartLinesRemove",
+  );
+
+  const cart = res.body.data.cartLinesRemove.cart;
+  if (!cart) {
+    throw new Error("cartLinesRemove returned no cart");
+  }
+
+  return reshapeCart(cart);
 }
 
 export async function updateCart(
   lines: { id: string; merchandiseId: string; quantity: number }[],
 ): Promise<Cart> {
-  const cartId = (await cookies()).get("cartId")?.value!;
+  const cartId = await ensureCartId();
   const res = await shopifyFetch<ShopifyUpdateCartOperation>({
     query: editCartItemsMutation,
     variables: {
       cartId,
       lines,
     },
+    includeBuyerIp: true,
   });
 
-  return reshapeCart(res.body.data.cartLinesUpdate.cart);
+  assertNoCartUserErrors(
+    res.body.data.cartLinesUpdate.userErrors,
+    "cartLinesUpdate",
+  );
+
+  const cart = res.body.data.cartLinesUpdate.cart;
+  if (!cart) {
+    throw new Error("cartLinesUpdate returned no cart");
+  }
+
+  return reshapeCart(cart);
 }
 
 export async function getCart(): Promise<Cart | undefined> {
@@ -277,9 +405,34 @@ export async function getCart(): Promise<Cart | undefined> {
   const res = await shopifyFetch<ShopifyCartOperation>({
     query: getCartQuery,
     variables: { cartId },
+    includeBuyerIp: true,
   });
 
   // Old carts becomes `null` when you checkout.
+  if (!res.body.data.cart) {
+    return undefined;
+  }
+
+  return reshapeCart(res.body.data.cart);
+}
+
+/**
+ * Uncached cart read for checkout redirect. Prefer this over getCart()
+ * so checkoutUrl is not served from a briefly cached cart snapshot.
+ */
+export async function getCartForCheckout(): Promise<Cart | undefined> {
+  const cartId = (await cookies()).get("cartId")?.value;
+
+  if (!cartId) {
+    return undefined;
+  }
+
+  const res = await shopifyFetch<ShopifyCartOperation>({
+    query: getCartQuery,
+    variables: { cartId },
+    includeBuyerIp: true,
+  });
+
   if (!res.body.data.cart) {
     return undefined;
   }
@@ -516,8 +669,7 @@ export async function getProducts({
 
 // This is called from `app/api/revalidate.ts` so providers can control revalidation logic.
 export async function revalidate(req: NextRequest): Promise<NextResponse> {
-  // We always need to respond with a 200 status code to Shopify,
-  // otherwise it will continue to retry the request.
+  // Always HTTP 200 for Shopify webhooks so failed auth does not cause retry storms.
   const collectionWebhooks = [
     "collections/create",
     "collections/delete",
@@ -528,19 +680,26 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
     "products/delete",
     "products/update",
   ];
+  const pageWebhooks = ["pages/create", "pages/delete", "pages/update"];
   const topic = (await headers()).get("x-shopify-topic") || "unknown";
   const secret = req.nextUrl.searchParams.get("secret");
   const isCollectionUpdate = collectionWebhooks.includes(topic);
   const isProductUpdate = productWebhooks.includes(topic);
+  const isPageUpdate = pageWebhooks.includes(topic);
 
   if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
     console.error("Invalid revalidation secret.");
-    return NextResponse.json({ status: 401 });
+    return NextResponse.json(
+      { revalidated: false, message: "Invalid secret" },
+      { status: 200 },
+    );
   }
 
-  if (!isCollectionUpdate && !isProductUpdate) {
-    // We don't need to revalidate anything for any other topics.
-    return NextResponse.json({ status: 200 });
+  if (!isCollectionUpdate && !isProductUpdate && !isPageUpdate) {
+    return NextResponse.json(
+      { revalidated: false, message: "Topic ignored", topic },
+      { status: 200 },
+    );
   }
 
   if (isCollectionUpdate) {
@@ -553,5 +712,12 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
     revalidateTag(TAGS.products, "max");
   }
 
-  return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
+  if (isPageUpdate) {
+    revalidateTag(TAGS.pages, "max");
+  }
+
+  return NextResponse.json(
+    { revalidated: true, now: Date.now(), topic },
+    { status: 200 },
+  );
 }

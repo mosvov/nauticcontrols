@@ -77,6 +77,7 @@ Vercel actively maintains **Next.js Commerce** as a Shopify-first App Router tem
 | **Next.js Commerce / custom Storefront API on Vercel** | Best fit **given this repo's direction** and Next.js preference |
 | Hydrogen + Oxygen | Only if abandoning Next.js; gains Shopify-native DX, loses Vercel/Next ecosystem |
 | Hydrogen React inside Next.js | Useful library layer (money, media, Shop Pay button), not a full stack |
+| Hydrogen `@preview` (framework-agnostic / Next) | **Watch only until GA** — see `docs/hydrogen-preview-watch.md`. Not for production yet (API will change). |
 
 **Plan constraint from Vercel:** Next.js Commerce does **not** work on Shopify **Starter** (cannot install custom/headless theme). Need Basic+ ([Vercel KB](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel)).
 
