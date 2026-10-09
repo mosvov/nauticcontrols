@@ -8,6 +8,7 @@ import {
   getProduct,
   getProducts,
 } from "lib/shopify";
+import type { Product } from "lib/shopify/types";
 import Link from "next/link";
 
 export const metadata = {
@@ -18,6 +19,10 @@ export const metadata = {
   },
 };
 
+function withoutFlagship(products: Product[]) {
+  return products.filter((product) => product.handle !== FLAGSHIP_HANDLE);
+}
+
 export default async function HomePage() {
   const [flagship, featuredRaw] = await Promise.all([
     getProduct(FLAGSHIP_HANDLE),
@@ -26,15 +31,10 @@ export default async function HomePage() {
     }),
   ]);
 
-  let featured = featuredRaw.filter(
-    (product) => product.handle !== FLAGSHIP_HANDLE,
-  );
-
+  let featured = withoutFlagship(featuredRaw);
   if (featured.length < 4) {
-    const all = await getProducts({});
-    featured = all.filter((product) => product.handle !== FLAGSHIP_HANDLE);
+    featured = withoutFlagship(await getProducts({}));
   }
-
   featured = featured.slice(0, 8);
 
   return (
