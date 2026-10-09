@@ -105,7 +105,7 @@ async function ProductPageContent({
           href="/search"
           className="mb-4 inline-block text-sm text-mute hover:text-ink"
         >
-          ← Back to shelf
+          ← Back to catalog
         </Link>
 
         <div className="grid gap-5 md:grid-cols-[1.35fr_0.75fr] md:items-start">
@@ -145,7 +145,7 @@ async function RelatedProducts({ id }: { id: string }) {
   return (
     <div className="pt-10">
       <h2 className="font-display mb-4 text-2xl font-bold tracking-tight text-ink">
-        Related on the shelf
+        Related products
       </h2>
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {relatedProducts.slice(0, 4).map((product) => (

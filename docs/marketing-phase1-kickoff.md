@@ -4,9 +4,9 @@ Source: `docs/plan-90-day-marketing.md` · Started 2026-10-08
 
 ## Positioning (use everywhere)
 
-**The US home for Signal K hardware.** Domestic stock, kit docs / firmware path, a human who answers.
+**Marine and RV electronics, US stock.** Boards, kits, Signal K / NMEA 2000 gear. Ships from the US. Kit docs and a human who answers email.
 
-Disambiguate when announcing: US stockist for Hat Labs open-source kits - not affiliated with "Nauti-Control".
+Disambiguate when announcing: Nautic Controls - not affiliated with "Nauti-Control".
 
 ## This week
 

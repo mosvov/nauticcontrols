@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export const metadata = {
   description:
-    "HALPI2 and Hat Labs Signal K hardware in US stock. Marine computers, kits, boards, and NMEA 2000 gear. Ships from Florida.",
+    "Marine and RV electronics: HALPI2, Signal K kits, boards, and NMEA 2000 parts. US stock. Free ground shipping on orders $75+.",
   openGraph: {
     type: "website",
   },
@@ -49,10 +49,10 @@ export default async function HomePage() {
           <section className="mt-12">
             <div className="mb-4 flex items-end justify-between gap-3">
               <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
-                Featured hardware
+                Featured
               </h2>
               <Link href="/search" className="text-sm text-mute hover:text-ink">
-                Full shelf →
+                View catalog →
               </Link>
             </div>
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">

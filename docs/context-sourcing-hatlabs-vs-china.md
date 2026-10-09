@@ -1,5 +1,7 @@
 # Context: Sourcing Split — Hat Labs vs China / US Domestic
 
+> **Internal supplier record.** Public brand and catalog rules: [`context-brand-and-catalog.md`](context-brand-and-catalog.md). Do not copy sourcing or warehouse detail into the storefront.
+
 **Saved:** 2026-09-27 · **Updated:** 2026-10-06  
 **Related:** `context-hat-labs-partnership.md` · `draft-pilot-order-analysis.md` · `suppliers-china-accessories.md` · Google Sheet PO
 

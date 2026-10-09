@@ -24,10 +24,10 @@ export function FlagshipHero({ product }: { product?: Product }) {
             Nautic Controls
           </p>
           <h1 className="font-display mt-2 text-[clamp(2.2rem,5vw,3.6rem)] leading-[0.95] font-bold tracking-tight text-ink">
-            Marine Signal K computer, in US stock
+            HALPI2 on Raspberry Pi CM5
           </h1>
           <p className="mt-3 max-w-xl text-[1.02rem] leading-relaxed text-mute">
-            Raspberry Pi CM5 HALPI2 for onboard Signal K. Ships from Florida.
+            Raspberry Pi CM5 marine computer for Signal K. Ships from the US.
           </p>
 
           {product ? (

@@ -2,12 +2,14 @@
 
 ## Intent
 
-Build **Nautic Controls** as a US-facing ecommerce brand that resells **Hat Labs Oy** marine electronics from domestic Florida inventory.
+Build **Nautic Controls** as a US-facing ecommerce brand for **marine and RV electronics** (boards, kits, NMEA 2000 / Signal K gear, accessories).
 
-- **Supplier market:** Hat Labs sells from Finland (`shop.hatlabs.fi`). Direct US shipping typically takes ~2 weeks and adds high international freight / customs friction on small orders.
-- **Our market:** Stock in the US, fulfill via Shopify (headless Next.js storefront in this repo), ship domestically in 2–4 days, avoid surprise import fees for end customers.
-- **Pilot capital:** Order **€1,864.83** goods (~**$2,051** @ 1.10; ~**$2,200–2,250** all-in with freight) — kit-balanced mix in `context-hat-labs-partnership.md` §6 and `draft-pilot-order-analysis.md`.
-- **Model:** Buy wholesale EUR, land in Florida, resell USD for profit — primarily as boards and turnkey kits (enclosure + connectors), not bare Finland dropship.
+- **Market:** Buyers who want US stock, USD checkout, and domestic shipping.
+- **Catalog:** Multi-brand. Hat Labs is one manufacturer line in the assortment; more brands will be added over time.
+- **Storefront:** Shopify Admin for catalog/checkout; headless Next.js in this repo for browse / PDP / cart.
+- **Public positioning:** See [`context-brand-and-catalog.md`](context-brand-and-catalog.md).
+
+Pilot Hat Labs PO and supplier terms remain in internal docs (`context-hat-labs-partnership.md`, `draft-pilot-order-analysis.md`). Keep sourcing detail out of customer-facing copy.
 
 ## This Repository
 
@@ -15,19 +17,19 @@ Build **Nautic Controls** as a US-facing ecommerce brand that resells **Hat Labs
 | --- | --- |
 | This Next.js app (`/private/var/www/nauticcontrols`) | Headless Shopify storefront (App Router + Storefront API) |
 | Shopify Admin | Product catalog, inventory, checkout, payments, shipping |
-| `docs/context-hat-labs-partnership.md` | Supplier terms, pricing, pilot PO, compliance |
-| `docs/moskalyk-2026-09-25.csv` / `.pdf` | Confirmed wholesale price list (2026-09-25) |
-| `docs/reseller-annex.pdf` / `reseller-terms.pdf` | Draft contract pack (v0.2) |
+| `docs/context-brand-and-catalog.md` | Public brand and catalog rules |
+| `docs/context-hat-labs-partnership.md` | Internal Hat Labs supplier terms, pricing, pilot PO |
+| `docs/moskalyk-2026-09-25.csv` / `.pdf` | Confirmed Hat Labs wholesale price list (2026-09-25) |
+| `docs/reseller-annex.pdf` / `reseller-terms.pdf` | Draft Hat Labs contract pack (v0.2) |
 
 ## Launch Constraint Order
 
 Commerce code alone does not unblock sales. Order of operations:
 
-1. Florida entity + Annex §1 fields complete
-2. CGL insurance ($1M) with Hat Labs as Additional Insured
-3. Signature-ready Reseller Terms + Annex (currently **DRAFT**)
-4. Confirm pilot quantities + pro-forma + EUR wire
-5. Goods land → Shopify products + inventory
-6. Storefront goes live against real catalog
+1. Entity + insurance / supplier annex items as required for first manufacturer lines
+2. Signature-ready supplier agreements where needed
+3. Confirm pilot quantities + payment for first stock
+4. Goods available → Shopify products + inventory
+5. Storefront goes live against real catalog
 
-Detail checklist lives in `context-hat-labs-partnership.md` §9.
+Detail checklist for Hat Labs lives in `context-hat-labs-partnership.md` §9.

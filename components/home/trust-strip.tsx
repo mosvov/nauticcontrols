@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 const items = [
-  { label: "Ships from USA" },
+  { label: "Ships from the US" },
   {
-    label: "Free ground $75+",
+    label: "Free shipping $75+",
     href: "/shipping",
   },
-  { label: "Signal K / NMEA 2000" },
-  { label: "Florida warehouse stock" },
+  { label: "Signal K & NMEA 2000" },
+  { label: "Marine & RV" },
 ] as const;
 
 export function TrustStrip() {

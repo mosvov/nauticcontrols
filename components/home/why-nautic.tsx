@@ -1,15 +1,15 @@
 const pillars = [
   {
     title: "US stock",
-    body: "Hat Labs hardware on the shelf in Florida. Faster than EU dropship for contiguous US orders.",
+    body: "Boards, kits, and NMEA parts ready to ship from the US. No international wait for lower-48 orders.",
   },
   {
-    title: "Open hardware",
-    body: "Genuine Hat Labs boards and designs. You buy it, you own it, with source and docs available.",
+    title: "Open and compatible",
+    body: "Signal K and NMEA 2000 gear with manufacturer docs and source where the product is open hardware.",
   },
   {
-    title: "Kits and docs",
-    body: "Installation kits and a US support path so Signal K and NMEA 2000 builds leave the bench sooner.",
+    title: "Kits that install",
+    body: "Board, enclosure, and connectors bundled when we offer a kit, plus US email support if you hit a snag.",
   },
 ] as const;
 

@@ -1,5 +1,7 @@
 # Context Handoff: Hat Labs Partnership, Distribution Agreement & Pilot Order Strategy
 
+> **Internal supplier record.** Public brand and catalog rules: [`context-brand-and-catalog.md`](context-brand-and-catalog.md). Do not copy sourcing or warehouse detail into the storefront.
+
 **Last verified:** 2026-09-27  
 **Sources:** `moskalyk-2026-09-25` price list · Reseller Terms/Annex v0.2 · live `shop.hatlabs.fi` · US retail comps · `draft-pilot-order-analysis.md`  
 **Related:** `context-shopify-us-store.md` · `draft-pilot-order-analysis.md` · `context-sourcing-hatlabs-vs-china.md` · `suppliers-china-accessories.md`

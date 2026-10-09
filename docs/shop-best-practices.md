@@ -1,6 +1,6 @@
 # Nautic Controls - online shop best practices
 
-Practical guidance for a small US Signal K / marine hardware storefront (headless Shopify + Next.js).
+Practical guidance for a small US marine / RV electronics storefront (headless Shopify + Next.js).
 
 ## Live theme
 
@@ -15,10 +15,12 @@ Shopify Liquid headless theme zip remains redirect-only for checkout/email links
 
 ## Positioning
 
-- Lead with **ships from the USA** and Signal K / NMEA 2000 fit. That is the buying reason vs Hat Labs EU or Amazon.
-- **Homepage hero stays the HALPI2 Computer** (brand / demo flagship). Secondary CTA and shop-by-type still push kits as the volume path.
+- Lead with **Ships from the US** / **US stock**, plus marine and RV / Signal K / NMEA 2000 fit.
+- Multi-brand catalog. Name the manufacturer on the PDP when it is the product brand; do not frame the store as a single-brand stockist.
+- **Homepage hero stays the HALPI2 Computer** (flagship SKU). Secondary CTA and shop-by-type still push kits as the volume path.
 - Elsewhere (nav, collection order, merchandising): kits first, boards second, connectors third.
 - One job per page: browse, decide, or buy. Do not mix blog, docs dump, and checkout friction on the PDP.
+- Public brand rules: [`context-brand-and-catalog.md`](context-brand-and-catalog.md).
 
 ## Catalog IA
 
@@ -37,7 +39,7 @@ Publish every sellable SKU to the **Headless** channel. Hidden homepage collecti
 2. **Price + availability** next to CTA (In stock when true).
 3. **Sales package** as bullets (what arrives).
 4. **Compatibility** (Signal K, NMEA 2000, SH-ESP32, HALMET, Pi, voltage range).
-5. **Docs** (Hat Labs product page + firmware examples). Keep regulatory fine print below the fold.
+5. **Docs** (manufacturer product docs + firmware examples). Keep regulatory fine print below the fold.
 6. **Related** kits/parts that complete the install (enclosure, M12, SP13).
 
 Images: first image = board or kit on clean background; then connectors, enclosure context, scale.
@@ -46,7 +48,7 @@ Images: first image = board or kit on clean background; then connectors, enclosu
 
 - Shipping, returns, FCC/disclaimer pages linked from footer and PDP.
 - Contiguous US rates: **$9.95** under $75, **free ground** at $75+. Other destinations: contact for a quote (do not say “we don’t ship”). Peer UX: sitewide bar + PDP below ATC + cart progress + footer. See `docs/plans/2026-10-08-shipping-rates.md`.
-- Inventory truth = Florida Warehouse location. Never sell ghost stock.
+- Inventory truth = Shopify location quantities. Never sell ghost stock.
 - Order emails and checkout links must land on `www.nauticcontrols.com` (headless theme hostname).
 - Revalidation webhooks on product + collection changes so the storefront cache stays honest.
 

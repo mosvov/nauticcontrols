@@ -84,10 +84,10 @@ export default async function Footer() {
               {SITE_NAME}
             </Link>
             <p className="mt-3 max-w-xs text-xs leading-relaxed text-mute">
-              US home for Signal K hardware. Free US ground on orders $75+
-              (contiguous US).
+              Marine and RV electronics: boards, kits, and NMEA 2000 / Signal K
+              gear. US stock. Free ground shipping on orders $75+ in the lower
+              48.
             </p>
-            <p className="mt-3 text-xs text-mute">Ships from Florida, USA.</p>
             <a
               href="mailto:info@nauticcontrols.com"
               className="mt-2 inline-block text-xs text-accent underline underline-offset-4 hover:text-ink"
@@ -131,7 +131,7 @@ export default async function Footer() {
             {copyrightName.length && !copyrightName.endsWith(".") ? "." : ""}{" "}
             All rights reserved.
           </p>
-          <p className="text-xs">Precision Marine Control Systems</p>
+          <p className="text-xs">Marine &amp; RV electronics</p>
         </div>
       </div>
     </footer>

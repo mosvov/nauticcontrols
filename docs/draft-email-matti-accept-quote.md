@@ -1,5 +1,7 @@
 # Draft reply to Matti — shop status + product assets
 
+> **Internal supplier correspondence.** Public brand and catalog rules: [`context-brand-and-catalog.md`](context-brand-and-catalog.md).
+
 **To:** matti.airas@hatlabs.fi (reply on thread)  
 **Subject:** Re: Hat Labs reseller agreement  
 **Gmail draft:** created as reply on the thread

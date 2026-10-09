@@ -26,7 +26,7 @@ export function CartShippingProgress({
       <div className="flex items-start justify-between gap-3">
         <p className="font-medium text-ink">
           {qualifies
-            ? "Free US ground unlocked"
+            ? "Free shipping on this order"
             : `Add ${formatUsd(remaining)} for free shipping`}
         </p>
         <p className="shrink-0 text-xs text-mute">
@@ -49,7 +49,7 @@ export function CartShippingProgress({
       </div>
       <p className="mt-2 text-xs text-mute">
         {qualifies
-          ? "Contiguous US · confirmed at checkout"
+          ? "Lower 48 · confirmed at checkout"
           : `Orders under ${formatUsd(FREE_SHIPPING_THRESHOLD_USD)} ship for ${formatUsd(FLAT_SHIPPING_USD)}`}{" "}
         ·{" "}
         <Link

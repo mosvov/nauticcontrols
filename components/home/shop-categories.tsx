@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const categories = [
-  { title: "Kits", href: "/search/kits", blurb: "Ready install bundles" },
+  { title: "Kits", href: "/search/kits", blurb: "Board, enclosure, connectors" },
   {
     title: "Development Boards",
     href: "/search/development-boards",
@@ -10,7 +10,7 @@ const categories = [
   {
     title: "Marine Computers",
     href: "/search/marine-computers",
-    blurb: "HALPI2 and Pi marine hosts",
+    blurb: "HALPI2 and Pi hosts",
   },
   {
     title: "Accessories",
@@ -20,7 +20,7 @@ const categories = [
   {
     title: "NMEA 2000",
     href: "/search/nmea-2000",
-    blurb: "Gear for the backbone",
+    blurb: "Cables and backbone parts",
   },
 ] as const;
 

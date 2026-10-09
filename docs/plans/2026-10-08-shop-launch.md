@@ -11,6 +11,7 @@
 - Next.js on Vercel = browse / PDP / cart (this repo)
 - Cart API → Shopify hosted `checkoutUrl`
 - eBay later via Marketplace Connect (not custom sync)
+- Brand: multi-brand marine/RV reseller (see `docs/context-brand-and-catalog.md`). Hat Labs pilot SKUs are phase-1 catalog; more brands land later.
 
 ## Phase 0 — Wiring
 

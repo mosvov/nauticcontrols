@@ -8,13 +8,13 @@
 
 | Key | Type | Purpose |
 | --- | --- | --- |
-| `docs_url` | `url` | Primary Hat Labs docs link |
+| `docs_url` | `url` | Primary manufacturer docs link |
 | `firmware_url` | `url` | Optional GitHub / SensESP / example firmware |
 | `compliance_url` | `url` | Manufacturer compliance page when available |
 | `install_guide_url` | `url` | Nautic kit install guide when published |
 | `warranty_summary` | `single_line_text_field` | Short warranty line on PDP |
 | `fcc_summary` | `multi_line_text_field` | Short Part 15 / responsible-party pointer |
-| `hatlabs_sku` | `single_line_text_field` | Manufacturer SKU for support / warranty matching |
+| `hatlabs_sku` | `single_line_text_field` | Manufacturer SKU for support / warranty matching (Hat Labs lines; keep key for existing SKUs). Prefer treating as manufacturer SKU in UI copy. Future non-Hat Labs lines may use a neutral `manufacturer_sku` key when added. |
 
 ## Admin only (no Storefront access)
 

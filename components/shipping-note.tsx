@@ -31,13 +31,13 @@ export function ShippingNote({ productPriceUsd }: ShippingNoteProps) {
 
   let message: string;
   if (hasCartItems && qualifies) {
-    message = "Free US ground unlocked on your cart.";
+    message = "Your cart qualifies for free shipping.";
   } else if (hasCartItems && remaining > 0) {
-    message = `Add ${formatUsd(remaining)} more for free US ground.`;
+    message = `Add ${formatUsd(remaining)} more for free shipping.`;
   } else if (productQualifiesAlone) {
-    message = "This item ships free with US ground (contiguous US).";
+    message = "This item ships free in the lower 48.";
   } else {
-    message = `Free US ground on orders ${formatUsd(FREE_SHIPPING_THRESHOLD_USD)}+. Under ${formatUsd(FREE_SHIPPING_THRESHOLD_USD)}: ${formatUsd(FLAT_SHIPPING_USD)} (contiguous US).`;
+    message = `Free shipping on orders ${formatUsd(FREE_SHIPPING_THRESHOLD_USD)}+. Under that: ${formatUsd(FLAT_SHIPPING_USD)} (lower 48).`;
   }
 
   return (

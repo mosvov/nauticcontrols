@@ -4,8 +4,9 @@ Prepared 2026-09-29. Built from a four-track research sweep (forums/Reddit, podc
 
 ## Positioning (say this everywhere)
 
-**"The US home for Signal K hardware."** Domestic stock, pre-flashed firmware, a human who answers.
-Nobody else owns this: Actisense/Digital Yacht sell through dealers and ignore DIY; Yacht Devices sells direct but ships from Europe; KUS sells on price with zero support.
+**"Marine and RV electronics, US stock."** Boards, kits, Signal K / NMEA 2000 gear. Ships from the US. Kit docs and a human who answers email.
+
+Compete on availability, clear docs, and support - not on exclusive single-brand framing.
 
 ## Pricing recap (locked 2026-09-29)
 
@@ -38,7 +39,7 @@ One flagship video; Shorts are the trailer for discovery, long-form is what sell
 ## Phase 2 — Launch (Days 31–45)
 
 **6. One announcement per community, in the vendor/product-review area only.**
-Use the accepted formula: plain hardware description + docs/video links + "happy to answer any technical questions." Proactively disambiguate: "we're the US stockist for Hat Labs' open-source kits — not affiliated with Nauti-Control" (a similarly-named company is already active on CruisersForum).
+Use the accepted formula: plain hardware description + docs/video links + "happy to answer any technical questions." Proactively disambiguate: "Nautic Controls - not affiliated with Nauti-Control" (a similarly-named company is already active on CruisersForum).
 
 **7. Store live, kits in stock, support inbox staffed.**
 Budget the first two weeks overwhelmingly for support — answer within minutes, acknowledge issues openly, ship free fixes. Fast, honest support converts early buyers into evangelists. Do NOT run pre-orders as the buying experience; the 2–4-day-delivery promise is the differentiator, don't undermine it. Use the deposit waitlist only to size the next restock.

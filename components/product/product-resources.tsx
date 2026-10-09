@@ -42,7 +42,7 @@ export function ProductResources({ product }: { product: Product }) {
           <ul className="space-y-1 text-mute">
             {docsUrl ? (
               <li>
-                <ExternalLink href={docsUrl}>Product docs (Hat Labs)</ExternalLink>
+                <ExternalLink href={docsUrl}>Product docs</ExternalLink>
               </li>
             ) : null}
             {firmwareUrl ? (

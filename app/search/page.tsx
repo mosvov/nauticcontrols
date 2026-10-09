@@ -30,10 +30,11 @@ export default async function SearchPage(props: {
       ) : (
         <div className="mb-5">
           <h1 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
-            On the shelf
+            Catalog
           </h1>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-mute">
-            Signal K kits, boards, and NMEA 2000 parts. Ships from the USA.
+            Marine and RV electronics: Signal K kits, boards, and NMEA 2000
+            parts. Ships from the US.
           </p>
         </div>
       )}

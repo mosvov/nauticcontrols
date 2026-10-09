@@ -1,5 +1,7 @@
 # Product Prep — Invoice ACC-SINV-2026-00401
 
+> **Internal supplier record.** Public brand and catalog rules: [`context-brand-and-catalog.md`](context-brand-and-catalog.md).
+
 **Date:** 2026-10-08  
 **Invoice:** Hat Labs Oy → Nautic Controls, 2026-10-06  
 **Goods:** €1,884.20 · Shipping UPS Expedited FL: €173.17 · **Grand total €2,057.37** (VAT 0% export)  
