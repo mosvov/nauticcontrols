@@ -146,9 +146,14 @@ export type ShopifyProduct = {
   hatlabsSku?: ProductMetafield | null;
 };
 
+export type ShopifyCartUserError = {
+  field?: string[] | null;
+  message: string;
+};
+
 export type ShopifyCartOperation = {
   data: {
-    cart: ShopifyCart;
+    cart: ShopifyCart | null;
   };
   variables: {
     cartId: string;
@@ -156,13 +161,25 @@ export type ShopifyCartOperation = {
 };
 
 export type ShopifyCreateCartOperation = {
-  data: { cartCreate: { cart: ShopifyCart } };
+  data: {
+    cartCreate: {
+      cart: ShopifyCart | null;
+      userErrors: ShopifyCartUserError[];
+    };
+  };
+  variables?: {
+    lineItems?: {
+      merchandiseId: string;
+      quantity: number;
+    }[];
+  };
 };
 
 export type ShopifyAddToCartOperation = {
   data: {
     cartLinesAdd: {
-      cart: ShopifyCart;
+      cart: ShopifyCart | null;
+      userErrors: ShopifyCartUserError[];
     };
   };
   variables: {
@@ -177,7 +194,8 @@ export type ShopifyAddToCartOperation = {
 export type ShopifyRemoveFromCartOperation = {
   data: {
     cartLinesRemove: {
-      cart: ShopifyCart;
+      cart: ShopifyCart | null;
+      userErrors: ShopifyCartUserError[];
     };
   };
   variables: {
@@ -189,7 +207,8 @@ export type ShopifyRemoveFromCartOperation = {
 export type ShopifyUpdateCartOperation = {
   data: {
     cartLinesUpdate: {
-      cart: ShopifyCart;
+      cart: ShopifyCart | null;
+      userErrors: ShopifyCartUserError[];
     };
   };
   variables: {

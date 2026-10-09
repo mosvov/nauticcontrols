@@ -1,11 +1,19 @@
 import cartFragment from "../fragments/cart";
 
+const cartUserErrors = /* GraphQL */ `
+  userErrors {
+    field
+    message
+  }
+`;
+
 export const addToCartMutation = /* GraphQL */ `
   mutation addToCart($cartId: ID!, $lines: [CartLineInput!]!) {
     cartLinesAdd(cartId: $cartId, lines: $lines) {
       cart {
         ...cart
       }
+      ${cartUserErrors}
     }
   }
   ${cartFragment}
@@ -17,6 +25,7 @@ export const createCartMutation = /* GraphQL */ `
       cart {
         ...cart
       }
+      ${cartUserErrors}
     }
   }
   ${cartFragment}
@@ -28,6 +37,7 @@ export const editCartItemsMutation = /* GraphQL */ `
       cart {
         ...cart
       }
+      ${cartUserErrors}
     }
   }
   ${cartFragment}
@@ -39,6 +49,7 @@ export const removeFromCartMutation = /* GraphQL */ `
       cart {
         ...cart
       }
+      ${cartUserErrors}
     }
   }
   ${cartFragment}

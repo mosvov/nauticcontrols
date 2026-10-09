@@ -3,13 +3,13 @@
 import { TAGS } from "lib/constants";
 import {
   addToCart,
-  createCart,
+  ensureCartId,
   getCart,
+  getCartForCheckout,
   removeFromCart,
   updateCart,
 } from "lib/shopify";
 import { updateTag } from "next/cache";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function addItem(
@@ -24,7 +24,8 @@ export async function addItem(
     await addToCart([{ merchandiseId: selectedVariantId, quantity: 1 }]);
     updateTag(TAGS.cart);
   } catch (e) {
-    return "Error adding item to cart";
+    console.error(e);
+    return e instanceof Error ? e.message : "Error adding item to cart";
   }
 }
 
@@ -47,7 +48,8 @@ export async function removeItem(prevState: any, merchandiseId: string) {
       return "Item not found in cart";
     }
   } catch (e) {
-    return "Error removing item from cart";
+    console.error(e);
+    return e instanceof Error ? e.message : "Error removing item from cart";
   }
 }
 
@@ -91,16 +93,22 @@ export async function updateItemQuantity(
     updateTag(TAGS.cart);
   } catch (e) {
     console.error(e);
-    return "Error updating item quantity";
+    return e instanceof Error ? e.message : "Error updating item quantity";
   }
 }
 
 export async function redirectToCheckout() {
-  let cart = await getCart();
-  redirect(cart!.checkoutUrl);
+  const cart = await getCartForCheckout();
+
+  if (!cart?.checkoutUrl) {
+    throw new Error("Cart checkout URL is unavailable");
+  }
+
+  redirect(cart.checkoutUrl);
 }
 
 export async function createCartAndSetCookie() {
-  let cart = await createCart();
-  (await cookies()).set("cartId", cart.id!);
+  // Reuse an existing cartId (e.g. created by ensureCartId during add-to-cart)
+  // so a late modal mount effect does not orphan a cart that already has lines.
+  await ensureCartId();
 }
