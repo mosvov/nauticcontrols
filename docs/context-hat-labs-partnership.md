@@ -245,7 +245,8 @@ Plan the pilot as **~9–12 month inventory**. Reorder bestsellers when ~50% sol
 
 ### E. Shopify + storefront
 
-- [ ] Shopify store: payments, US shipping
+- [x] Shopify store: contiguous US shipping ($9.95 under $75 / free $75+; other destinations contact for quote)
+- [ ] Shopify store: payments + tax + checkout smoke
 - [ ] `.env.local`: `SHOPIFY_STORE_DOMAIN` + Storefront API token
 - [ ] Products: SKUs + kits (after consent)
 - [ ] Inventory from received stock; cost basis

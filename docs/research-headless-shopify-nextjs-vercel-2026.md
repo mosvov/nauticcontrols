@@ -301,7 +301,7 @@ Headless does **not** replace the commerce back office. You still configure:
 | --- | --- | --- |
 | Payments | **Shopify Payments** (+ Shop Pay) | Hosted checkout; Shop Pay button via Hydrogen React or checkout |
 | Tax | **Shopify Tax** / US tax setup | [US taxes](https://help.shopify.com/en/manual/taxes/us), [Shopify Tax](https://help.shopify.com/en/manual/taxes/shopify-tax); set product categories; Florida nexus advice from a CPA |
-| Shipping | Shipping profiles / rates by market | [Shipping profiles](https://help.shopify.com/en/manual/fulfillment/setup/shipping-profiles); start with flat/USPS/UPS calculated rates for domestic only |
+| Shipping | Shipping profiles / rates by market | Contiguous US: **$9.95** under $75, free at $75+; other destinations contact for quote (`docs/plans/2026-10-08-shipping-rates.md`). Labels via Shopify Shipping |
 | Inventory | Shopify inventory + location | Webhooks keep storefront in sync |
 | Email | Shopify notification templates | Brand in admin; update notification URLs to headless domain |
 | Fraud | Shopify Protect / Payments risk | Checkout-native |
@@ -322,7 +322,7 @@ Aligned with `docs/context-shopify-us-store.md` ops order:
 
 1. Shopify **Basic+** store, Florida LLC billing, Shopify Payments  
 2. Headless channel + Headless theme; checkout subdomain DNS  
-3. US domestic shipping profile; Shopify Tax for registered states; product tax categories  
+3. Contiguous US shipping (**done:** $9.95 / free $75+); Shopify Tax for registered states; product tax categories  
 4. Create 5-15 Active products (kits as simple SKUs first); publish to Headless  
 5. Fork/deploy [vercel/commerce](https://github.com/vercel/commerce) or slim Storefront client; set env vars on Vercel  
 6. Wire 6 product/collection webhooks (prod + preview)  

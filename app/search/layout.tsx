@@ -1,9 +1,6 @@
-import Footer from "components/layout/footer";
-import Collections from "components/layout/search/collections";
 import FilterList from "components/layout/search/filter";
 import { sorting } from "lib/constants";
 import ChildrenWrapper from "./children-wrapper";
-import { Suspense } from "react";
 
 export default function SearchLayout({
   children,
@@ -11,21 +8,13 @@ export default function SearchLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <div className="mx-auto flex max-w-(--breakpoint-2xl) flex-col gap-8 px-4 pb-4 text-black md:flex-row dark:text-white">
-        <div className="order-first w-full flex-none md:max-w-[125px]">
-          <Collections />
-        </div>
-        <div className="order-last min-h-screen w-full md:order-none">
-          <Suspense fallback={null}>
-            <ChildrenWrapper>{children}</ChildrenWrapper>
-          </Suspense>
-        </div>
-        <div className="order-none flex-none md:order-last md:w-[125px]">
-          <FilterList list={sorting} title="Sort by" />
-        </div>
+    <div className="mx-auto flex w-full max-w-[1140px] flex-1 flex-col gap-6 px-4 py-6 text-ink md:flex-row md:gap-8">
+      <div className="w-full min-w-0 flex-1">
+        <ChildrenWrapper>{children}</ChildrenWrapper>
       </div>
-      <Footer />
-    </>
+      <aside className="w-full flex-none rounded-[0.35rem] border border-line bg-tile p-5 md:w-[240px] md:max-w-[240px]">
+        <FilterList list={sorting} title="Sort by" />
+      </aside>
+    </div>
   );
 }

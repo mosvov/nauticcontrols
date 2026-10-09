@@ -393,7 +393,7 @@ export async function getCollections(): Promise<Collection[]> {
 
 export async function getMenu(handle: string): Promise<Menu[]> {
   "use cache";
-  cacheTag(TAGS.collections);
+  cacheTag(TAGS.menus);
   cacheLife("days");
 
   if (!endpoint) {
@@ -429,7 +429,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
 
 export async function getPage(handle: string): Promise<Page> {
   "use cache";
-  cacheTag(TAGS.collections);
+  cacheTag(TAGS.pages);
   cacheLife("days");
 
   const res = await shopifyFetch<ShopifyPageOperation>({
@@ -442,7 +442,7 @@ export async function getPage(handle: string): Promise<Page> {
 
 export async function getPages(): Promise<Page[]> {
   "use cache";
-  cacheTag(TAGS.collections);
+  cacheTag(TAGS.pages);
   cacheLife("days");
 
   const res = await shopifyFetch<ShopifyPagesOperation>({
@@ -545,6 +545,8 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
 
   if (isCollectionUpdate) {
     revalidateTag(TAGS.collections, "max");
+    // Nav menus often point at collections.
+    revalidateTag(TAGS.menus, "max");
   }
 
   if (isProductUpdate) {

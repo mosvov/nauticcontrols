@@ -1,17 +1,19 @@
-import { getCollection, getCollectionProducts, getCollections } from "lib/shopify";
+import ProductGridItems from "components/layout/product-grid-items";
+import { ShelfSkeleton } from "components/layout/search/shelf-skeleton";
+import { defaultSort, sorting } from "lib/constants";
+import {
+  getCollection,
+  getCollectionProducts,
+  getCollections,
+} from "lib/shopify";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-
-import Grid from "components/grid";
-import ProductGridItems from "components/layout/product-grid-items";
-import { defaultSort, sorting } from "lib/constants";
 
 export async function generateStaticParams() {
   const collections = await getCollections();
   return collections
     .filter((collection) => collection.handle)
-    .slice(0, 1)
     .map((collection) => ({ collection: collection.handle }));
 }
 
@@ -37,7 +39,7 @@ export default function CategoryPage(props: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<ShelfSkeleton />}>
       <CategoryPageContent
         params={props.params}
         searchParams={props.searchParams}
@@ -54,24 +56,37 @@ async function CategoryPageContent({
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const resolvedSearchParams = await searchParams;
-  const { collection } = await params;
+  const { collection: handle } = await params;
   const { sort } = (resolvedSearchParams || {}) as { [key: string]: string };
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
+  const collection = await getCollection(handle);
+  if (!collection) return notFound();
+
   const products = await getCollectionProducts({
-    collection,
+    collection: handle,
     sortKey,
     reverse,
   });
 
   return (
     <section>
+      <div className="mb-5">
+        <h1 className="font-display text-3xl font-bold tracking-tight text-ink">
+          {collection.title}
+        </h1>
+        {collection.description ? (
+          <p className="mt-2 max-w-xl text-sm text-mute">
+            {collection.description}
+          </p>
+        ) : null}
+      </div>
       {products.length === 0 ? (
-        <p className="py-3 text-lg">{`No products found in this collection`}</p>
+        <p className="py-3 text-mute">No products found in this collection</p>
       ) : (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <ProductGridItems products={products} />
-        </Grid>
+        </ul>
       )}
     </section>
   );

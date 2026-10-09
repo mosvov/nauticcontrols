@@ -18,9 +18,9 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110003.jpg?v=1726045479",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P9110004.jpg?v=1726045478"
     ],
-    "body_html": "<p>US-stocked DIY Signal K / NMEA 2000 gateway kit built around the Hat Labs <strong>SH-ESP32</strong>.</p>\n<p>Ships from Florida. No international freight or customs surprises for US customers.</p>\n<h3>Kit includes</h3>\n<ul>\n<li>1\u00d7 SH-ESP32 development board (sales package)</li>\n<li>1\u00d7 Waterproof enclosure 100\u00d768\u00d750 mm (flanges + holes)</li>\n<li>1\u00d7 NMEA 2000 Micro-C panel connector with pigtails</li>\n</ul>\n<h3>What this is</h3>\n<p>A developer-style installation kit for boaters building a Wi-Fi / USB NMEA 2000 gateway or custom Signal K sensor node. Firmware and install guidance are provided by Nautic Controls (board does not ship with finished consumer gateway firmware from Hat Labs).</p>\n<h3>DIY note</h3>\n<p>This is not a drop-in Actisense or Yacht Devices finished gateway. Expect basic soldering/assembly skill and firmware flashing.</p>\n<p>Hardware by <a href=\"https://hatlabs.fi\">Hat Labs Oy</a>. Docs: <a href=\"https://docs.hatlabs.fi\">docs.hatlabs.fi</a></p>",
+    "body_html": "<p> DIY Signal K / NMEA 2000 gateway kit built around the Hat Labs <strong>SH-ESP32</strong>.</p>\n<p>Ships from the USA.</p>\n<h3>Kit includes</h3>\n<ul>\n<li>1\u00d7 SH-ESP32 development board (sales package)</li>\n<li>1\u00d7 Waterproof enclosure 100\u00d768\u00d750 mm (flanges + holes)</li>\n<li>1\u00d7 NMEA 2000 Micro-C panel connector with pigtails</li>\n</ul>\n<h3>What this is</h3>\n<p>A developer-style installation kit for boaters building a Wi-Fi / USB NMEA 2000 gateway or custom Signal K sensor node. Firmware and install guidance are provided by Nautic Controls (board does not ship with finished consumer gateway firmware from Hat Labs).</p>\n<h3>DIY note</h3>\n<p>This is not a drop-in Actisense or Yacht Devices finished gateway. Expect basic soldering/assembly skill and firmware flashing.</p>\n<p>Hardware by <a href=\"https://hatlabs.fi\">Hat Labs Oy</a>. Docs: <a href=\"https://docs.hatlabs.fi\">docs.hatlabs.fi</a></p>",
     "seo_title": "Signal K Gateway Kit | Nautic Controls",
-    "seo_description": "US-stocked SH-ESP32 gateway kit with enclosure and NMEA 2000 M12 connector. Ships from Florida.",
+    "seo_description": " SH-ESP32 gateway kit with enclosure and NMEA 2000 M12 connector. Ships from the USA.",
     "grams": 400
   },
   {
@@ -42,9 +42,9 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110144.jpg?v=1744703927",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/P4110148.jpg?v=1744703927"
     ],
-    "body_html": "<p>US-stocked DIY engine and tank monitoring kit built around Hat Labs <strong>HALMET</strong>.</p>\n<p>Connect resistive, voltage, binary, or pulse outputs from engines and tanks to NMEA 2000 / Signal K.</p>\n<h3>Kit includes</h3>\n<ul>\n<li>1\u00d7 HALMET board (sales package with screw terminals)</li>\n<li>1\u00d7 Waterproof enclosure 158\u00d790\u00d760 mm (pre-drilled)</li>\n<li>1\u00d7 SP13 2-pin power pigtail connector pair</li>\n</ul>\n<h3>DIY note</h3>\n<p>HALMET ships as a development kit without finished consumer firmware. Nautic Controls provides install guidance and firmware path. Not a drop-in Actisense EMU-1 replacement.</p>\n<p>Example firmware: <a href=\"https://github.com/hatlabs/HALMET-example-firmware\">HALMET-example-firmware</a> \u00b7 Docs: <a href=\"https://docs.hatlabs.fi/halmet\">docs.hatlabs.fi/halmet</a></p>",
+    "body_html": "<p> DIY engine and tank monitoring kit built around Hat Labs <strong>HALMET</strong>.</p>\n<p>Connect resistive, voltage, binary, or pulse outputs from engines and tanks to NMEA 2000 / Signal K.</p>\n<h3>Kit includes</h3>\n<ul>\n<li>1\u00d7 HALMET board (sales package with screw terminals)</li>\n<li>1\u00d7 Waterproof enclosure 158\u00d790\u00d760 mm (pre-drilled)</li>\n<li>1\u00d7 SP13 2-pin power pigtail connector pair</li>\n</ul>\n<h3>DIY note</h3>\n<p>HALMET ships as a development kit without finished consumer firmware. Nautic Controls provides install guidance and firmware path. Not a drop-in Actisense EMU-1 replacement.</p>\n<p>Example firmware: <a href=\"https://github.com/hatlabs/HALMET-example-firmware\">HALMET-example-firmware</a> \u00b7 Docs: <a href=\"https://docs.hatlabs.fi/halmet\">docs.hatlabs.fi/halmet</a></p>",
     "seo_title": "Engine Monitoring Kit | Nautic Controls",
-    "seo_description": "US-stocked HALMET engine kit with enclosure and SP13 power. Analog gauges to Signal K.",
+    "seo_description": " HALMET engine kit with enclosure and SP13 power. Analog gauges to Signal K.",
     "grams": 500
   },
   {
@@ -68,7 +68,7 @@
     ],
     "body_html": "<p>Hat Labs <strong>SH-ESP32</strong> sensor development board for marine and automotive systems. Isolated NMEA 2000 CAN, protected I/O, 8\u201332 V power, Wi-Fi / Bluetooth via ESP32.</p>\n<p><strong>US stock</strong> via Nautic Controls (Florida). Faster domestic shipping than ordering from Finland.</p>\n<h3>Typical uses</h3>\n<ul>\n<li>NMEA 2000 / NMEA 0183 gateways</li>\n<li>Tank, bilge, temp, RPM, and attitude sensors</li>\n<li>Relay control (lights, blowers, winch)</li>\n<li>Custom Signal K nodes with SensESP</li>\n</ul>\n<h3>Sales package</h3>\n<ul>\n<li>SH-ESP32 rev.2 with connectors soldered</li>\n<li>Pluggable screw terminals (CAN + power)</li>\n</ul>\n<p>Programmable over micro-USB. Recommended framework: SensESP. Docs: <a href=\"https://docs.hatlabs.fi\">docs.hatlabs.fi</a></p>\n<p><em>Developer board \u2014 firmware not pre-installed.</em></p>",
     "seo_title": "SH-ESP32 Board | Nautic Controls",
-    "seo_description": "Hat Labs SH-ESP32 developer board. US stock via Nautic Controls in Florida.",
+    "seo_description": "Hat Labs SH-ESP32 developer board. Ships from the USA via Nautic Controls.",
     "grams": 80
   },
   {
@@ -93,7 +93,7 @@
     ],
     "body_html": "<p>Hat Labs <strong>HALMET</strong> (Marine Engine &amp; Tank interface). Connect resistive, voltage, binary, or pulse outputs to NMEA 2000 or Signal K with native CAN and Wi-Fi.</p>\n<p><strong>US stock</strong> via Nautic Controls.</p>\n<h3>Sales package</h3>\n<ul>\n<li>HALMET device</li>\n<li>4-pin pluggable terminal for NMEA 2000 and power</li>\n<li>8\u00d7 two-pin terminals for analog/digital inputs</li>\n<li>4\u00d7 jumper headers for active resistance measurement</li>\n</ul>\n<p>Development-kit style product \u2014 no consumer firmware pre-installed. Example firmware on GitHub. Docs: <a href=\"https://docs.hatlabs.fi/halmet\">docs.hatlabs.fi/halmet</a></p>",
     "seo_title": "HALMET Board | Nautic Controls",
-    "seo_description": "Hat Labs HALMET engine and tank I/O board. US stock via Nautic Controls.",
+    "seo_description": "Hat Labs HALMET engine and tank I/O board. Ships from the USA.",
     "grams": 100
   },
   {
@@ -115,7 +115,7 @@
     ],
     "body_html": "<p>Hat Labs <strong>SH-RPi</strong> (Sailor Hat) power-management HAT for Raspberry Pi. Wide 9\u201332 V input, supercapacitor safe shutdown, current limiting, monitoring, and RTC.</p>\n<p><strong>US stock</strong> via Nautic Controls. Raspberry Pi not included.</p>\n<h3>Highlights</h3>\n<ul>\n<li>Three 20F supercapacitors for controlled shutdown on power loss</li>\n<li>Input current limiting (0.8 / 1.8 / 2.8 A)</li>\n<li>Peak current up to 5 A; continuous 5 V output \u2265 3 A</li>\n<li>HTTP API monitoring (voltage, current, temp)</li>\n<li>Standard Pi HAT form factor; stackable with interface HATs</li>\n</ul>\n<p>Note: any N2K port on related kits may be power-only depending on configuration \u2014 see Hat Labs docs. Docs: <a href=\"https://docs.hatlabs.fi/sh-rpi\">docs.hatlabs.fi/sh-rpi</a></p>",
     "seo_title": "SH-RPi Board | Nautic Controls",
-    "seo_description": "Hat Labs SH-RPi with supercap safe shutdown. US stock via Nautic Controls.",
+    "seo_description": "Hat Labs SH-RPi with supercap safe shutdown. Ships from the USA.",
     "grams": 120
   },
   {
@@ -139,7 +139,7 @@
     ],
     "body_html": "<p>Factory-assembled Hat Labs <strong>HALPI2</strong> marine computer: Raspberry Pi Compute Module 5, 4 GB RAM, 256 GB SSD, in a marine enclosure with NMEA 2000 connectivity.</p>\n<p>Pre-configured Signal K, AvNav, and Halos marine software options. 100% Raspberry Pi ecosystem compatible.</p>\n<p><strong>US stock</strong> via Nautic Controls \u2014 demo / flagship unit for Signal K server builds.</p>\n<p>Docs: <a href=\"https://docs.hatlabs.fi/halpi2\">docs.hatlabs.fi/halpi2</a></p>",
     "seo_title": "HALPI2 4GB/256GB | Nautic Controls",
-    "seo_description": "Factory HALPI2 marine CM5 / Signal K server. US stock via Nautic Controls.",
+    "seo_description": "Factory HALPI2 marine CM5 / Signal K server. Ships from the USA.",
     "grams": 800
   },
   {
@@ -157,7 +157,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100241.jpg?v=1765453247",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC100240.jpg?v=1765453247"
     ],
-    "body_html": "<p>Hat Labs waterproof enclosure <strong>100\u00d768\u00d750 mm</strong> with flanges and pre-made holes. Sized for SH-ESP32 gateway installs.</p>\n<p>SKU <code>ECK-PW100-FH</code>. US stock via Nautic Controls.</p>",
+    "body_html": "<p>Hat Labs waterproof enclosure <strong>100\u00d768\u00d750 mm</strong> with flanges and pre-made holes. Sized for SH-ESP32 gateway installs.</p>\n<p>SKU <code>ECK-PW100-FH</code>. Ships from the USA.</p>",
     "seo_title": "Waterproof Enclosure PW100 | Nautic Controls",
     "seo_description": "Hat Labs ECK-PW100-FH enclosure spare. US stock.",
     "grams": 150
@@ -177,7 +177,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110248.jpg?v=1765455434",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/PC110249.jpg?v=1765455439"
     ],
-    "body_html": "<p>Hat Labs waterproof enclosure <strong>158\u00d790\u00d760 mm</strong> with pre-drilled holes. Sized for HALMET engine kits.</p>\n<p>SKU <code>ECK-PW158-H</code>. US stock via Nautic Controls.</p>",
+    "body_html": "<p>Hat Labs waterproof enclosure <strong>158\u00d790\u00d760 mm</strong> with pre-drilled holes. Sized for HALMET engine kits.</p>\n<p>SKU <code>ECK-PW158-H</code>. Ships from the USA.</p>",
     "seo_title": "Waterproof Enclosure PW158 | Nautic Controls",
     "seo_description": "Hat Labs ECK-PW158-H enclosure spare. US stock.",
     "grams": 200
@@ -198,7 +198,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/a71709b494c8567c95833e138dbbc279.jpg?v=1721389438",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/CS0725401M12-P5A-GCFM12-0.2PV-NZGJ_-Model_1_4.jpg?v=1721390047"
     ],
-    "body_html": "<p>NMEA 2000 Micro-C style <strong>male panel connector</strong> with pigtail wires \u2014 no soldering to the connector body.</p>\n<ul>\n<li>IP67 ingress protection</li>\n<li>~12 mm panel hole, rear-mount nut</li>\n<li>Pinout: Black GND, Red 12V, White H, Blue L</li>\n</ul>\n<p>Invoice SKU <code>CX-M12-PM5A-PW200</code> (200 mm pigtails). Product photos sourced from Hat Labs shop listing (similar PW300 / 30 cm variant).</p>\n<p>US stock via Nautic Controls.</p>",
+    "body_html": "<p>NMEA 2000 Micro-C style <strong>male panel connector</strong> with pigtail wires \u2014 no soldering to the connector body.</p>\n<ul>\n<li>IP67 ingress protection</li>\n<li>~12 mm panel hole, rear-mount nut</li>\n<li>Pinout: Black GND, Red 12V, White H, Blue L</li>\n</ul>\n<p>Invoice SKU <code>CX-M12-PM5A-PW200</code> (200 mm pigtails). Product photos sourced from Hat Labs shop listing (similar PW300 / 30 cm variant).</p>\n<p>Ships from the USA.</p>",
     "seo_title": "NMEA 2000 M12 Panel Connector | Nautic Controls",
     "seo_description": "Hat Labs N2K M12 male panel connector with pigtails. US stock.",
     "grams": 50
@@ -221,7 +221,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.52.png?v=1744705905",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P2-0.2PW.png?v=1781598716"
     ],
-    "body_html": "<p>Hat Labs <strong>SP13</strong> 2-pin power pigtail connector pair for enclosure power feeds (HALMET / marine installs).</p>\n<p>SKU <code>CXP-SP13-CF2-PW200</code>. US stock via Nautic Controls.</p>",
+    "body_html": "<p>Hat Labs <strong>SP13</strong> 2-pin power pigtail connector pair for enclosure power feeds (HALMET / marine installs).</p>\n<p>SKU <code>CXP-SP13-CF2-PW200</code>. Ships from the USA.</p>",
     "seo_title": "SP13 2-Pin Power Pigtail | Nautic Controls",
     "seo_description": "Hat Labs SP13 CF2 power pigtail connector pair. US stock.",
     "grams": 40
@@ -244,7 +244,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_07f54c92-65f9-47d3-9741-3037b191df94.png?v=1744706763",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-P5-0.2PW.png?v=1781598586"
     ],
-    "body_html": "<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 5-pin, female cable plug.</p>\n<p>SKU <code>CXP-SP13-CF5-PW200</code>. US stock via Nautic Controls.</p>",
+    "body_html": "<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 5-pin, female cable plug.</p>\n<p>SKU <code>CXP-SP13-CF5-PW200</code>. Ships from the USA.</p>",
     "seo_title": "SP13 5-Pin Female Pigtail | Nautic Controls",
     "seo_description": "Hat Labs SP13 CF5 pigtail connector pair. US stock.",
     "grams": 40
@@ -267,7 +267,7 @@
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/Screenshot2025-04-15at11.30.03_ae6dbdca-1390-48bd-a9a1-a817b7f8dbb4.png?v=1744706462",
       "https://cdn.shopify.com/s/files/1/0671/2832/8476/files/SP1312-S4-0.2PW.png?v=1781598626"
     ],
-    "body_html": "<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 4-pin, male cable plug.</p>\n<p>SKU <code>CXP-SP13-CM4-PW200</code>. US stock via Nautic Controls.</p>",
+    "body_html": "<p>Hat Labs <strong>SP13</strong> pigtail connector pair, 4-pin, male cable plug.</p>\n<p>SKU <code>CXP-SP13-CM4-PW200</code>. Ships from the USA.</p>",
     "seo_title": "SP13 4-Pin Male Pigtail | Nautic Controls",
     "seo_description": "Hat Labs SP13 CM4 pigtail connector pair. US stock.",
     "grams": 40

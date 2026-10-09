@@ -12,7 +12,7 @@
 | Sole member / manager | Volodymyr Moskalyk |
 | DBA / brand | **Nautic Controls** (commercial division of RigSense LLC) |
 | Physical / business address | **606 Stargaze Lane, Saint Augustine, FL 32095** |
-| Phone | **747-283-4976** |
+| Phone | Not published on storefront (use email for public contact) |
 | Email | mosvov@gmail.com |
 | Registered agent / statutory office | Registered Agents Inc · 7901 4th St N, STE 300, St. Petersburg, FL 33702 |
 | Website | TBD (Nautic Controls storefront) |

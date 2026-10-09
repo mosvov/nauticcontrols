@@ -9,7 +9,7 @@
 | Empty / vague `product_type` on many SKUs | Typed: Kit, Development Board, Raspberry Pi HAT, Marine Computer, Enclosure, NMEA 2000 Connector, Circular Connector |
 | SP13 CF2 body is title-only (~33 chars) | Full install-oriented description |
 | Enclosures thin vs shop capability | Expanded enclosure copy (holes, use case) |
-| Tags are EU/shop-ops oriented (`All Products`, `Featured`) | Buyer + filter tags: `us-stock`, `florida`, `marine`, `diy`, `signal-k`, `nmea2000`, etc. |
+| Tags are EU/shop-ops oriented (`All Products`, `Featured`) | Buyer + filter tags: `marine`, `diy`, `signal-k`, `nmea2000`, etc. |
 | No kit SKUs (boards only) | Kits as primary offers |
 | No US-localized positioning | Every listing leads with Florida / domestic shipping |
 
@@ -33,5 +33,5 @@
 6. **Collection SEO** – custom SEO titles for each collection page
 7. **Clean sample collections** – remove Hydrogen / Automated Collection leftovers
 8. **FAQ / install snippets** – distinguish DIY vs finished Actisense/Yacht Devices competitors
-9. **Weight / shipping profiles** – grams already set; confirm shipping rates use them
+9. **Weight / shipping profiles** – grams set; rates live: $9.95 under $75 / free $75+ contiguous US (`docs/plans/2026-10-08-shipping-rates.md`)
 10. **Reviews / UGC** – after first US installs

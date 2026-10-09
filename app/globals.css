@@ -3,19 +3,37 @@
 @plugin "@tailwindcss/container-queries";
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --color-ink: #1a2330;
+  --color-shelf: #f5f7fa;
+  --color-tile: #ffffff;
+  --color-line: #dde3eb;
+  --color-accent: #2f6fed;
+  --color-mute: #617286;
+  --color-shelf-bar: #e9eef4;
+  --color-tile-wash: #fafbfc;
+  --font-sans: var(--font-shelf-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-shelf-display), ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
+  html {
+    color-scheme: light;
+  }
+
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+    border-color: var(--color-line);
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  body {
+    background: var(--color-shelf);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    min-height: 100vh;
   }
 }
 
@@ -28,5 +46,5 @@
 a,
 input,
 button {
-  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-shelf;
 }

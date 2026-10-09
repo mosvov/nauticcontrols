@@ -6,7 +6,7 @@ Prereqs: Shopify on paid plan, Florida inventory accurate, 1–2 real DTC orders
 
 - Existing seller: https://www.ebay.com/usr/v.moskalyk
 - [ ] Before first Nautic listing: rename public username toward `nauticcontrols` (or closest available) to keep feedback history
-- [ ] Confirm business policies: shipping from FL, returns, marine electronics category readiness
+- [ ] Confirm business policies: shipping from FL ($9.95 under $75 / free $75+ on Shopify DTC; eBay policy may differ), returns, marine electronics category readiness
 
 ## Connect
 

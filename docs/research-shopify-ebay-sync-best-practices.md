@@ -210,8 +210,8 @@ Sources:
 Practical hardware setup for Florida stock:
 
 1. One **domestic US shipping policy** with realistic handling time (1–2 business days once goods landed).  
-2. Calculated or flat rates that reflect kit weight/dims (enclosures + connectors weigh more than bare boards).  
-3. Separate policy or rate table if bare boards ship cheaper than full kits.  
+2. Shopify DTC (done): **$9.95** under $75, **free ground** at $75+, contiguous US (`docs/plans/2026-10-08-shipping-rates.md`). eBay can use calculated or a matching flat table; free shipping on eBay increases FVF base.  
+3. Separate eBay policy or rate table if bare boards ship cheaper than full kits.  
 4. Returns policy aligned with electronics (restocking / opened packaging rules stated clearly).  
 5. Item location = Florida (buyer trust + domestic shipping expectations).
 

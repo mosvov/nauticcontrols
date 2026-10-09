@@ -1,5 +1,7 @@
 # Remaining Shopify ↔ Next.js wiring (manual)
 
+Live storefront theme: **Studio Shelf** (see `docs/shop-best-practices.md`).
+
 Automated setup finished most Admin wiring. Two items need a human click because the Shopify plugin blocks them.
 
 ## 1. Headless theme (required for checkout/email links)
@@ -15,11 +17,11 @@ Theme zip is in-repo: `docs/shopify-headless-theme.zip`
 
 ## 2. Revalidation webhooks
 
-After production has env vars (already pushed to Vercel - redeploy once), add HTTP webhooks:
+After production has env vars (already pushed to Vercel), add HTTP webhooks:
 
-Callback (same secret as `SHOPIFY_REVALIDATION_SECRET` in `.env.local` / Vercel):
+Callback (same secret as `SHOPIFY_REVALIDATION_SECRET` in `.env.local` / Vercel; add Vercel Auth bypass query param from project settings while production is protected):
 
-`https://www.nauticcontrols.com/api/revalidate?secret=464b3bf5-e565-4df1-bfb0-563c38f7d242`
+`https://www.nauticcontrols.com/api/revalidate?secret=<SHOPIFY_REVALIDATION_SECRET>`
 
 Topics:
 
@@ -29,6 +31,8 @@ Topics:
 - collections/create  
 - collections/update  
 - collections/delete  
+
+Optional later (policy pages / nav cache): `pages/create`, `pages/update`, `pages/delete` - today pages use a separate cache tag and only refresh on redeploy unless you add those webhooks and extend `lib/shopify` `revalidate`.
 
 Admin path: Settings → Notifications → Webhooks.
 

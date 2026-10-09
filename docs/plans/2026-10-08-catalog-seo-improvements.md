@@ -132,6 +132,8 @@ Cover: what is included, DIY vs finished gateway, firmware path, US stock.
 
 **Done when:** Spreadsheet or short note in this plan of weights + any gaps. Rate setup may need Admin UI (shipping zones).
 
+**Follow-up (2026-10-08):** Rates live on General profile - $9.95 under $75 / free $75+ contiguous US. See `docs/plans/2026-10-08-shipping-rates.md`.
+
 ---
 
 ### Task 9: Vercel env + revalidate webhooks (gate)
@@ -173,7 +175,7 @@ Commit docs after each major batch if requested.
 | 5 Metafields | Already done | Definitions + values already on catalog |
 | 6 Policy pages | Already done | shipping, returns, about, fcc published |
 | 7 Kit FAQs | Done | Gateway + Engine kits |
-| 8 Weights | Done | Set grams from catalog JSON (were 0). Shipping rate profiles still need Admin UI when paid plan / rates configured |
+| 8 Weights | Done | Grams set. Rates: $9.95 under $75 / free $75+ contiguous US (`docs/plans/2026-10-08-shipping-rates.md`) |
 | 9 Vercel + webhooks | Gated | Wait for explicit ask |
 
 ### Weights applied (grams)

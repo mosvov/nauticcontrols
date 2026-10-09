@@ -21,7 +21,7 @@
 - [ ] Vercel env (same keys) — **deferred until you ask**
 - [ ] Headless theme uploaded/published (needs Admin login — see `docs/admin-setup-checklist.md`)
 - [ ] Webhooks → `/api/revalidate` (after Vercel env)
-- [ ] Florida location (needs Admin login)
+- [x] Florida Warehouse location + General profile origin (Shop location unused / no online fulfillment)
 - [ ] Replace demo snowboard catalog with Nautic seed CSV import
 
 ### Env keys (values only in `.env.local` / Vercel UI)
@@ -69,11 +69,14 @@ Pages: Shipping, Returns & Warranty, About, FCC / Responsible Party.
 
 ## Phase 2 — Go-live gate (manual / after stock)
 
+- [x] Contiguous US shipping: **$9.95** under $75, **free** at $75+; other destinations contact for quote (`docs/plans/2026-10-08-shipping-rates.md`)
 - [ ] Goods received and counted at Florida location
 - [ ] Upgrade store to Shopify **Basic+**
 - [ ] Enable Shopify Payments (RigSense LLC)
+- [ ] Shopify Tax for registered states (FL registration TBD)
 - [ ] Set real inventory quantities
 - [ ] Kits Active only with firmware path + install guide
+- [ ] Smoke: real checkout under $75 ($9.95 ship) and ≥ $75 (free ship), then refund
 - [ ] Remove coming-soon gate on homepage
 - [ ] Soft-launch to waitlist / communities
 

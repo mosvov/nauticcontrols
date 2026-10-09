@@ -1,6 +1,5 @@
 "use client";
 
-import { PlusIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { addItem } from "components/cart/actions";
 import { Product, ProductVariant } from "lib/shopify/types";
@@ -11,18 +10,22 @@ import { useCart } from "./cart-context";
 function SubmitButton({
   availableForSale,
   selectedVariantId,
+  className,
 }: {
   availableForSale: boolean;
   selectedVariantId: string | undefined;
+  className?: string;
 }) {
-  const buttonClasses =
-    "relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white";
-  const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60";
+  const buttonClasses = clsx(
+    "relative flex w-full min-h-[3.1rem] items-center justify-center rounded-[0.35rem] bg-accent px-4 text-sm font-bold tracking-wide text-white transition hover:brightness-105",
+    className,
+  );
+  const disabledClasses = "cursor-not-allowed opacity-60 hover:brightness-100";
 
   if (!availableForSale) {
     return (
       <button disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+        Out of stock
       </button>
     );
   }
@@ -34,30 +37,25 @@ function SubmitButton({
         disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
-        <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
-        </div>
-        Add To Cart
+        Select an option
       </button>
     );
   }
 
   return (
-    <button
-      aria-label="Add to cart"
-      className={clsx(buttonClasses, {
-        "hover:opacity-90": true,
-      })}
-    >
-      <div className="absolute left-0 ml-4">
-        <PlusIcon className="h-5" />
-      </div>
-      Add To Cart
+    <button aria-label="Add to cart" className={buttonClasses}>
+      Add to cart
     </button>
   );
 }
 
-export function AddToCart({ product }: { product: Product }) {
+export function AddToCart({
+  product,
+  className,
+}: {
+  product: Product;
+  className?: string;
+}) {
   const { variants, availableForSale } = product;
   const { addCartItem } = useCart();
   const searchParams = useSearchParams();
@@ -85,6 +83,7 @@ export function AddToCart({ product }: { product: Product }) {
       <SubmitButton
         availableForSale={availableForSale}
         selectedVariantId={selectedVariantId}
+        className={className}
       />
       <p aria-live="polite" className="sr-only" role="status">
         {message}

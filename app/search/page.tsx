@@ -1,53 +1,46 @@
-import Grid from "components/grid";
 import ProductGridItems from "components/layout/product-grid-items";
 import { defaultSort, sorting } from "lib/constants";
 import { getProducts } from "lib/shopify";
-import { Suspense } from "react";
 
 export const metadata = {
-  title: "Search",
-  description: "Search for products in the store.",
+  title: "Catalog",
+  description: "Browse Nautic Controls Signal K and NMEA 2000 hardware.",
 };
 
-export default function SearchPage(props: {
+export default async function SearchPage(props: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  return (
-    <Suspense fallback={null}>
-      <SearchPageContent searchParams={props.searchParams} />
-    </Suspense>
-  );
-}
-
-async function SearchPageContent({
-  searchParams,
-}: {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
-  const resolvedSearchParams = await searchParams;
-  const { sort, q: searchValue } = (resolvedSearchParams || {}) as {
-    [key: string]: string;
-  };
+  const searchParams = await props.searchParams;
+  const { sort, q: searchValue } = searchParams as { [key: string]: string };
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
 
   const products = await getProducts({ sortKey, reverse, query: searchValue });
-  const resultsText = products.length > 1 ? "results" : "result";
+  const resultsText = products.length === 1 ? "result" : "results";
 
   return (
     <>
       {searchValue ? (
-        <p className="mb-4">
+        <p className="mb-4 text-sm text-mute">
           {products.length === 0
-            ? "There are no products that match "
+            ? "No products match "
             : `Showing ${products.length} ${resultsText} for `}
-          <span className="font-bold">&quot;{searchValue}&quot;</span>
+          <span className="font-semibold text-ink">&quot;{searchValue}&quot;</span>
         </p>
-      ) : null}
+      ) : (
+        <div className="mb-5">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
+            On the shelf
+          </h1>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-mute">
+            Signal K kits, boards, and NMEA 2000 parts. Ships from the USA.
+          </p>
+        </div>
+      )}
       {products.length > 0 ? (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <ProductGridItems products={products} />
-        </Grid>
+        </ul>
       ) : null}
     </>
   );

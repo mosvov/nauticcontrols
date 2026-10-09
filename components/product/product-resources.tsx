@@ -7,7 +7,7 @@ function ExternalLink({ href, children }: { href: string; children: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="underline underline-offset-4 hover:text-black dark:hover:text-white"
+      className="text-accent underline underline-offset-4 hover:brightness-110"
     >
       {children}
     </a>
@@ -33,13 +33,13 @@ export function ProductResources({ product }: { product: Product }) {
   }
 
   return (
-    <div className="mb-6 space-y-4 border-t border-neutral-200 pt-6 text-sm dark:border-neutral-700">
+    <div className="mt-6 space-y-4 border-t border-line pt-5 text-sm">
       {hasLinks ? (
         <div>
-          <h2 className="mb-2 text-base font-medium text-black dark:text-white">
+          <h2 className="mb-2 text-base font-semibold text-ink">
             Documentation
           </h2>
-          <ul className="space-y-1 text-neutral-600 dark:text-neutral-400">
+          <ul className="space-y-1 text-mute">
             {docsUrl ? (
               <li>
                 <ExternalLink href={docsUrl}>Product docs (Hat Labs)</ExternalLink>
@@ -71,10 +71,10 @@ export function ProductResources({ product }: { product: Product }) {
       ) : null}
 
       {hasPolicy ? (
-        <div className="space-y-2 text-neutral-600 dark:text-neutral-400">
+        <div className="space-y-2 text-mute">
           {hatlabsSku ? (
             <p>
-              <span className="text-neutral-500">Manufacturer SKU: </span>
+              <span className="text-mute/80">Manufacturer SKU: </span>
               {hatlabsSku}
             </p>
           ) : null}
@@ -85,7 +85,7 @@ export function ProductResources({ product }: { product: Product }) {
                 .trim()}{" "}
               <Link
                 href="/returns"
-                className="underline underline-offset-4 hover:text-black dark:hover:text-white"
+                className="text-accent underline underline-offset-4"
               >
                 Returns &amp; Warranty
               </Link>
@@ -98,7 +98,7 @@ export function ProductResources({ product }: { product: Product }) {
                 .trim()}{" "}
               <Link
                 href="/fcc"
-                className="underline underline-offset-4 hover:text-black dark:hover:text-white"
+                className="text-accent underline underline-offset-4"
               >
                 FCC / Responsible Party
               </Link>

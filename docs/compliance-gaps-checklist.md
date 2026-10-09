@@ -10,7 +10,7 @@ Track items that block truthful FCC claims and kit Activation. Related: [`docs/m
 - [ ] Same for HALPI2 (docs appendix exists; confirm records + US marketing statement)
 - [ ] Stable public `compliance_url` per RF SKU, or confirm "available on request" via `/fcc`
 - [ ] Signed reseller terms / annex (draft today; FCC responsible-party role assumes signed terms)
-- [ ] Brand support email for FCC contact (prefer durable inbox over personal Gmail)
+- [x] Brand support email for FCC contact (`info@nauticcontrols.com` via Forward Email → Gmail)
 
 ## Kits (before Active)
 

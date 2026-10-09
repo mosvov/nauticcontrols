@@ -1,12 +1,24 @@
 import { CartProvider } from "components/cart/cart-context";
+import Footer from "components/layout/footer";
 import { Navbar } from "components/layout/navbar";
-import { StoreChrome } from "components/layout/store-chrome";
-import { GeistSans } from "geist/font/sans";
+import { ShippingAnnouncement } from "components/shipping-announcement";
 import { getCart } from "lib/shopify";
-import { ReactNode, Suspense } from "react";
+import { baseUrl } from "lib/utils";
+import { Manrope, Syne } from "next/font/google";
+import { ReactNode } from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
-import { baseUrl } from "lib/utils";
+
+const display = Syne({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-shelf-display",
+});
+
+const sans = Manrope({
+  subsets: ["latin"],
+  variable: "--font-shelf-sans",
+});
 
 const { SITE_NAME } = process.env;
 
@@ -27,28 +39,17 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  // Don't await the fetch, pass the Promise to the context provider
   const cart = getCart();
 
   return (
-    <html lang="en" className={GeistSans.variable}>
-      <body className="bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+      <body className="flex min-h-dvh flex-col bg-shelf text-ink antialiased selection:bg-accent/20">
         <CartProvider cartPromise={cart}>
-          <Suspense
-            fallback={
-              <main>
-                {children}
-                <Toaster closeButton />
-              </main>
-            }
-          >
-            <StoreChrome navbar={<Navbar />}>
-              <main>
-                {children}
-                <Toaster closeButton />
-              </main>
-            </StoreChrome>
-          </Suspense>
+          <ShippingAnnouncement />
+          <Navbar />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+          <Toaster closeButton />
         </CartProvider>
       </body>
     </html>
