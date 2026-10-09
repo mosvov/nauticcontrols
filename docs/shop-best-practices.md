@@ -23,7 +23,7 @@ Shopify Liquid headless theme zip remains redirect-only for checkout/email links
 
 | Surface | Rule |
 | --- | --- |
-| Home | Brand + 1 promise + featured shelf grid + path to full catalog |
+| Home | Flagship HALPI2 hero + trust strip + shop-by-type + featured shelf + why-buy pillars |
 | Collection / list | Dense shelf tiles; filter by type; sort by price and newest |
 | PDP | Stage image, sticky buy panel, docs below CTA, related shelf row |
 | Cart / checkout | Hosted Shopify checkout. Do not rebuild checkout |

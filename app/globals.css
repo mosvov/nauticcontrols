@@ -48,3 +48,39 @@ input,
 button {
   @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-accent/40 focus-visible:ring-offset-2 focus-visible:ring-offset-shelf;
 }
+
+@keyframes home-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-reveal {
+  animation: home-reveal 0.55s ease-out both;
+}
+
+.home-reveal-delay-1 {
+  animation: home-reveal 0.55s ease-out 0.08s both;
+}
+
+.home-reveal-delay-2 {
+  animation: home-reveal 0.6s ease-out 0.16s both;
+}
+
+.home-reveal-delay-3 {
+  animation: home-reveal 0.55s ease-out 0.22s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal,
+  .home-reveal-delay-1,
+  .home-reveal-delay-2,
+  .home-reveal-delay-3 {
+    animation: none;
+  }
+}

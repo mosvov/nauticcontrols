@@ -1,56 +1,52 @@
+import { FlagshipHero, FLAGSHIP_HANDLE } from "components/home/flagship-hero";
+import { ShopCategories } from "components/home/shop-categories";
+import { TrustStrip } from "components/home/trust-strip";
+import { WhyNautic } from "components/home/why-nautic";
 import { ShelfTile } from "components/product/shelf-tile";
-import { getCollectionProducts, getProducts } from "lib/shopify";
+import {
+  getCollectionProducts,
+  getProduct,
+  getProducts,
+} from "lib/shopify";
 import Link from "next/link";
 
 export const metadata = {
   description:
-    "Nautic Controls - the US home for Signal K hardware. Hat Labs gateway and engine-monitoring kits, ships from the USA.",
+    "HALPI2 and Hat Labs Signal K hardware in US stock. Marine computers, kits, boards, and NMEA 2000 gear. Ships from Florida.",
   openGraph: {
     type: "website",
   },
 };
 
 export default async function HomePage() {
-  let featured = await getCollectionProducts({
-    collection: "hidden-homepage-featured-items",
-  });
+  const [flagship, featuredRaw] = await Promise.all([
+    getProduct(FLAGSHIP_HANDLE),
+    getCollectionProducts({
+      collection: "hidden-homepage-featured-items",
+    }),
+  ]);
+
+  let featured = featuredRaw.filter(
+    (product) => product.handle !== FLAGSHIP_HANDLE,
+  );
 
   if (featured.length < 4) {
-    featured = await getProducts({});
+    const all = await getProducts({});
+    featured = all.filter((product) => product.handle !== FLAGSHIP_HANDLE);
   }
+
+  featured = featured.slice(0, 8);
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1140px] flex-1 px-4 pt-8 pb-12">
-        <section className="max-w-2xl">
-          <p className="text-xs tracking-[0.16em] text-mute uppercase">
-            Nautic Controls
-          </p>
-          <h1 className="font-display mt-2 text-[clamp(2.2rem,5vw,3.6rem)] leading-[0.95] font-bold tracking-tight text-ink">
-            On the shelf
-          </h1>
-          <p className="mt-3 max-w-xl text-[1.02rem] leading-relaxed text-mute">
-            Signal K and NMEA 2000 kits, boards, and connectors. Ships from the
-            USA.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/search"
-              className="inline-flex min-h-11 items-center justify-center rounded-[0.35rem] bg-accent px-5 text-sm font-bold text-white hover:brightness-105"
-            >
-              Browse catalog
-            </Link>
-            <Link
-              href="/search/kits"
-              className="inline-flex min-h-11 items-center justify-center rounded-[0.35rem] border border-line bg-tile px-5 text-sm font-semibold text-ink hover:border-accent/45"
-            >
-              View kits
-            </Link>
-          </div>
-        </section>
+      <FlagshipHero product={flagship} />
+      <TrustStrip />
+
+      <div className="mx-auto w-full max-w-[1140px] flex-1 px-4 pt-10 pb-14">
+        <ShopCategories />
 
         {featured.length > 0 ? (
-          <section className="mt-10">
+          <section className="mt-12">
             <div className="mb-4 flex items-end justify-between gap-3">
               <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
                 Featured hardware
@@ -60,7 +56,7 @@ export default async function HomePage() {
               </Link>
             </div>
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {featured.slice(0, 8).map((product, index) => (
+              {featured.map((product, index) => (
                 <li key={product.handle}>
                   <ShelfTile product={product} priority={index < 2} />
                 </li>
@@ -68,6 +64,10 @@ export default async function HomePage() {
             </ul>
           </section>
         ) : null}
+
+        <div className="mt-14">
+          <WhyNautic />
+        </div>
       </div>
     </>
   );
