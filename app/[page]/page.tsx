@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import Prose from "components/prose";
-import { getPage } from "lib/shopify";
+import { getPage, getPages } from "lib/shopify";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const pages = await getPages();
+  return pages.slice(0, 1).map((page) => ({ page: page.handle }));
+}
 
 export async function generateMetadata(props: {
   params: Promise<{ page: string }>;
@@ -23,11 +29,17 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function Page(props: {
-  params: Promise<{ page: string }>;
-}) {
-  const params = await props.params;
-  const page = await getPage(params.page);
+export default function Page(props: { params: Promise<{ page: string }> }) {
+  return (
+    <Suspense fallback={null}>
+      <PageContent params={props.params} />
+    </Suspense>
+  );
+}
+
+async function PageContent({ params }: { params: Promise<{ page: string }> }) {
+  const { page: handle } = await params;
+  const page = await getPage(handle);
 
   if (!page) return notFound();
 

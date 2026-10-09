@@ -3,12 +3,17 @@ import Footer from "components/layout/footer";
 import { Gallery } from "components/product/gallery";
 import { ProductDescription } from "components/product/product-description";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
-import { getProduct, getProductRecommendations } from "lib/shopify";
+import { getProduct, getProductRecommendations, getProducts } from "lib/shopify";
 import type { Image } from "lib/shopify/types";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+
+export async function generateStaticParams() {
+  const products = await getProducts({});
+  return products.slice(0, 10).map((product) => ({ handle: product.handle }));
+}
 
 export async function generateMetadata(props: {
   params: Promise<{ handle: string }>;
@@ -47,11 +52,23 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function ProductPage(props: {
+export default function ProductPage(props: {
   params: Promise<{ handle: string }>;
 }) {
-  const params = await props.params;
-  const product = await getProduct(params.handle);
+  return (
+    <Suspense fallback={null}>
+      <ProductPageContent params={props.params} />
+    </Suspense>
+  );
+}
+
+async function ProductPageContent({
+  params,
+}: {
+  params: Promise<{ handle: string }>;
+}) {
+  const { handle } = await params;
+  const product = await getProduct(handle);
 
   if (!product) return notFound();
 

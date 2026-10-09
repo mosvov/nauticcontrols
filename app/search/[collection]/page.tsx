@@ -1,10 +1,19 @@
-import { getCollection, getCollectionProducts } from "lib/shopify";
+import { getCollection, getCollectionProducts, getCollections } from "lib/shopify";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import Grid from "components/grid";
 import ProductGridItems from "components/layout/product-grid-items";
 import { defaultSort, sorting } from "lib/constants";
+
+export async function generateStaticParams() {
+  const collections = await getCollections();
+  return collections
+    .filter((collection) => collection.handle)
+    .slice(0, 1)
+    .map((collection) => ({ collection: collection.handle }));
+}
 
 export async function generateMetadata(props: {
   params: Promise<{ collection: string }>;
@@ -23,17 +32,34 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function CategoryPage(props: {
+export default function CategoryPage(props: {
   params: Promise<{ collection: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
-  const { sort } = searchParams as { [key: string]: string };
+  return (
+    <Suspense fallback={null}>
+      <CategoryPageContent
+        params={props.params}
+        searchParams={props.searchParams}
+      />
+    </Suspense>
+  );
+}
+
+async function CategoryPageContent({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ collection: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedSearchParams = await searchParams;
+  const { collection } = await params;
+  const { sort } = (resolvedSearchParams || {}) as { [key: string]: string };
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
   const products = await getCollectionProducts({
-    collection: params.collection,
+    collection,
     sortKey,
     reverse,
   });

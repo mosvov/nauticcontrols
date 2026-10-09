@@ -8,6 +8,8 @@ import { Suspense } from "react";
 const { COMPANY_NAME, SITE_NAME } = process.env;
 
 export default async function Footer() {
+  "use cache";
+
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : "");
   const skeleton =

@@ -2,6 +2,7 @@ import { Carousel } from "components/carousel";
 import { ComingSoon } from "components/coming-soon";
 import { ThreeItemGrid } from "components/grid/three-items";
 import Footer from "components/layout/footer";
+import { Suspense } from "react";
 
 export const metadata = {
   description:
@@ -15,8 +16,12 @@ export default function HomePage() {
   return (
     <>
       <ComingSoon />
-      <ThreeItemGrid />
-      <Carousel />
+      <Suspense fallback={null}>
+        <ThreeItemGrid />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Carousel />
+      </Suspense>
       <Footer />
     </>
   );
