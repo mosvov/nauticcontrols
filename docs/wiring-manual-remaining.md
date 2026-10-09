@@ -39,9 +39,9 @@ Admin path: Settings → Notifications → Webhooks.
 ## Already done via plugin
 
 - Florida Warehouse location - Toronto demo location deactivated  
-- Menus: `next-js-frontend-header-menu`, `next-js-frontend-footer-menu`  
+- Menus: `next-js-frontend-header-menu` (footer links are hard-coded; `next-js-frontend-footer-menu` unused)  
 - Collections: `hidden-homepage-featured-items`, `hidden-homepage-carousel` (published to Headless)  
-- Pages: shipping, returns, about, fcc  
+- Pages: shipping, returns, about, fcc, privacy, terms  
 - Vercel env: COMPANY_NAME, SITE_NAME, SHOPIFY_STORE_DOMAIN, SHOPIFY_STOREFRONT_ACCESS_TOKEN, SHOPIFY_REVALIDATION_SECRET  
 
 ## Note for product-seed chat

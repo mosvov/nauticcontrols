@@ -16,14 +16,15 @@ Shopify Liquid headless theme zip remains redirect-only for checkout/email links
 ## Positioning
 
 - Lead with **ships from the USA** and Signal K / NMEA 2000 fit. That is the buying reason vs Hat Labs EU or Amazon.
-- Kits first, boards second, connectors third. Homepage and nav should mirror that order.
+- **Homepage hero stays the HALPI2 Computer** (brand / demo flagship). Secondary CTA and shop-by-type still push kits as the volume path.
+- Elsewhere (nav, collection order, merchandising): kits first, boards second, connectors third.
 - One job per page: browse, decide, or buy. Do not mix blog, docs dump, and checkout friction on the PDP.
 
 ## Catalog IA
 
 | Surface | Rule |
 | --- | --- |
-| Home | Brand + 1 promise + featured shelf grid + path to full catalog |
+| Home | HALPI2 Computer flagship hero + trust strip + shop-by-type + featured shelf + why-buy pillars |
 | Collection / list | Dense shelf tiles; filter by type; sort by price and newest |
 | PDP | Stage image, sticky buy panel, docs below CTA, related shelf row |
 | Cart / checkout | Hosted Shopify checkout. Do not rebuild checkout |
