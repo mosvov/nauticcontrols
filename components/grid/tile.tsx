@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/image";
+import { ShopifyImage } from "components/shopify-image";
 import Label from "../label";
 
 export function GridTileImage({
@@ -16,7 +16,7 @@ export function GridTileImage({
     currencyCode: string;
     position?: "bottom" | "center";
   };
-} & React.ComponentProps<typeof Image>) {
+} & React.ComponentProps<typeof ShopifyImage>) {
   return (
     <div
       className={clsx(
@@ -29,7 +29,7 @@ export function GridTileImage({
       )}
     >
       {props.src ? (
-        <Image
+        <ShopifyImage
           className={clsx("relative h-full w-full object-contain", {
             "transition duration-300 ease-in-out group-hover:scale-105":
               isInteractive,

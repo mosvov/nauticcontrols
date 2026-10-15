@@ -1,6 +1,6 @@
 import Price from "components/price";
+import { ShopifyImage } from "components/shopify-image";
 import type { Product } from "lib/shopify/types";
-import Image from "next/image";
 import Link from "next/link";
 
 export const FLAGSHIP_HANDLE = "halpi2-4gb-256";
@@ -63,7 +63,7 @@ export function FlagshipHero({ product }: { product?: Product }) {
         <div className="home-reveal-delay-2">
           <div className="relative mx-auto aspect-square w-full max-w-[420px] md:max-w-none">
             {image?.url ? (
-              <Image
+              <ShopifyImage
                 src={image.url}
                 alt={image.altText || product?.title || "HALPI2 marine computer"}
                 fill
