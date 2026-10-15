@@ -1,15 +1,16 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 
-const ShopifyCookiesReadyContext = createContext(true);
+/** Default false so trackers wait until bootstrap reports ready. */
+const ShopifyCookiesReadyContext = createContext(false);
 
 export function ShopifyCookiesReadyProvider({
   ready,
   children,
 }: {
   ready: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <ShopifyCookiesReadyContext.Provider value={ready}>

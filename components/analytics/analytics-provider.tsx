@@ -6,7 +6,7 @@ import { ensureGaQueue } from "lib/analytics/ga";
 import { ensureMetaStub } from "lib/analytics/meta";
 import { shopifyPageView } from "lib/analytics/shopify";
 import { usePathname } from "next/navigation";
-import { Suspense, useEffect, useMemo, useRef, type ReactNode } from "react";
+import { Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 import { MetaPixel } from "./meta-pixel";
 import { ShopifyCookiesReadyProvider } from "./shopify-cookies-ready";
 
@@ -16,31 +16,42 @@ type AnalyticsProviderProps = {
   children?: ReactNode;
 };
 
-function absoluteCheckoutDomain(shopDomain?: string): string | undefined {
+function absoluteHttpsCheckoutDomain(shopDomain?: string): string | undefined {
   if (!shopDomain) return undefined;
   const trimmed = shopDomain.trim().replace(/\/+$/, "");
   if (!trimmed) return undefined;
-  if (/^https?:\/\//i.test(trimmed)) return trimmed;
-  return `https://${trimmed}`;
+  const withoutScheme = trimmed.replace(/^https?:\/\//i, "");
+  return `https://${withoutScheme}`;
 }
 
-function RouteAnalytics({
+/**
+ * Cookie bootstrap + route tracking. Kept in Suspense (usePathname) but does
+ * not wrap app children, so nav/cart state is not remounted on resolve.
+ */
+function CookieBootstrap({
   shopDomain,
   storefrontToken,
-  children,
-}: AnalyticsProviderProps) {
+  onReady,
+}: {
+  shopDomain?: string;
+  storefrontToken?: string;
+  onReady: (ready: boolean) => void;
+}) {
   const pathname = usePathname();
   const checkoutDomain = useMemo(
-    () => absoluteCheckoutDomain(shopDomain),
+    () => absoluteHttpsCheckoutDomain(shopDomain),
     [shopDomain],
   );
-  const lastShopifyPath = useRef<string | null>(null);
 
   const cookiesReady = useShopifyCookies({
     fetchTrackingValues: Boolean(checkoutDomain && storefrontToken),
     storefrontAccessToken: storefrontToken,
     checkoutDomain,
   });
+
+  useEffect(() => {
+    onReady(cookiesReady);
+  }, [cookiesReady, onReady]);
 
   useEffect(() => {
     ensureMetaStub();
@@ -50,8 +61,6 @@ function RouteAnalytics({
 
   useEffect(() => {
     if (!cookiesReady) return;
-    if (lastShopifyPath.current === pathname) return;
-    lastShopifyPath.current = pathname;
 
     if (process.env.NODE_ENV === "development") {
       const { uniqueToken, visitToken } = getTrackingValues();
@@ -69,18 +78,27 @@ function RouteAnalytics({
     void shopifyPageView();
   }, [cookiesReady, pathname]);
 
+  return null;
+}
+
+export function AnalyticsProvider({
+  shopDomain,
+  storefrontToken,
+  children,
+}: AnalyticsProviderProps) {
+  const [cookiesReady, setCookiesReady] = useState(false);
+
   return (
     <ShopifyCookiesReadyProvider ready={cookiesReady}>
       {children}
+      <Suspense fallback={null}>
+        <CookieBootstrap
+          shopDomain={shopDomain}
+          storefrontToken={storefrontToken}
+          onReady={setCookiesReady}
+        />
+      </Suspense>
       <MetaPixel />
     </ShopifyCookiesReadyProvider>
-  );
-}
-
-export function AnalyticsProvider(props: AnalyticsProviderProps) {
-  return (
-    <Suspense fallback={props.children ?? null}>
-      <RouteAnalytics {...props} />
-    </Suspense>
   );
 }
