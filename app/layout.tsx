@@ -14,6 +14,9 @@ import { Toaster } from "sonner";
 import "./globals.css";
 
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
+const shopDomain = process.env.SHOPIFY_STORE_DOMAIN?.trim() || "";
+const storefrontToken =
+  process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN?.trim() || "";
 
 const display = Syne({
   subsets: ["latin"],
@@ -56,7 +59,10 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
           <Toaster closeButton />
-          <AnalyticsProvider />
+          <AnalyticsProvider
+            shopDomain={shopDomain}
+            storefrontToken={storefrontToken}
+          />
           <Analytics />
           <SpeedInsights />
           {gaId ? <GoogleAnalytics gaId={gaId} /> : null}

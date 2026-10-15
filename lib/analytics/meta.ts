@@ -1,33 +1,52 @@
 import { analyticsConfig, hasMeta } from "./config";
+import { shopifyNumericId } from "./ids";
 import type { AnalyticsProduct, CartAnalyticsPayload } from "./types";
 
 type Fbq = (...args: unknown[]) => void;
 
 declare global {
   interface Window {
-    fbq?: Fbq;
+    fbq?: Fbq & { callMethod?: (...args: unknown[]) => void; queue?: unknown[] };
     _fbq?: Fbq;
   }
 }
 
+/** Ensure Meta's stub exists so early events queue before fbevents.js loads. */
+export function ensureMetaStub() {
+  if (typeof window === "undefined" || !hasMeta()) return;
+  if (typeof window.fbq === "function") return;
+
+  const n: Fbq & { callMethod?: (...args: unknown[]) => void; queue?: unknown[]; loaded?: boolean; version?: string; push?: Fbq } =
+    function (...args: unknown[]) {
+      if (n.callMethod) {
+        n.callMethod(...args);
+      } else {
+        (n.queue = n.queue || []).push(args);
+      }
+    };
+  n.push = n;
+  n.loaded = true;
+  n.version = "2.0";
+  n.queue = [];
+  window.fbq = n;
+  window._fbq = n;
+}
+
 function fbq(...args: unknown[]) {
-  if (
-    typeof window === "undefined" ||
-    !hasMeta() ||
-    typeof window.fbq !== "function"
-  ) {
-    return;
-  }
-  window.fbq(...args);
+  if (typeof window === "undefined" || !hasMeta()) return;
+  ensureMetaStub();
+  window.fbq!(...args);
 }
 
 function contentIds(products: AnalyticsProduct[]): string[] {
-  return products.map((p) => p.variantId || p.productId);
+  return products
+    .map((p) => shopifyNumericId(p.variantId || p.productId))
+    .filter(Boolean);
 }
 
 function contents(products: AnalyticsProduct[]) {
   return products.map((p) => ({
-    id: p.variantId || p.productId,
+    id: shopifyNumericId(p.variantId || p.productId),
     quantity: p.quantity ?? 1,
     item_price: Number(p.price),
   }));

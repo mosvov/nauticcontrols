@@ -74,7 +74,7 @@ export async function shopifyAddToCart(payload: CartAnalyticsPayload) {
     eventName: AnalyticsEventName.ADD_TO_CART,
     payload: {
       ...basePayload(),
-      cartId: payload.cartId,
+      cartId: payload.cartId || "",
       products,
       totalValue:
         payload.value ??

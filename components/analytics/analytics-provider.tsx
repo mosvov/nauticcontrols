@@ -2,26 +2,42 @@
 
 import { useShopifyCookies } from "@shopify/hydrogen-react";
 import { trackPageView } from "lib/analytics";
-import { usePathname, useSearchParams } from "next/navigation";
+import { ensureGaQueue } from "lib/analytics/ga";
+import { ensureMetaStub } from "lib/analytics/meta";
+import { usePathname } from "next/navigation";
 import { Suspense, useEffect } from "react";
 import { MetaPixel } from "./meta-pixel";
 
-function RouteAnalytics() {
+type AnalyticsProviderProps = {
+  shopDomain?: string;
+  storefrontToken?: string;
+};
+
+function RouteAnalytics({
+  shopDomain,
+  storefrontToken,
+}: AnalyticsProviderProps) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  useShopifyCookies({ hasUserConsent: true });
+
+  useShopifyCookies({
+    fetchTrackingValues: Boolean(shopDomain && storefrontToken),
+    storefrontAccessToken: storefrontToken,
+    checkoutDomain: shopDomain,
+  });
 
   useEffect(() => {
+    ensureMetaStub();
+    ensureGaQueue();
     void trackPageView();
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return <MetaPixel />;
 }
 
-export function AnalyticsProvider() {
+export function AnalyticsProvider(props: AnalyticsProviderProps) {
   return (
     <Suspense fallback={null}>
-      <RouteAnalytics />
+      <RouteAnalytics {...props} />
     </Suspense>
   );
 }
