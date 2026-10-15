@@ -42,10 +42,11 @@ const faqs: { question: string; answer: ReactNode }[] = [
     answer: (
       <>
         Unused items in original packaging can usually be returned within 30
-        days of delivery. Most products carry a 2-year limited warranty.{" "}
+        days of delivery. Full return and warranty terms are on{" "}
         <Link href="/returns" className={linkClass}>
           Returns &amp; Warranty
         </Link>
+        .
       </>
     ),
   },
@@ -65,7 +66,7 @@ export function WhyNautic() {
         {faqs.map((faq) => (
           <li key={faq.question} className="border-b border-line">
             <details className="group">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3.5 text-[0.95rem] font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-[0.2rem] py-3.5 text-[0.95rem] font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
                 {faq.question}
                 <span
                   aria-hidden
