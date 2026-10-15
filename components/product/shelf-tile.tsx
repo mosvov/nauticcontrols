@@ -1,6 +1,6 @@
 import Price from "components/price";
+import { ShopifyImage } from "components/shopify-image";
 import type { Product } from "lib/shopify/types";
-import Image from "next/image";
 import Link from "next/link";
 
 export function ShelfTile({
@@ -18,7 +18,7 @@ export function ShelfTile({
     >
       <div className="relative aspect-square border-b border-line bg-tile-wash">
         {product.featuredImage?.url ? (
-          <Image
+          <ShopifyImage
             src={product.featuredImage.url}
             alt={product.featuredImage.altText || product.title}
             fill

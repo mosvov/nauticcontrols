@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/image";
+import { ShopifyImage } from "components/shopify-image";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export function Gallery({
@@ -25,7 +25,7 @@ export function Gallery({
     <form>
       <div className="relative aspect-square overflow-hidden rounded-[0.35rem] border border-line bg-tile">
         {images[imageIndex] ? (
-          <Image
+          <ShopifyImage
             className="object-contain p-6 md:p-10"
             fill
             sizes="(min-width: 900px) 55vw, 100vw"
@@ -51,7 +51,7 @@ export function Gallery({
                     isActive ? "border-accent" : "border-line",
                   )}
                 >
-                  <Image
+                  <ShopifyImage
                     alt={image.altText}
                     src={image.src}
                     fill

@@ -6,8 +6,8 @@ import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import LoadingDots from "components/loading-dots";
 import Price from "components/price";
 import { DEFAULT_OPTION } from "lib/constants";
+import { ShopifyImage } from "components/shopify-image";
 import { createUrl } from "lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
@@ -139,7 +139,7 @@ export default function CartModal() {
                                 <div className="relative h-16 w-16 overflow-hidden rounded-[0.35rem] border border-line bg-tile-wash">
                                   {item.merchandise.product.featuredImage
                                     ?.url ? (
-                                    <Image
+                                    <ShopifyImage
                                       className="h-full w-full object-contain p-1"
                                       width={64}
                                       height={64}
