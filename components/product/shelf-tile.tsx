@@ -28,10 +28,15 @@ export function ShelfTile({
           />
         ) : null}
       </div>
-      <h2 className="min-h-[2.6rem] px-3 pt-2.5 pb-0.5 text-[0.92rem] leading-snug font-semibold text-ink">
-        {product.title}
-      </h2>
-      <div className="mt-auto flex items-center justify-between px-3 pt-2 pb-3 text-sm">
+      <div className="flex flex-col px-3 pt-2.5">
+        <h2 className="line-clamp-2 text-[0.92rem] leading-snug font-semibold text-ink">
+          {product.title}
+        </h2>
+        <p className="mt-1 truncate text-xs leading-snug text-mute">
+          {product.vendor || "\u00a0"}
+        </p>
+      </div>
+      <div className="mt-auto flex items-center justify-between px-3 pt-2.5 pb-3 text-sm">
         <Price
           className="text-sm font-bold text-ink"
           amount={product.priceRange.minVariantPrice.amount}

@@ -35,7 +35,7 @@ export default async function HomePage() {
   if (featured.length < 4) {
     featured = withoutFlagship(await getProducts({}));
   }
-  featured = featured.slice(0, 8);
+  featured = featured.slice(0, 4);
 
   return (
     <>
@@ -49,7 +49,7 @@ export default async function HomePage() {
           <section className="mt-12">
             <div className="mb-4 flex items-end justify-between gap-3">
               <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
-                Featured
+                From the shelf
               </h2>
               <Link href="/search" className="text-sm text-mute hover:text-ink">
                 View catalog →
