@@ -544,6 +544,23 @@ export async function getCollections(): Promise<Collection[]> {
   return collections;
 }
 
+/** Map Shopify Online Store menu URLs to headless site paths. */
+function toHeadlessMenuPath(url: string): string {
+  // Storefront API often returns absolute URLs on the shop primary domain
+  // (e.g. nauticcontrols.myshopify.com), which may differ from
+  // SHOPIFY_STORE_DOMAIN (permanent *.myshopify.com host). Always use pathname.
+  let pathname = url;
+  try {
+    pathname = new URL(url, domain || "https://shopify.local").pathname;
+  } catch {
+    // Relative or malformed; keep as-is and normalize below.
+  }
+
+  return pathname
+    .replace(/^\/collections/, "/search")
+    .replace(/^\/pages/, "") || "/";
+}
+
 export async function getMenu(handle: string): Promise<Menu[]> {
   "use cache";
   cacheTag(TAGS.menus);
@@ -566,10 +583,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
       res.body?.data?.menu?.items.map(
         (item: { title: string; url: string }) => ({
           title: item.title,
-          path: item.url
-            .replace(domain, "")
-            .replace("/collections", "/search")
-            .replace("/pages", ""),
+          path: toHeadlessMenuPath(item.url),
         }),
       ) || []
     );
