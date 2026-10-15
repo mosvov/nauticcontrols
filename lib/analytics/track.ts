@@ -14,9 +14,11 @@ import type { AnalyticsProduct, CartAnalyticsPayload } from "./types";
 
 export type { AnalyticsProduct, CartAnalyticsPayload } from "./types";
 
-export function trackPageView() {
+export function trackPageView(options?: { shopify?: boolean }) {
   metaPageView();
-  void shopifyPageView();
+  if (options?.shopify !== false) {
+    void shopifyPageView();
+  }
 }
 
 export function trackViewItem(product: AnalyticsProduct) {
