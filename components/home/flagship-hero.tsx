@@ -9,36 +9,36 @@ export function FlagshipHero({ product }: { product?: Product }) {
   const primaryHref = product
     ? `/product/${product.handle}`
     : "/search/marine-computers";
-  const primaryLabel = product ? "Shop HALPI2" : "Browse computers";
+  const primaryLabel = product ? "View HALPI2" : "Browse computers";
   const image = product?.featuredImage;
 
   return (
     <section className="home-reveal relative overflow-hidden border-b border-line bg-shelf-bar">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_48%,rgba(47,111,237,0.16),transparent_52%),linear-gradient(165deg,var(--color-shelf-bar)_0%,var(--color-shelf)_50%,#dfe7f2_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_42%,rgba(47,111,237,0.12),transparent_55%),linear-gradient(165deg,var(--color-shelf-bar)_0%,var(--color-shelf)_58%,#e4ebf4_100%)]"
       />
-      <div className="relative mx-auto grid w-full max-w-[1200px] gap-8 px-4 py-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:items-center md:gap-6 md:py-12 lg:gap-8 lg:py-14">
-        <div className="home-reveal-delay-1 md:pr-2">
-          <h1 className="font-display text-[clamp(2.8rem,6.5vw,4.4rem)] leading-[0.9] font-bold tracking-tight text-balance text-ink">
-            HALPI2
-          </h1>
-          <p className="font-display mt-2 text-[clamp(1.15rem,2.4vw,1.55rem)] leading-snug font-semibold tracking-tight text-ink">
-            Raspberry Pi CM5 marine computer
+      <div className="relative mx-auto grid w-full max-w-[1140px] gap-8 px-4 py-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:items-center md:gap-10 md:py-14 lg:py-16">
+        <div className="home-reveal-delay-1">
+          <p className="text-xs tracking-[0.16em] text-mute uppercase">
+            Nautic Controls
           </p>
-          <p className="mt-3 max-w-md text-[1.02rem] leading-relaxed text-mute">
-            Signal K-ready. Ships from the US.
+          <h1 className="font-display mt-2 text-[clamp(2.2rem,5vw,3.6rem)] leading-[0.95] font-bold tracking-tight text-ink">
+            HALPI2 on Raspberry Pi CM5
+          </h1>
+          <p className="mt-3 max-w-xl text-[1.02rem] leading-relaxed text-mute">
+            Raspberry Pi CM5 marine computer for Signal K. Ships from the US.
           </p>
 
           {product ? (
-            <div className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <Price
-                className="text-xl font-bold text-ink"
+                className="text-lg font-bold text-ink"
                 amount={product.priceRange.minVariantPrice.amount}
                 currencyCode={product.priceRange.minVariantPrice.currencyCode}
                 currencyCodeClassName="!hidden"
               />
-              <span className="text-[0.95rem] text-mute">
+              <span className="text-sm text-mute">
                 {product.availableForSale ? "In stock" : "Out of stock"}
               </span>
             </div>
@@ -55,35 +55,28 @@ export function FlagshipHero({ product }: { product?: Product }) {
               href="/search/kits"
               className="inline-flex min-h-11 items-center justify-center rounded-[0.35rem] border border-line bg-tile px-5 text-sm font-semibold text-ink hover:border-accent/45"
             >
-              Signal K kits
+              Shop kits
             </Link>
           </div>
         </div>
 
-        <div className="home-reveal-delay-2 relative mx-auto w-full max-w-[560px] md:mx-0 md:max-w-[min(100%,560px)] xl:max-w-[min(100%,520px)] md:justify-self-end">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-[6%] rounded-full bg-[radial-gradient(circle,rgba(47,111,237,0.14)_0%,transparent_68%)] blur-2xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-[18%] bottom-[3%] h-[12%] rounded-[100%] bg-[radial-gradient(ellipse,rgba(26,35,48,0.14)_0%,transparent_70%)] blur-md"
-          />
-          {image?.url ? (
-            <ShopifyImage
-              src={image.url}
-              alt={image.altText || product?.title || "HALPI2 marine computer"}
-              width={image.width || 1200}
-              height={image.height || 1200}
-              priority
-              className="relative z-10 mx-auto h-auto max-h-[min(52vh,420px)] w-full object-contain drop-shadow-[0_16px_28px_rgba(26,35,48,0.12)] md:max-h-[min(56vh,460px)] xl:max-h-[440px]"
-              sizes="(min-width: 1280px) 520px, (min-width: 768px) 48vw, 94vw"
-            />
-          ) : (
-            <div className="flex min-h-[280px] items-center justify-center text-sm text-mute">
-              HALPI2
-            </div>
-          )}
+        <div className="home-reveal-delay-2">
+          <div className="relative mx-auto aspect-square w-full max-w-[420px] md:max-w-none">
+            {image?.url ? (
+              <ShopifyImage
+                src={image.url}
+                alt={image.altText || product?.title || "HALPI2 marine computer"}
+                fill
+                priority
+                className="object-contain p-2 md:p-4"
+                sizes="(min-width: 1100px) 520px, (min-width: 768px) 45vw, 90vw"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-mute">
+                HALPI2
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
