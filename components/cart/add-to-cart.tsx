@@ -2,9 +2,10 @@
 
 import clsx from "clsx";
 import { addItem } from "components/cart/actions";
+import { productToAnalytics, trackAddToCart } from "lib/analytics";
 import { Product, ProductVariant } from "lib/shopify/types";
 import { useSearchParams } from "next/navigation";
-import { useActionState } from "react";
+import { useState } from "react";
 import { useCart } from "./cart-context";
 
 function SubmitButton({
@@ -57,9 +58,9 @@ export function AddToCart({
   className?: string;
 }) {
   const { variants, availableForSale } = product;
-  const { addCartItem } = useCart();
+  const { addCartItem, cart } = useCart();
   const searchParams = useSearchParams();
-  const [message, formAction] = useActionState(addItem, null);
+  const [message, setMessage] = useState<string | null>(null);
 
   const variant = variants.find((variant: ProductVariant) =>
     variant.selectedOptions.every(
@@ -68,7 +69,6 @@ export function AddToCart({
   );
   const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
   const selectedVariantId = variant?.id || defaultVariantId;
-  const addItemAction = formAction.bind(null, selectedVariantId);
   const finalVariant = variants.find(
     (variant) => variant.id === selectedVariantId,
   )!;
@@ -77,7 +77,16 @@ export function AddToCart({
     <form
       action={async () => {
         addCartItem(finalVariant, product);
-        addItemAction();
+        const error = await addItem(null, selectedVariantId);
+        if (error) {
+          setMessage(error);
+          return;
+        }
+        setMessage(null);
+        trackAddToCart({
+          cartId: cart?.id,
+          products: [productToAnalytics(product, finalVariant, 1)],
+        });
       }}
     >
       <SubmitButton
