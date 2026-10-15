@@ -3,20 +3,36 @@ import { ShopCategories } from "components/home/shop-categories";
 import { TrustStrip } from "components/home/trust-strip";
 import { WhyNautic } from "components/home/why-nautic";
 import { ShelfTile } from "components/product/shelf-tile";
+import { JsonLd } from "components/seo/json-ld";
+import { HOME_FAQS } from "lib/home-faq";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  absoluteUrl,
+  canonicalAlternates,
+  faqPageJsonLd,
+  socialMetadata,
+} from "lib/seo";
 import {
   getCollectionProducts,
   getProduct,
   getProducts,
 } from "lib/shopify";
 import type { Product } from "lib/shopify/types";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  description:
-    "Marine and RV electronics: HALPI2, Signal K kits, boards, and NMEA 2000 parts. US stock. Free ground shipping on orders $75+.",
-  openGraph: {
-    type: "website",
+export const metadata: Metadata = {
+  title: {
+    absolute: DEFAULT_TITLE,
   },
+  description: DEFAULT_DESCRIPTION,
+  alternates: canonicalAlternates("/"),
+  ...socialMetadata({
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    url: absoluteUrl("/"),
+  }),
 };
 
 function withoutFlagship(products: Product[]) {
@@ -39,6 +55,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd data={faqPageJsonLd(HOME_FAQS)} />
       <FlagshipHero product={flagship} />
       <TrustStrip />
 

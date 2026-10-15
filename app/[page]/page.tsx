@@ -4,7 +4,13 @@ import { Suspense } from "react";
 import PolicyRail, { MobilePageToc } from "components/page/policy-rail";
 import Prose from "components/prose";
 import { enrichPageBody } from "lib/page-toc";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  canonicalAlternates,
+} from "lib/seo";
 import { getPage, getPages } from "lib/shopify";
+import { JsonLd } from "components/seo/json-ld";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -20,13 +26,27 @@ export async function generateMetadata(props: {
 
   if (!page) return notFound();
 
+  const title = page.seo?.title || page.title;
+  const description = page.seo?.description || page.bodySummary;
+  const path = `/${page.handle}`;
+
   return {
-    title: page.seo?.title || page.title,
-    description: page.seo?.description || page.bodySummary,
+    title,
+    description,
+    alternates: canonicalAlternates(path),
     openGraph: {
+      type: "article",
+      siteName: "Nautic Controls",
+      title,
+      description: description || undefined,
+      url: absoluteUrl(path),
       publishedTime: page.createdAt,
       modifiedTime: page.updatedAt,
-      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: description || undefined,
     },
   };
 }
@@ -63,6 +83,12 @@ async function PageContent({ params }: { params: Promise<{ page: string }> }) {
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: page.title, path: `/${page.handle}` },
+        ])}
+      />
       <article className="w-full min-w-0 flex-1 rounded-[0.35rem] border border-line bg-tile p-6 md:p-8">
         <h1 className="font-display mb-6 text-3xl font-bold tracking-tight text-ink md:text-4xl">
           {page.title}

@@ -1,12 +1,19 @@
 import ProductGridItems from "components/layout/product-grid-items";
 import { ShelfSkeleton } from "components/layout/search/shelf-skeleton";
+import { JsonLd } from "components/seo/json-ld";
 import { defaultSort, sorting } from "lib/constants";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  canonicalAlternates,
+  socialMetadata,
+} from "lib/seo";
 import {
   getCollection,
   getCollectionProducts,
   getCollections,
 } from "lib/shopify";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -25,12 +32,22 @@ export async function generateMetadata(props: {
 
   if (!collection) return notFound();
 
+  const title = collection.seo?.title || collection.title;
+  const description =
+    collection.seo?.description ||
+    collection.description ||
+    `${collection.title} products`;
+  const path = `/search/${collection.handle}`;
+
   return {
-    title: collection.seo?.title || collection.title,
-    description:
-      collection.seo?.description ||
-      collection.description ||
-      `${collection.title} products`,
+    title,
+    description,
+    alternates: canonicalAlternates(path),
+    ...socialMetadata({
+      title,
+      description,
+      url: absoluteUrl(path),
+    }),
   };
 }
 
@@ -71,6 +88,16 @@ async function CategoryPageContent({
 
   return (
     <section>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Catalog", path: "/search" },
+          {
+            name: collection.title,
+            path: `/search/${collection.handle}`,
+          },
+        ])}
+      />
       <div className="mb-5">
         <h1 className="font-display text-3xl font-bold tracking-tight text-ink">
           {collection.title}

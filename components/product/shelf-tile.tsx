@@ -29,9 +29,9 @@ export function ShelfTile({
         ) : null}
       </div>
       <div className="flex flex-col px-3 pt-2.5">
-        <h2 className="line-clamp-2 text-[0.92rem] leading-snug font-semibold text-ink">
+        <h3 className="line-clamp-2 text-[0.92rem] leading-snug font-semibold text-ink">
           {product.title}
-        </h2>
+        </h3>
         <p className="mt-1 truncate text-xs leading-snug text-mute">
           {product.vendor || "\u00a0"}
         </p>

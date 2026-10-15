@@ -3,8 +3,16 @@ import { Gallery } from "components/product/gallery";
 import { BuyPanelSkeleton, PdpSkeleton } from "components/product/pdp-skeleton";
 import { ProductDescription } from "components/product/product-description";
 import { ShelfTile } from "components/product/shelf-tile";
+import { JsonLd } from "components/seo/json-ld";
 import { productToAnalytics } from "lib/analytics";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  canonicalAlternates,
+  productJsonLd,
+  socialMetadata,
+} from "lib/seo";
 import {
   getProduct,
   getProductRecommendations,
@@ -31,10 +39,24 @@ export async function generateMetadata(props: {
 
   const { url, width, height, altText: alt } = product.featuredImage || {};
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
+  const title = product.seo.title || product.title;
+  const description = product.seo.description || product.description;
+  const path = `/product/${product.handle}`;
+  const images = url
+    ? [
+        {
+          url,
+          width,
+          height,
+          alt: alt || product.title,
+        },
+      ]
+    : undefined;
 
   return {
-    title: product.seo.title || product.title,
-    description: product.seo.description || product.description,
+    title,
+    description,
+    alternates: canonicalAlternates(path),
     robots: {
       index: indexable,
       follow: indexable,
@@ -43,18 +65,12 @@ export async function generateMetadata(props: {
         follow: indexable,
       },
     },
-    openGraph: url
-      ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt,
-            },
-          ],
-        }
-      : null,
+    ...socialMetadata({
+      title,
+      description,
+      url: absoluteUrl(path),
+      images,
+    }),
   };
 }
 
@@ -78,30 +94,15 @@ async function ProductPageContent({
 
   if (!product) return notFound();
 
-  const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.title,
-    description: product.description,
-    image: product.featuredImage?.url,
-    offers: {
-      "@type": "AggregateOffer",
-      availability: product.availableForSale
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      priceCurrency: product.priceRange.minVariantPrice.currencyCode,
-      highPrice: product.priceRange.maxVariantPrice.amount,
-      lowPrice: product.priceRange.minVariantPrice.amount,
-    },
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productJsonLd),
-        }}
+      <JsonLd data={productJsonLd(product)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Catalog", path: "/search" },
+          { name: product.title, path: `/product/${product.handle}` },
+        ])}
       />
       <ProductViewTracker product={productToAnalytics(product)} />
       <div className="mx-auto w-full max-w-[1140px] flex-1 px-4 pt-4 pb-24 md:pb-10">

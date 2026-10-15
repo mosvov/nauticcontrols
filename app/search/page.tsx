@@ -1,10 +1,28 @@
 import ProductGridItems from "components/layout/product-grid-items";
+import { JsonLd } from "components/seo/json-ld";
 import { defaultSort, sorting } from "lib/constants";
+import {
+  absoluteUrl,
+  breadcrumbJsonLd,
+  canonicalAlternates,
+  socialMetadata,
+} from "lib/seo";
 import { getProducts } from "lib/shopify";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Catalog",
-  description: "Browse Nautic Controls Signal K and NMEA 2000 hardware.",
+const catalogTitle = "Catalog";
+const catalogDescription =
+  "Browse Nautic Controls Signal K and NMEA 2000 hardware. Kits, boards, marine computers, and connectors. Ships from the US.";
+
+export const metadata: Metadata = {
+  title: catalogTitle,
+  description: catalogDescription,
+  alternates: canonicalAlternates("/search"),
+  ...socialMetadata({
+    title: catalogTitle,
+    description: catalogDescription,
+    url: absoluteUrl("/search"),
+  }),
 };
 
 export default async function SearchPage(props: {
@@ -20,13 +38,26 @@ export default async function SearchPage(props: {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Catalog", path: "/search" },
+        ])}
+      />
       {searchValue ? (
-        <p className="mb-4 text-sm text-mute">
-          {products.length === 0
-            ? "No products match "
-            : `Showing ${products.length} ${resultsText} for `}
-          <span className="font-semibold text-ink">&quot;{searchValue}&quot;</span>
-        </p>
+        <>
+          <h1 className="mb-2 font-display text-2xl font-bold tracking-tight text-ink">
+            Search results
+          </h1>
+          <p className="mb-4 text-sm text-mute">
+            {products.length === 0
+              ? "No products match "
+              : `Showing ${products.length} ${resultsText} for `}
+            <span className="font-semibold text-ink">
+              &quot;{searchValue}&quot;
+            </span>
+          </p>
+        </>
       ) : (
         <div className="mb-5">
           <h1 className="font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
