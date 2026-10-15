@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CartProvider } from "components/cart/cart-context";
 import Footer from "components/layout/footer";
 import { Navbar } from "components/layout/navbar";
@@ -50,6 +52,8 @@ export default async function RootLayout({
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
           <Toaster closeButton />
+          <Analytics />
+          <SpeedInsights />
         </CartProvider>
       </body>
     </html>
