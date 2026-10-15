@@ -1,18 +1,13 @@
 /**
- * Generate favicon / app icon set from public/images/logo.png
+ * Generate favicon / app icon set
  *
- * Follows the modern minimal set (Evil Martians + Next.js App Router):
- * - app/favicon.ico          (32x32 ICO for legacy / /favicon.ico)
- * - app/icon.png             (32x32 PNG for modern browsers)
- * - app/apple-icon.png       (180x180 Apple touch icon)
- * - public/icons/icon-192.png
- * - public/icons/icon-512.png
- * - public/icons/icon-maskable.png (512 with safe-zone padding)
+ * Tab icons (16/32/192) use public/images/favicon-mark.svg (blue disc + waves).
+ * Apple touch + 512 + maskable use the full logo on a dark plate.
  *
  * Usage: npm run icons
  */
 
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
@@ -20,6 +15,9 @@ import sharp from "sharp";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const sourcePath = path.join(root, "public/images/logo.png");
+const tabMarkPath = path.join(root, "public/images/favicon-mark.svg");
+
+const APP_PLATE = "#0B1220";
 
 /** Pack one or more PNG buffers into a multi-size .ico (PNG-compressed). */
 function pngBuffersToIco(pngBuffers) {
@@ -68,85 +66,63 @@ async function squareSource() {
     .png();
 }
 
-async function resizePng(pipeline, size, { background = "#000000", fit = "cover" } = {}) {
-  return pipeline
-    .clone()
+async function renderMark(markSvg, size) {
+  return sharp(markSvg)
     .resize(size, size, {
-      fit,
-      background,
-      withoutEnlargement: false,
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
     })
-    .png({ compressionLevel: 9, palette: false })
+    .png({ compressionLevel: 9 })
     .toBuffer();
 }
 
-/** Apple recommends ~20px padding on a 180px canvas. */
+/** Opaque hard plate for Apple / maskable (platforms dislike transparency). */
+async function platedIcon(pipeline, canvas, { background, padRatio = 0.1 } = {}) {
+  const inner = Math.max(1, Math.round(canvas * (1 - padRatio * 2)));
+  const logo = await pipeline
+    .clone()
+    .resize(inner, inner, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+
+  return sharp({
+    create: {
+      width: canvas,
+      height: canvas,
+      channels: 4,
+      background,
+    },
+  })
+    .composite([
+      {
+        input: logo,
+        left: Math.round((canvas - inner) / 2),
+        top: Math.round((canvas - inner) / 2),
+      },
+    ])
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+}
+
 async function appleTouchIcon(pipeline) {
-  const inner = 140;
-  const canvas = 180;
-  const logo = await pipeline
-    .clone()
-    .resize(inner, inner, { fit: "contain", background: "#000000" })
-    .png()
-    .toBuffer();
-
-  return sharp({
-    create: {
-      width: canvas,
-      height: canvas,
-      channels: 4,
-      background: "#000000",
-    },
-  })
-    .composite([
-      {
-        input: logo,
-        left: Math.round((canvas - inner) / 2),
-        top: Math.round((canvas - inner) / 2),
-      },
-    ])
-    .png({ compressionLevel: 9 })
-    .toBuffer();
+  return platedIcon(pipeline, 180, { background: APP_PLATE, padRatio: 20 / 180 });
 }
 
-/** Maskable: keep logo inside ~80% safe zone (409/512). */
 async function maskableIcon(pipeline, canvas = 512) {
-  const inner = Math.round(canvas * 0.8);
-  const logo = await pipeline
-    .clone()
-    .resize(inner, inner, { fit: "contain", background: "#000000" })
-    .png()
-    .toBuffer();
-
-  return sharp({
-    create: {
-      width: canvas,
-      height: canvas,
-      channels: 4,
-      background: "#000000",
-    },
-  })
-    .composite([
-      {
-        input: logo,
-        left: Math.round((canvas - inner) / 2),
-        top: Math.round((canvas - inner) / 2),
-      },
-    ])
-    .png({ compressionLevel: 9 })
-    .toBuffer();
+  return platedIcon(pipeline, canvas, { background: APP_PLATE, padRatio: 0.1 });
 }
 
 async function main() {
   const source = await squareSource();
+  const markSvg = await readFile(tabMarkPath);
   const appDir = path.join(root, "app");
   const iconsDir = path.join(root, "public/icons");
   await mkdir(iconsDir, { recursive: true });
 
-  const icon32 = await resizePng(source, 32);
-  const icon16 = await resizePng(source, 16);
-  const icon192 = await resizePng(source, 192);
-  const icon512 = await resizePng(source, 512);
+  const icon16 = await renderMark(markSvg, 16);
+  const icon32 = await renderMark(markSvg, 32);
+  const icon192 = await renderMark(markSvg, 192);
+  const icon512 = await platedIcon(source, 512, { background: APP_PLATE, padRatio: 0.08 });
   const apple = await appleTouchIcon(source);
   const maskable = await maskableIcon(source, 512);
   const faviconIco = pngBuffersToIco([icon16, icon32]);
@@ -162,7 +138,9 @@ async function main() {
 
   await Promise.all(outputs.map(([file, buf]) => writeFile(file, buf)));
 
-  console.log("Generated favicons from public/images/logo.png:");
+  console.log("Generated favicons:");
+  console.log(`  tab mark: ${path.relative(root, tabMarkPath)}`);
+  console.log(`  full logo: ${path.relative(root, sourcePath)} (apple / 512 / maskable)`);
   for (const [file] of outputs) {
     console.log(`  - ${path.relative(root, file)}`);
   }
