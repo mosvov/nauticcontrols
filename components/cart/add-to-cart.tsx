@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { addItem } from "components/cart/actions";
+import { productToAnalytics, trackAddToCart } from "lib/analytics";
 import { Product, ProductVariant } from "lib/shopify/types";
 import { useSearchParams } from "next/navigation";
 import { useActionState } from "react";
@@ -77,6 +78,9 @@ export function AddToCart({
     <form
       action={async () => {
         addCartItem(finalVariant, product);
+        trackAddToCart({
+          products: [productToAnalytics(product, finalVariant, 1)],
+        });
         addItemAction();
       }}
     >

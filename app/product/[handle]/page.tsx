@@ -1,12 +1,15 @@
+import { ProductViewTracker } from "components/analytics/product-view-tracker";
 import { Gallery } from "components/product/gallery";
-import {
-  BuyPanelSkeleton,
-  PdpSkeleton,
-} from "components/product/pdp-skeleton";
+import { BuyPanelSkeleton, PdpSkeleton } from "components/product/pdp-skeleton";
 import { ProductDescription } from "components/product/product-description";
 import { ShelfTile } from "components/product/shelf-tile";
+import { productToAnalytics } from "lib/analytics";
 import { HIDDEN_PRODUCT_TAG } from "lib/constants";
-import { getProduct, getProductRecommendations, getProducts } from "lib/shopify";
+import {
+  getProduct,
+  getProductRecommendations,
+  getProducts,
+} from "lib/shopify";
 import type { Image } from "lib/shopify/types";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -100,6 +103,7 @@ async function ProductPageContent({
           __html: JSON.stringify(productJsonLd),
         }}
       />
+      <ProductViewTracker product={productToAnalytics(product)} />
       <div className="mx-auto w-full max-w-[1140px] flex-1 px-4 pt-4 pb-24 md:pb-10">
         <Link
           href="/search"

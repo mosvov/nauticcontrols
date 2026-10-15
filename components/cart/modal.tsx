@@ -11,15 +11,13 @@ import { createUrl } from "lib/utils";
 import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
+import { trackBeginCheckout } from "lib/analytics";
 import { createCartAndSetCookie, redirectToCheckout } from "./actions";
 import { useCart } from "./cart-context";
 import { DeleteItemButton } from "./delete-item-button";
 import { EditItemQuantityButton } from "./edit-item-quantity-button";
 import OpenCart from "./open-cart";
-import {
-  CartShippingProgress,
-  cartShippingLabel,
-} from "./shipping-progress";
+import { CartShippingProgress, cartShippingLabel } from "./shipping-progress";
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -228,7 +226,26 @@ export default function CartModal() {
                       />
                     </div>
                   </div>
-                  <form action={redirectToCheckout}>
+                  <form
+                    action={async () => {
+                      if (cart?.lines?.length) {
+                        trackBeginCheckout({
+                          cartId: cart.id,
+                          value: Number(cart.cost.totalAmount.amount),
+                          currency: cart.cost.totalAmount.currencyCode,
+                          products: cart.lines.map((line) => ({
+                            productId: line.merchandise.product.id,
+                            variantId: line.merchandise.id,
+                            name: line.merchandise.product.title,
+                            price: line.cost.totalAmount.amount,
+                            currency: line.cost.totalAmount.currencyCode,
+                            quantity: line.quantity,
+                          })),
+                        });
+                      }
+                      await redirectToCheckout();
+                    }}
+                  >
                     <CheckoutButton />
                   </form>
                 </div>
