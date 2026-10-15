@@ -54,15 +54,16 @@ export default async function RootLayout({
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="flex min-h-dvh flex-col bg-shelf text-ink antialiased selection:bg-accent/20">
         <CartProvider cartPromise={cart}>
-          <ShippingAnnouncement />
-          <Navbar />
-          <main className="flex flex-1 flex-col">{children}</main>
-          <Footer />
-          <Toaster closeButton />
           <AnalyticsProvider
             shopDomain={shopDomain}
             storefrontToken={storefrontToken}
-          />
+          >
+            <ShippingAnnouncement />
+            <Navbar />
+            <main className="flex flex-1 flex-col">{children}</main>
+            <Footer />
+            <Toaster closeButton />
+          </AnalyticsProvider>
           <Analytics />
           <SpeedInsights />
           {gaId ? <GoogleAnalytics gaId={gaId} /> : null}

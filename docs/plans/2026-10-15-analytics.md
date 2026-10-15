@@ -40,14 +40,15 @@ Purchase is **not** fired from Next.js (checkout is Shopify-hosted).
 1. Preview/Production with env vars present
 2. Home → PDP → add to cart → checkout: network calls to Meta, Google, Monorail, `/_vercel/insights`
 3. Direct PDP landing: ViewContent / view_item still fire (Meta stub + dataLayer queue)
-4. Confirm `_shopify_y` / `_shopify_s` (or Customer Privacy tokens) after first page view
-5. Test order: Purchase in Meta Events Manager + GA4 (via Shopify channels)
-6. After connecting Shopify Meta/Google channels, check Events Manager / GA4 for duplicate `InitiateCheckout` / `begin_checkout`; drop storefront-side checkout events for a vendor if it doubles
-7. Vercel project → Analytics shows page views
+4. Confirm same-origin `POST /api/unstable/graphql.json` returns **200** (Shopify cookie bootstrap proxy)
+5. Confirm `getTrackingValues()` has non-empty `uniqueToken` / `visitToken` (legacy `_shopify_y` / `_shopify_s` are deprecated 2026-04-30)
+6. Test order: Purchase in Meta Events Manager + GA4 (via Shopify channels)
+7. After connecting Shopify Meta/Google channels, check Events Manager / GA4 for duplicate `InitiateCheckout` / `begin_checkout`; drop storefront-side checkout events for a vendor if it doubles
+8. Vercel project → Analytics shows page views
 
-## Merge note
+## Shopify cookie proxy
 
-`feat/observability-sentry-vercel` also adds `@vercel/analytics` / Speed Insights in `app/layout.tsx`. Rebase one branch onto the other and keep a single `<Analytics />` + `<SpeedInsights />` pair.
+Hydrogen-react `useShopifyCookies({ fetchTrackingValues: true })` POSTs to same-origin `/api/unstable/graphql.json`. This Next app implements that path as a Storefront API proxy (`app/api/unstable/graphql.json/route.ts`) that forwards `Set-Cookie` and `Server-Timing` so visitor tokens are first-party on `www.nauticcontrols.com`. See also `docs/plans/2026-10-15-shopify-cookie-proxy.md`.
 
 ## Follow-up (not in v1)
 
