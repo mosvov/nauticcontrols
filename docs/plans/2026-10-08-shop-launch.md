@@ -1,7 +1,8 @@
 # Nautic Controls Shop Launch — Ops Checklist
 
 **Date:** 2026-10-08  
-**Store:** `dev-store-749237498237499137.myshopify.com`  
+**Production store:** `nautic-controls-bh11vkhs.myshopify.com` ([admin](https://admin.shopify.com/store/nautic-controls-bh11vkhs))  
+**Staging store:** `dev-store-749237498237499137.myshopify.com` (keep for experiments)  
 **Storefront:** https://www.nauticcontrols.com/  
 **Full plan:** Cursor plan `nautic_shop_launch`
 
@@ -72,8 +73,8 @@ Pages: Shipping, Returns & Warranty, About, FCC / Responsible Party.
 
 - [x] Contiguous US shipping: **$9.95** under $75, **free** at $75+; other destinations contact for quote (`docs/plans/2026-10-08-shipping-rates.md`)
 - [ ] Goods received and counted at Florida location
-- [ ] Upgrade store to Shopify **Basic+**
-- [ ] Enable Shopify Payments (Nautic Controls)
+- [ ] Live store on Shopify **Basic+** (created; finish Admin wiring on `nautic-controls-bh11vkhs`)
+- [ ] Enable Shopify Payments (Nautic Controls) on the **production** store
 - [ ] Shopify Tax for registered states (FL registration TBD)
 - [ ] Set real inventory quantities
 - [ ] Kits Active only with firmware path + install guide

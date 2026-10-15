@@ -1,49 +1,38 @@
 # Remaining Shopify ↔ Next.js wiring (manual)
 
-Live storefront theme: **Studio Shelf** (see `docs/shop-best-practices.md`).
+**Production:** https://admin.shopify.com/store/nautic-controls-bh11vkhs  
+**Staging:** https://admin.shopify.com/store/dev-store-749237498237499137  
 
-Automated setup finished most Admin wiring. Two items need a human click because the Shopify plugin blocks them.
+Catalog, inventory, metafields, markets (CA/MX draft), Headless theme (MAIN, hostname `www.nauticcontrols.com`), Headless channel, and Vercel Production env are already on the live store. Checkout/email links use the Headless theme.
 
-## 1. Headless theme (required for checkout/email links)
+## Still manual in Admin
 
-Theme zip is in-repo: `docs/shopify-headless-theme.zip`
+1. **Packages** (API cannot create): Settings → Shipping and delivery → Packages → Small board box / Kit box per `docs/admin-setup-checklist.md`  
+2. Shopify Payments + tax (after Client transfer + paid plan)  
+3. Confirm revalidation webhooks on the live store still point at production  
 
-1. Admin → Online Store → Themes → Add theme → Upload zip  
-2. Upload `docs/shopify-headless-theme.zip`  
-3. Customize → Theme settings → Storefront → Hostname: `www.nauticcontrols.com`  
-4. Publish  
-
-(API `themeCreate` / theme publish are restricted for this app connection.)
-
-## 2. Revalidation webhooks
-
-After production has env vars (already pushed to Vercel), add HTTP webhooks:
-
-Callback (same secret as `SHOPIFY_REVALIDATION_SECRET` in `.env.local` / Vercel; add Vercel Auth bypass query param from project settings while production is protected):
+## Revalidation webhooks
 
 `https://www.nauticcontrols.com/api/revalidate?secret=<SHOPIFY_REVALIDATION_SECRET>`
 
-Topics:
-
-- products/create  
-- products/update  
-- products/delete  
-- collections/create  
-- collections/update  
-- collections/delete  
-
-Also wire page webhooks (supported in `lib/shopify` `revalidate`): `pages/create`, `pages/update`, `pages/delete`.
+Topics: products/create|update|delete, collections/create|update|delete  
+Optional: pages/create|update|delete  
 
 Admin path: Settings → Notifications → Webhooks.
 
-## Already done via plugin
+## Cutover rule
 
-- Florida Warehouse location - Toronto demo location deactivated  
-- Menus: `next-js-frontend-header-menu` (footer links are hard-coded; `next-js-frontend-footer-menu` unused)  
-- Collections: `hidden-homepage-featured-items`, `hidden-homepage-carousel` (published to Headless)  
-- Pages: shipping, returns, about, fcc, privacy, terms  
-- Vercel env: COMPANY_NAME, SITE_NAME, SHOPIFY_STORE_DOMAIN, SHOPIFY_STOREFRONT_ACCESS_TOKEN, SHOPIFY_REVALIDATION_SECRET  
+- Vercel **Production** → live store tokens only  
+- Vercel Preview + local `.env.local` → staging det store until you intentionally switch  
+- Do not delete the staging store until a successful paid order on production  
 
-## Note for product-seed chat
+## Client transfer (soft-launch gate)
 
-Publish every sellable product to the **Dev Store Headless** sales channel, and add kits to the two Hidden collections when ready.
+Do not transfer until soft-launch ready. Partner Client-transfer stores require an **external** recipient email (not the Partner org owner like `mosvov@gmail.com`).
+
+1. Partner Dashboard → store → Transfer to client → external email (bookkeeper / alternate)  
+2. Recipient accepts transfer  
+3. Choose **Basic** (or higher), not Starter  
+4. After paid plan is active, transfer ownership again to `mosvov@gmail.com` if desired  
+5. Then enable Shopify Payments / tax; leave Preview on det until you say otherwise  
+
