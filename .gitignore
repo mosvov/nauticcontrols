@@ -37,3 +37,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# git worktrees
+.worktrees/
+
+# Shopify migration dumps
+docs/exports/
