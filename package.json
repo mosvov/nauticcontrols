@@ -13,6 +13,7 @@
     "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.2.0",
     "@next/third-parties": "^16.4.1",
+    "@sentry/nextjs": "^11.8.0",
     "@shopify/hydrogen-react": "^2026.4.4",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
